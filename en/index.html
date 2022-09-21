@@ -31,18 +31,18 @@
   </script>
 </head>
 
-<body class="themeColor">
-
+<body class="themeColor default-scrollbar">
 <nav>
   <div id="navBar">
     <div class="logo">
-      <img id="logo" src="../media/logo.png" alt="Teamcubation">
+      <img id="logo" class="scrollToTop" src="../media/logo.png" alt="Teamcubation">
     </div>
     <div class="navigate">
       <a class="what" href="#what">navBar.what</a>
       <a class="how" href="#how">navBar.how</a>
       <a class="clients" href="#clients">navBar.clients</a>
       <a class="team" href="#team">navBar.team</a>
+      <a class="contact" href="#contact">navBar.contact</a>
       <a class="devsJuniors" href="#devsJuniors">navBar.devsJunior</a>
       <a class="devsSeniors" href="#devsSeniors">navBar.devsSenior</a>
       <!-- <div class="language-select">
@@ -77,6 +77,8 @@
 </nav>
 
 <div id="pageContent">
+  <!-- <button id="backToTop" class="scrollToTop" type="button"></button> -->
+  <img id="backToTop" class="scrollToTop" src="../media/logo/logo-btn.svg" alt>
   <section id="banner" class="color-dark">
     <div class="grid-row align-items-center">
       <div class="col-8 top-quotes">
@@ -135,16 +137,13 @@
       <h4 class="color-dark me-1 d-inline fw-600">weDo.descriptionText.lineOne.boldTextOne</h4>
       <h4 class="color-dark me-1 d-inline">weDo.descriptionText.lineOne.standardTextTwo</h4>
       <h4 class="color-dark me-1 fw-600 d-inline">weDo.descriptionText.lineOne.boldTextTwo</h4>
-      <br>
       <h4 class="color-dark me-1 d-inline fw-600">weDo.descriptionText.lineTwo.boldTextOne</h4>
       <h4 class="color-dark me-1 d-inline">weDo.descriptionText.lineTwo.standardTextOne</h4>
       <h4 class="color-dark me-1 d-inline fw-600">weDo.descriptionText.lineTwo.boldTextTwo</h4>
       <h4 class="color-dark me-1 d-inline">weDo.descriptionText.lineTwo.standardTextTwo</h4>
-      <br>
       <h4 class="color-dark me-1 d-inline">weDo.descriptionText.lineThree.standardTextOne</h4>
       <h4 class="color-dark me-1 d-inline fw-600">weDo.descriptionText.lineThree.boldTextOne</h4>
       <h4 class="color-dark me-1 d-inline">weDo.descriptionText.lineThree.standardTextTwo</h4>
-      <br>
       <h4 class="color-dark me-1 d-inline mb-5">weDo.descriptionText.lineFour.standardTextOne</h4>
       <div class="grid-row mt-4">
         <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
@@ -220,8 +219,10 @@
       </div>
     </div>
   </section>
+
   <img id="weDoDivider" src="../media/wave/weDoDivider.svg" alt>
   <div id="scrolltoHow"></div>
+
   <section id="how">
     <div id="howDoDecorationPlus">
       <img class="position-relative plus-default" width="40%" src="../media/plus/default.svg" alt="plus_orange">
@@ -350,10 +351,10 @@
   </div></section>
 
   <img id="teamDivider" src="../media/wave/white.svg" alt="divider">
-  
   <div id="scrolltoContact"></div>
+
   <section id="contact">
-    <div class="grid-row">
+    <div class="grid-row justify-content-evenly">
       <div class="col-xs-12 col-lg-6 color-gray-100 mt-5">
         <h2 class="color-gray-100 mb-5">contact.description.centralText</h2>
         <h4 id="formOnlyCompany">contact.description.centralTextTwo</h4>
@@ -389,7 +390,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-5 mt-2 px-2">
+      <div class="col-12 col-lg-5 mt-2 px-2 d-flex flex-column align-items-center">
         <h2 class="color-gray-100 my-3">contact.form.centralText</h2>
         <form class="form-contact" id="form-team">
           <div class="mt-5">
@@ -420,6 +421,9 @@
               </ul>
             </div>
           </div>
+          <div class="mt-4">
+            <input type="text" class="organizationContact" placeholder="contact.form.organization">
+          </div>
           <div class="mt-5">
             <label for="country-phone-team" class="form-label">contact.form.telephone.label</label>
           </div>
@@ -445,12 +449,14 @@
           <div class="mb-4 mt-5">
             <textarea name="message" class="message" rows="1" required placeholder="contact.form.reason"></textarea>
           </div>
-          <input class="typeContact" hidden value="Team">
+          <!-- <input class="typeContact" hidden value="Team"> -->
         </form>
       </div>
     </div>
   </section>
+
   <div id="scrollToJuniors"></div>
+
   <section id="devsJuniors" style="background-image: url('../media/background/blue.svg')">
     <img id="logoBlue" src="../media/logo/blue.svg" alt="TEAMCUBATION">
     <img id="devsJuniorsDivider" src="../media/wave/devsJuniorsdivider.svg" alt="divider">
