@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@200;400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css?v=30">
+  <link rel="stylesheet" href="css/style.css?v=31">
   <link rel="stylesheet" href="jquery.animatedheadline/css/jquery.animatedheadline.css">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
@@ -92,9 +92,6 @@
   <img id="backToTop" class="scrollToTop" src="media/logo/logo-btn.svg" alt="">
 
   <section id="banner">
-    <img id="banner_img_desktop" src="media/background/green-desktop.svg" alt="banner_img">
-    <img id="banner_img_laptop" src="media/background/green-laptop.svg" alt="banner_img">
-    <img id="banner_img_mobile" src="media/background/green-mobile.svg" alt="banner_img">
     <div id="bannerLayer">
       <div id="bannerProblem" class="grid-row align-items-center">
         <div id="rotateText" class="col-12 top-quotes overflow-hidden">
@@ -111,17 +108,27 @@
         </div>
       </div>
       <div class="grid-row">
-        <div id="bannersolution" class="col-12 color-white">
-          <h1 data-t>banner.solution.centralText.lineOne</h1>
-          <h1 data-t>banner.solution.centralText.lineTwo</h1>
+        <div id="bannersolution" class="col-12">
+          <h1 data-t class="color-gray">banner.solution.centralText.lineOne</h1>
+          <h1 data-t class="color-gray mb-2">banner.solution.centralText.lineTwo</h1>
           <h4 class="subTitle" data-t>banner.solution.descriptionText.lineOne</h4>
           <h4 class="subTitle" data-t>banner.solution.descriptionText.lineTwo</h4>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- <img id="darkDivider" width="100%" src="media/background/dark-new.svg"></section> -->
+  <section id="process">
+    <img id="dark" src="media/background/dark.svg" alt="banner_img">
+    <div id="processLayer" class="text-r">
+      <h2 data-t class="d-inline color-light-gray">process.grayTextOne</h2>
+      <h2 data-t class="d-inline color-white">process.whiteTextOne</h2>
+      <h2 data-t class="d-inline color-white">process.textTwo</h2>
+      <h2 data-t class="d-inline color-white">process.whiteTextThree</h2>
+      <h2 data-t class="d-inline color-light-gray">process.grayTextThree</h2>
+      <h2 data-t class="d-inline color-light-gray">process.grayTextFour</h2>
+      <h2 data-t class="d-inline color-white">process.whiteTextFour</h2>
+    </div>
+  </section>
 
   <section id="what" style="background-image:url(media/background/orange.svg)">
     <img id="logoOrange" src="media/logo/orange.svg" alt="">
@@ -509,7 +516,7 @@
 <script src="jquery.animatedheadline/js/jquery.animatedheadline.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-<script type="module" src="index.js?v=20"></script>
+<script type="module" src="index.js?v=21"></script>
 
 </body>
 </html>
