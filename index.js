@@ -1,5 +1,4 @@
-// import data_en from "./src/locales/en.json" assert {type: 'json'};
-// import data_es from "./src/locales/es.json" assert {type: 'json'};
+import {CarouselAnimator, incrementCounter} from './animations.js';
 
 const url = "https://teamcubation.com/";
 const initialLocation = document.location.href;
@@ -7,16 +6,9 @@ const lang = document.documentElement.lang;
 let json_path;
 
 $(document).ready(
-  gtag("event", "page_view", {
-    page_title: `home`,
-    page_location: `${url}`,
-    page_path: `${url}`,
-    send_to: "G-VVX5NJFK14",
-  }),
   document.documentElement.lang === "es"
     ? (json_path = "./src/locales/es.json")
     : (json_path = "./src/locales/en.json"),
-  $('.top-quotes').animatedHeadline({ animationType: "push" })
 );
 
 const dataByLang = {
@@ -63,15 +55,16 @@ const dataByLang = {
   },
 };
 
-// const urlBuilder = (currentUrl) => {
-//   return !currentUrl.includes("/en/") ? url : `${url}/en/`;
-// };
 
+$(".contact-button").on("click", () => {
+  $("#form-modal").toggleClass('hidden');
+});
 
-$(".form-contact").append(
-  '<button type="submit" name="submit-contact" class="btn-tc submit-contact" style="float: right; width: 25%">' +
-    dataByLang.formContact.btnSend + "<span class=_effect>_</span></button>"
-);
+$("#close-modal").on("click", (e) => {
+  e.preventDefault();
+  $("#form-modal").toggleClass('hidden');
+});
+
 $(".form-contact").on("submit", function (ev) {
   ev.preventDefault();
   let data_origin_extra_error_message = dataByLang.formContact.validation.noOptionSelected;
@@ -106,7 +99,7 @@ $(".form-contact").on("submit", function (ev) {
     $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
     btn.text(dataByLang.formContact.btnSending);
     $.ajax({
-      url: "https://api.prod.tq.teamcubation.com/contact",
+      // url: "https://api.prod.tq.teamcubation.com/contact",
       type: "POST",
       contentType: "application/json",
       data: JSON.stringify({
@@ -122,7 +115,7 @@ $(".form-contact").on("submit", function (ev) {
       success: (r) => {
         $(".alert").remove();
         $(".form-contact").prepend(
-          '<div class="alert alert-success mt-5" role="alert"></div>'
+          '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
         );
         $(".alert").text(dataByLang.formContact.submitResponse.success);
         $(".alert")
@@ -130,29 +123,22 @@ $(".form-contact").on("submit", function (ev) {
           .slideUp(500, function () {
             $(".alert").slideUp(500);
           });
-        btn.replaceWith(
-          '<button type="submit" name="submit-contact" class="btn-tc submit-contact">' +
-            dataByLang.formContact.btnSend +
-            "<span class=_effect>_</span></button>"
-        );
+          btn.text(dataByLang.formContact.btnSend);
         clearForm();
       },
       error: (r) => {
         $(".alert").remove();
         $(".form-contact").prepend(
-          '<div class="alert alert-danger mt-5" role="alert"></div>'
+          '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
         );
         $(".alert").text(dataByLang.formContact.submitResponse.error);
+        debugger
         $(".alert")
           .fadeTo(2000, 500)
           .slideUp(500, function () {
             $(".alert").slideUp(500);
           });
-        btn.replaceWith(
-          '<button type="submit" name="submit-contact" class="btn-tc submit-contact">' +
-            dataByLang.formContact.btnSend +
-            "<span class=_effect>_</span></button>"
-        );
+          btn.text(dataByLang.formContact.btnSend);
         clearForm();
       },
     });
@@ -181,7 +167,7 @@ const clearForm = () => {
   $(".chevron-select").removeClass("chevron-effect");
   $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
   $(".input-select")
-    .prop("disabled", true)
+    .style("disabled", true)
     .val("")
     .attr("placeholder", dataByLang.formContact.originExtraPlaceholder)
     .removeData("value-selected")
@@ -191,38 +177,38 @@ const clearForm = () => {
 $(".language-select").hover(
   function () {
     if (screen.width > 1024) {
-      $(`.lenguage-options li`).each(function () {
+      $(`.language-options li`).each(function () {
         if ($(this).data("lang") === lang) {
           $(this).find("a").addClass("a-disbled");
         }
       });
-      $(`.lenguage-options`).slideDown();
+      $(`.language-options`).toggle();
     }
   },
   function () {
-    $(`.lenguage-options`).slideUp();
+    $(`.language-options`).toggle();
   }
 );
 
-$(".language-select").on("click", function () {
-  $(`.lenguage-options li`).each(function () {
+$(".language-select-mobile").on("click", function () {
+  $(`.language-options li`).each(function () {
     if ($(this).data("lang") === lang) {
       $(this).find("a").addClass("a-disbled");
     }
   });
-  $(`.lenguage-options`).toggle("slow");
+  $(`.language-options`).toggle();
 });
 
 // input select //
 
-$(".select-tc").on("click", function () {
+$(".open-dropdown-select").on("click", function () {
   if ($(".option-tc").is(":visible")) {
     $(".list-options-tc").slideUp();
     $(this).find(".chevron-select").removeClass("chevron-effect");
   } else {
     $(".list-options-tc").slideDown();
     $(this).find(".chevron-select").addClass("chevron-effect");
-    $(".select-tc").css("border-bottom", " 2px solid red");
+    $(".select-tc").css("border-bottom", " 2px solid #551872");
   }
 });
 
@@ -239,6 +225,7 @@ $(".option-tc").on("click", function () {
   const optionSelected = $(this);
   const valueOption = optionSelected.data("option");
   const textOption = optionSelected.text();
+
   $(".text-error").remove();
   if (valueOption === "other") {
     $('.form-message').css('display', 'none');
@@ -273,130 +260,17 @@ $(".option-tc").on("click", function () {
 });
 
 function adjustContactTextareaHeight() {
-  $('.input-select').height(0);
-  $('.input-select').height($('.input-select')[0].scrollHeight - 4);
+ 
+  const selectHeight = $('.input-select')[0].scrollHeight;
+  const height = !selectHeight || selectHeight == 0 ? 50 : selectHeight;   
+  $('.input-select').height(height - 4);
 }
 
 $(adjustContactTextareaHeight);
 
-window.addEventListener("click", function (e) {
-  if (
-    !document.getElementById("dropdown-select").contains(e.target)
-  ) {
-    $(".list-options-tc").slideUp();
-    $(".chevron-select").removeClass("chevron-effect");
-    $(".select-tc").css(
-      "border-bottom",
-      "2px solid rgba(128, 128, 128, 0.507)"
-    );
-    if ($(".input-select").val() !== "") $(".text-error").remove();
-  }
-});
-
-// mobile navbar 
-
-$(".ion-md-menu").on("click", function () {
-  $("#navBarMobile").toggle(250);
-});
-
-$("a").on("click", function () {
-  $("#navBarMobile").css("display", "none");
-});
-
-
 // navbar - scroll
-const heigthNav = document.getElementById("navBar").clientHeight;
-let lastScrollTop = 0;
+const heigthNav = document.getElementById("navbar").clientHeight;
 let isNavigate = false;  
-
-window.addEventListener('scroll', (e) => {
-  if(screen.width > 768){
-    const currentPositionScroll = window.scrollY;
-    if(currentPositionScroll > 600){
-      $('#logo').addClass('navigate-home');
-      $('#backToTop').addClass('show-nav');
-    }
-    else{
-      $('#logo').removeClass('navigate-home');
-      $('#backToTop').removeClass('show-nav');
-    }
-    if (currentPositionScroll > lastScrollTop && currentPositionScroll > 600 && !isNavigate){
-      $('nav').addClass('hidden-nav');
-    } 
-    else {
-      $('nav').removeClass('hidden-nav');
-    }
-    lastScrollTop = currentPositionScroll <= 0 ? 0 : currentPositionScroll;
-  }
-});
-
-// effects - mouseevent
-window.addEventListener('mousemove', (e) => {
-  if(screen.width > 768){
-    const currentPositionScroll = window.scrollY;
-    if(currentPositionScroll > 500){
-      heigthNav + 80 > e.clientY && $('nav').removeClass('hidden-nav');
-    };
-  }
-});
-
-// navigation - scroll
-$(".scrollToTop").on("click", function (e) {
-  e.preventDefault();
-  location.href = initialLocation;
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-
-$(".how").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#how`;
-  perfectScroll("scrolltoHow", screen.width > 768 ? 150 : 10);
-});
-
-$(".what").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#what`;
-  perfectScroll(`weDoLayer`, screen.width > 768 ? 100 : -10);
-});
-
-$(".clients").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#clients`;
-  perfectScroll(`clients`, -40);
-});
-
-$(".team").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#team`;
-  perfectScroll(`scrolltoTeam`, 100);
-});
-
-$(".devsJuniors").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#devsJuniors`;
-  perfectScroll(`scrollToJuniors`, -80);
-});
-
-$(".devsSeniors").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#devsSeniors`;
-  perfectScroll("devsSeniorsLayer", -30);
-});
-
-$(".contact").on("click", function (e) {
-  e.preventDefault();
-  location.href = `#contact`;
-  perfectScroll("contact", 10);
-});
-
-const perfectScroll = (section, marginToAdd) => { 
-  const distanceCalculated = heigthNav + 30 + marginToAdd;
-  const scrollToSection = document.getElementById(section).offsetTop;
-  const scrollTo = scrollToSection - distanceCalculated;
-  isNavigate = true;
-  window.scrollTo({ top: scrollTo, behavior: "smooth" });
-};
 
 // is scrolling ?
 const  noScroll = (callback, refresh = 100) => {
@@ -412,90 +286,371 @@ noScroll(function () {
   isNavigate = false;
 });
 
-// scroll effect 
-AOS.init({
-  once: true,
-  delay: 0,
-  offset: 0,
-  duration: 750,
-  easing: 'ease-out-cubic'
+$(function(){
+  if (localStorage.getItem('lang_redirect') === null && location.href.indexOf('/en/') === -1) {
+    localStorage.setItem('lang_redirect', '1');
+    location.href = 'en/';
+  }
 });
 
+// partners slide
+document.addEventListener("DOMContentLoaded", function() {
+  const logosSlide = document.querySelector(".logos div");
+  logosSlide.classList.add("logos-slide");
+  const logosSlideCopy = logosSlide.cloneNode(true);
+  logosSlideCopy.classList.add("logos-slide");
+  document.querySelector(".logos").appendChild(logosSlideCopy);
+});
 
-//plus parallax effect
-let parallaxSceneOne = document.getElementById('parallaxOne');
-let parallaxSceneThree = document.getElementById('parallaxThree');
-let parallaxInstanceOne = new Parallax(parallaxSceneOne);
-let parallaxInstanceThree = new Parallax(parallaxSceneThree);
+// incrementCounter
+const peopleNumber = document.getElementById("people-number");
+let incrementAmountPeopleNumber = false;
+const costFromNumber = document.getElementById("cost-from-number");
+let incrementAmountCostFromNumber = false;
+const costTopNumber = document.getElementById("cost-to-number");
+const turnoverNumber = document.getElementById("turnover-number");
+let incrementAmountTurnoverNumber = false;
 
-parallaxSceneOne.style.display = 'block';
+// carousel animation
+const bannerNav = document.getElementById("banner-layout");
+const bannerContent = document.getElementById("banner-content");
+const partners = document.getElementById("partners");
+const proposal = document.getElementById("proposal");
+
+// problem
+const noMoreDevs = document.getElementById('problem');
+const noMoreDevsPositionHeight = noMoreDevs.offsetTop;
+const carouselNoMoreDevs = document.getElementById("problem-carousel");
+// const noMoreDevsCarouselItemWidth = document.querySelector(".problem-item-scroll").scrollWidth;
+
+// process
+const howDo = document.getElementById('process');
+const howDoCarousel = document.getElementById("process-carousel");
+const howDoCarouselItemWidth = document.querySelector(".process-item-scroll").scrollWidth;
+
+// results
+const results = document.getElementById('results');
+// const resultsCarousel = document.getElementById("results-carousel");
+// let resultsCarouselItemWidth = document.querySelector(".results-item-scroll").scrollWidth;
+// const margin= parseFloat(getComputedStyle(document.querySelector(".results-item-scroll")).marginRight);
+// resultsCarouselItemWidth= margin * 2 + resultsCarouselItemWidth;
+// const cardsToMove = window.innerWidth > 600 ? 3 : 1;
+// const noMoreDevsAnimation = new CarouselAnimator(carouselNoMoreDevs, noMoreDevsCarouselItemWidth, 4);
+const howDoAnimation = new CarouselAnimator(howDoCarousel, howDoCarouselItemWidth, 2);
+// const resultsAnimation = new CarouselAnimator(resultsCarousel, (resultsCarouselItemWidth) * cardsToMove , 6 / cardsToMove - 1);
+
+let lastScrollTop = 0;
+
+const scrollDirection = (prevPosition, currentPosition) => {
+  return currentPosition > prevPosition ? 'down' : 'up';
+}
+
+$(".process-prev").on("click", function(){
+  howDoAnimation.animate('play');
+  console.log('process prev')
+  if(howDoAnimation.loopCarousel >= 0){
+    $(".process-next").removeClass('hidden')
+  }else{
+    $(".process-next").addClass('hidden')
+  }
+  if(howDoAnimation.loopCarousel >= howDoAnimation.stop){
+    $(".process-prev").addClass('hidden')
+  }else{
+    $(".process-prev").removeClass('hidden')
+  }
+});
+
+$(".process-next").on("click", function(){
+  howDoAnimation.animate('play-reverse');
+  if(howDoAnimation.loopCarousel == 0){
+    $(".process-next").addClass('hidden')
+  }
+  if(howDoAnimation.loopCarousel >= howDoAnimation.stop){
+    $(".process-prev").addClass('hidden')
+  }else{
+    $(".process-prev").removeClass('hidden')
+  }
+});
+
+window.addEventListener("click", function (e) {
+  if (!document.getElementById("dropdown-select").contains(e.target)) {
+    $(".list-options-tc").slideUp();
+    $(".chevron-select").removeClass("chevron-effect");
+    $(".select-tc").css(
+      "border-bottom",
+      "2px solid rgba(128, 128, 128, 0.507)"
+    );
+    if ($(".input-select").val() !== "") $(".text-error").remove();
+  }
+});
+
+window.addEventListener('scroll', (e) => {
+  // if(screen.width > 768){
+      if(peopleNumber.getBoundingClientRect().top <= 500 && !incrementAmountPeopleNumber){
+        incrementCounter(peopleNumber, 0, 20000, 250);
+        incrementAmountPeopleNumber = true;
+      }
+      if(turnoverNumber.getBoundingClientRect().top <= 500 && !incrementAmountTurnoverNumber){
+        const text={prev: '', next: '%'}
+        incrementCounter(turnoverNumber, 0, 78, 1, text);
+        incrementAmountTurnoverNumber = true;
+      }
+      if(costFromNumber.getBoundingClientRect().top <= 500 && !incrementAmountCostFromNumber){
+        incrementCounter(costFromNumber, 0, 10000, 125);
+        incrementCounter(costTopNumber, 0, 14000, 125);
+        incrementAmountCostFromNumber = true;
+      }
+      // if(window.scrollY < 500){
+      //   // noMoreDevsAnimation.animate('reverse');
+      //   // howDoAnimation.animate('reverse');
+      //   resultsAnimation.animate('reverse');
+      // }
+      
+      const currentPositionScroll = window.scrollY;
+      // const proposalToTop = proposal.getBoundingClientRect();
+      // const noMoreDevsToTop = noMoreDevs.getBoundingClientRect();
+      // const howDoToTop = howDo.getBoundingClientRect();
+      const resultsToTop = results.getBoundingClientRect();
+      const direction = scrollDirection(lastScrollTop, currentPositionScroll);
+      
+      // effect fix cards at top
+      // if(proposalToTop.top <= 100 && direction == 'down'){
+      //   bannerNav.classList.add('fixed-scroll-position');
+      //   proposal.classList.add('sticky-scroll-position');
+      //   bannerContent.classList.add('display-none');
+      //   partners.classList.add('display-none');
+      // }
+
+    if(resultsToTop.top <= 100  && direction === 'down'){
+      // results.classList.add('sticky-scroll-position');
+      // if(resultsAnimation.loopCarousel < 2){
+      //   resultsAnimation.animate('play');
+      // };
+    };
+
+    // if(howDoToTop.top <= 0 && !howDoAnimation.finished){
+    //   howDo.classList.add('sticky-scroll-position');
+    //   if(howDoAnimation.loopCarousel < 2){
+    //     howDoAnimation.animate('play');
+    //   }
+    // }
+
+    // no more devs
+      // if(direction === 'down' && noMoreDevsToTop.top <= 0 && !noMoreDevsAnimation.finished){
+      //   noMoreDevs.classList.add('sticky-scroll-position');
+      //   if(noMoreDevsAnimation.loopCarousel < 4){
+      //     noMoreDevsAnimation.animate('play');
+      //   }
+      // }
 
 
-// test effect logo-card
-// var card = document.getElementById("cardDuration");
-// card.addEventListener("mouseover", function (e) {
-//   document.getElementById("pathDurationOne").setAttribute("stroke", "#ff7c00");
-//   document.getElementById("pathDurationTwo").setAttribute("stroke", "#ff7c00");
-//   document.getElementById("pathDurationThree").setAttribute("stroke", "#ff7c00");
-//   document.getElementById("pathDurationFour").setAttribute("stroke", "#ff7c00");
-// });
+    // }
+    // if(noMoreDevsAnimation.finished && currentPositionScroll >= noMoreDevsPositionHeight  && direction === 'down'){
+    //   // proposal.classList.remove('sticky-scroll-position');
+    //   noMoreDevs.classList.remove('sticky-scroll-position');
+    //   bannerNav.classList.remove('fixed-scroll-position');
+    // }
+    // if(howDoAnimation.finished  && direction === 'down'){
+    //   howDo.classList.remove('sticky-scroll-position')
+    // }
+    // if(resultsAnimation.finished && direction === 'down'){
+    //   results.classList.remove('sticky-scroll-position')
+    // }
+  // lastScrollTop = currentPositionScroll;
+});
 
-const team = {
-  ceo: {
-    name: "ceo",
-    role: "CEO "
-  },
-  coo: {
-    name: "coo",
-    role: "COO "
-  },
-  training: {
-    name: "training",
-    role: "Head of Training "
-  },
-  cto: {
-    name: "cto",
-    role: "CTO "
-  },
-  people: {
-    name: "people",
-    role: "Head of People "
-  },
-  cfo: {
-    name: "cfo",
-    role: "CFO "
-  },
-  data: {
-    name: "data",
-    role: "Head of Data & Analytics "
+// navbar and menu
+const proposalToTop = proposal.getBoundingClientRect().top;
+
+$(".navigate-home").on("click", function(){
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+})
+
+$(".link-button").on("click", function(){
+  closeMenu();
+  $('#navbar').addClass('hidden-nav');
+});
+
+const openMenu = () => {
+  $("#menu").removeClass('hidden');
+  $("#navbar-content").addClass('open-menu');
+  $("#footer-menu").removeClass('hidden');
+  $('#logo').addClass('hidden');
+  $('#logo-orange').removeClass('hidden');
+  if(screen.width < 574){
+    $("#navbar-content").addClass('open-menu-mobile');
+  }
+};
+
+const closeMenu = () => {
+  $("#menu").addClass('hidden');
+  $("#navbar-content").removeClass('open-menu');
+  $("#navbar-content").removeClass('open-mobile-menu');
+  $("#footer-menu").addClass('hidden');
+  $("#form-modal").addClass('hidden');
+  if( $(".display-nav").is(":visible")){
+    return
+  }
+  $('#logo').removeClass('hidden');
+  $('#logo-orange').addClass('hidden');
+};
+
+const handleControlMenu = (action) => {
+  $('#navbar').removeClass('background-nav');
+  if(action == 'open'){
+    openMenu();
+  } 
+  else{
+    closeMenu();
   }
 }
 
-$(function(){
-  writer(team.ceo.name, team.ceo.role, 150, 0);
-  writer(team.coo.name, team.coo.role, 150, 0);
-  writer(team.training.name, team.training.role, 150, 0);
-  writer(team.cto.name, team.cto.role, 150, 0);
-  writer(team.people.name, team.people.role, 150, 0);
-  writer(team.cfo.name, team.cfo.role, 150, 0);
-  writer(team.data.name, team.data.role, 150, 0);
+$(".menu-button").on("click", function () {
+  const isOpen = $(".open-menu").is(":visible") ? 'close' : 'open';
+  handleControlMenu(isOpen);
 });
- 
-const writer = (container, text, interval, n) => {
-  var i=0,
-   timer = setInterval(function() {
-    if ( i<text.length ) {
-      $("#"+container).html( text.substr(0,i++) + `<span id=underscore${container}>_</span>`);
-      $(`#underscore${container}`).addClass('_effect_style'); 
-    } 
-    else {
-      $(`#underscore${container}`).addClass('_effect')
-      clearInterval(timer);
-      if ( --n!=0 ) {
-        setTimeout(function() {
-          writer(container,text,interval,n);
-        },2000);
-      }
+
+window.addEventListener('scroll', (e) => {
+  const currentPositionScroll = window.scrollY;
+  const direction = scrollDirection(lastScrollTop, currentPositionScroll);
+  const isOpen = $(".open-menu").is(":visible");
+
+  if(currentPositionScroll > 600){
+    $('#logo').addClass('navigate-home');
+  }
+  else{
+    $('#logo').removeClass('navigate-home');
+  }
+  if(currentPositionScroll < proposalToTop){
+    $('#navbar-content').removeClass('display-nav');
+    if(!isOpen){
+      $('#logo').removeClass('hidden');
+      $('#logo-orange').addClass('hidden');
     }
-  },interval);
+  }
+  if(currentPositionScroll > proposalToTop && direction == "down"){
+    $('#navbar').addClass('hidden-nav');
+    handleControlMenu('close');
+  }
+  if(currentPositionScroll > proposalToTop && direction == "up"){
+    $('#navbar').removeClass('hidden-nav');
+    $('#navbar-content').addClass('display-nav');
+    $('#logo').addClass('hidden');
+    $('#logo-orange').removeClass('hidden');
+  }
+  lastScrollTop = currentPositionScroll <= 0 ? 0 : currentPositionScroll;
+});
+
+// diagram venn switch control
+
+const isTqState = () => {
+  if($("#seniors-venn-diagram-item").hasClass('venn-diagram-item-disabled') 
+    || $("#junior-venn-diagram-item").hasClass('venn-diagram-item-disabled') 
+    || $("#software-venn-diagram-item").hasClass('venn-diagram-item-disabled')) {
+      $("#diagram-logo").addClass('hidden');
+  } else {
+    $("#diagram-logo").removeClass('hidden');
+  };
 };
+
+const isCodeSchoolState = () => {
+  if($("#junior-venn-diagram-item").hasClass('venn-diagram-item-disabled')
+    || $("#seniors-venn-diagram-item").hasClass('venn-diagram-item-disabled')) {
+      $("#intersection-seniors-junior").addClass('hidden');
+  } else {
+    $("#intersection-seniors-junior").removeClass('hidden');
+  };
+} 
+
+const isSoftWareFactoryState = () => {
+  if($("#software-venn-diagram-item").hasClass('venn-diagram-item-disabled')
+    || $("#seniors-venn-diagram-item").hasClass('venn-diagram-item-disabled')) {
+      $("#intersection-seniors-software").addClass('hidden');
+  } else {
+    $("#intersection-seniors-software").removeClass('hidden');
+  };
+};
+
+const isNotExistState = () => {
+  if($("#software-venn-diagram-item").hasClass('venn-diagram-item-disabled')
+    || $("#junior-venn-diagram-item").hasClass('venn-diagram-item-disabled')) {
+      $("#intersection-software-junior").addClass('hidden');
+  } else {
+    $("#intersection-software-junior").removeClass('hidden');
+  };
+} 
+
+$("#seniors-switch").on("click", function(){
+  $("#seniors-venn-diagram-item").toggleClass('venn-diagram-item-disabled');
+  isTqState();
+  isSoftWareFactoryState();
+  isCodeSchoolState();
+});
+
+$("#junior-switch").on("click", function(){
+  $("#junior-venn-diagram-item").toggleClass('venn-diagram-item-disabled');
+  isTqState();
+  isCodeSchoolState();
+  isNotExistState();
+});
+
+$("#software-switch").on("click", function(){
+  $("#software-venn-diagram-item").toggleClass('venn-diagram-item-disabled');
+  isTqState();
+  isSoftWareFactoryState();
+  isNotExistState();
+})
+
+
+// styles for process carousel
+const itemOne = document.getElementById("step-leyend-container-01").offsetLeft;
+const itemTwo = document.getElementById("step-leyend-container-02").offsetLeft;
+const itemThree = document.getElementById("step-leyend-container-03").offsetLeft;
+const divider = document.getElementById("divider-process");
+const dividerCenter = document.getElementById("divider-center-process");
+
+divider.style.width = `calc(${itemThree - itemOne}px - 3em)`;
+divider.style.left = `calc(${itemOne}px + 3em)`;
+dividerCenter.style.left = `calc(${itemTwo - itemOne}px)`;
+
+
+// pep
+const dropdowns = document.querySelectorAll('.dropdown-standard-item');
+
+dropdowns.forEach(dropdown => {
+  const button = dropdown.querySelector('.card-standard-header .dropdown-item-button');
+  const title = dropdown.querySelector('.card-standard-header .sm-text-card');
+  const content = dropdown.querySelector('.collapsed-content');
+  const image = dropdown.querySelector('.hidden');
+  const iconbutton = button.querySelector('img');
+
+  dropdown.addEventListener('click', () => {
+    dropdowns.forEach(otherDropdown => {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.querySelector('.collapsed-content').classList.remove('d-flex');
+        otherDropdown.querySelector('.card-standard-header .dropdown-item-button img').src = 'media/arrow-dropdowns-down.svg';
+        otherDropdown.querySelector('.card-standard-header .sm-text-card').style.color = '#484848';
+      }
+    });
+  
+  iconbutton.src = 'media/arrow-dropdowns.svg';  
+  content.classList.add('d-flex');
+  title.style.color = '#F34E1E';
+   
+  const imageContainer = document.getElementById('pep-img-container');
+  imageContainer.innerHTML = '';
+  const newImage = document.createElement('img');
+  newImage.style.maxWidth = '100%';
+  newImage.src = image.src;
+  imageContainer.appendChild(newImage);
+  });
+}); 
+
+// restore in top sin scrollTo 
+history.scrollRestoration = "manual";
+$(window).on('beforeunload', function(){
+  $(window).scrollTop(0);
+});

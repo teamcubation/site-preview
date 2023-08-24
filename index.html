@@ -13,510 +13,1034 @@
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@200;400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css?v=31">
-  <link rel="stylesheet" href="jquery.animatedheadline/css/jquery.animatedheadline.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/style.css?v=40">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVX5NJFK14"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VVX5NJFK14', {
-      send_page_view: false
-    });
-  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PS65VB9');</script>
+  <!-- End Google Tag Manager -->
 </head>
 
-<body class="themeColor default-scrollbar">
-<div class="sceneOne">
-  <div id="parallaxOne" class="parallax" style="display: none">
-    <img src="media/plus/orange.svg" data-depth="0.2">
-    <img src="media/plus/default.svg" data-depth="0.5">
-    <img src="media/plus/default.svg" data-depth="0.4">
-    <img src="media/plus/default.svg" data-depth="0.5">
-  </div>
-</div>
+<body>
+  <!-- logo on top for google -->
+  <img style="display: none" src="media/logotipo.svg" alt="Teamcubation">
 
-<nav>
-  <div id="navBar">
-    <div class="logo">
-      <img id="logo" class="scrollToTop" src="media/logo.png" alt="Teamcubation">
-    </div>
-    <div class="navigate">
-      <a class="what" href="#what">¿Cómo?</a>
-      <a class="how" href="#how">La experiencia</a>
-      <a class="clients" href="#clients">Clientes</a>
-      <a class="team" href="#team">Equipo</a>
-      <a class="contact" href="#contact">Contactanos</a>
-      <a class="devsJuniors" href="#devsJuniors">Devs Junior</a>
-      <a class="devsSeniors" href="#devsSeniors">Devs con experiencia</a>
-      <!-- <div class="language-select">
-        <div class="language-tittle">
-          <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{section_1.flag}}" alt="redirect_lang">
-          <p data-t>lang.textButton</p>
+  <nav>
+    <div id="navbar">
+      <div id="navbar-content" class="collapsed-menu">      
+        <div id="navbar-container">
+          <div class="logo">
+            <img id="logo" class="navigate-home" src="media/logotipo.svg" alt="Teamcubation">
+            <img id="logo-orange" class="navigate-home hidden" src="media/logotipo-orange.svg" alt="Teamcubation">
+          </div>
+          <div class="navigate">
+            <!-- <div class="language-select">
+              <div class="language-tittle">
+                <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
+                <p data-t>lang.textButton</p>
+              </div>
+              <ul class="language-options">
+                <li data-lang="es">
+                  <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
+                </li>
+                <li data-lang="en">
+                  <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
+                </li>
+              </ul>
+            </div> -->
+            <button class="button outlined contact-button">Contáctanos</button>
+            <button id="menu-button" class="menu-button">
+              <i class="icon ion-md-menu"></i>
+            </button>      
+          </div>
+        </div>  
+        <div id="menu" class="hidden">
+          <div class="navigate-menu" style="position:absolute; width: 100%; top:0; left:0; padding: 0 3.5em">
+            <div class="vertical-divider-menu"></div>
+            <div class="vertical-divider-menu"></div>
+            <div class="vertical-divider-menu"></div>
+            <div class="vertical-divider-menu"></div>
+            <div class="vertical-divider-menu"></div>
+            <div class="vertical-divider-menu" style="visibility: hidden;"></div>
+          </div>  
+          <div class="navigate-menu">
+            <div class="link-button">
+              <a id="proposal-link" class="proposal" href="#proposal">Propuesta</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+            <div class="link-button">
+              <a class="problem" href="#problem">Problema</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+            <div class="link-button">
+              <a class="cases" href="#cases">Casos</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+            <div class="link-button">
+              <a class="process" href="#process">Proceso</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+            <div class="link-button">
+              <a class="methodology" href="#squad-description-layout">Metodología</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+            <div class="link-button">
+              <a class="aboutUs" href="#team">Quienes somos</a>
+              <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu">
+            </div>
+          </div>
         </div>
-        <ul class="lenguage-options">
-          <li data-lang="es">
-            <a data-t data-attr-t data-attr-t-interpolate href-t="{{section_1.url}}">lang.spanish</a>
-          </li>
-          <li data-lang="en">
-            <a data-t data-attr-t data-attr-t-interpolate href-t="{{section_1.url}}">lang.english</a>
-          </li>
-        </ul>
+      </div>
+      <div id="footer-menu" class="hidden">
+        <div class="navigate-menu h-100">
+          <!-- <button data-t data-attr-t data-attr-t-interpolate class="button bg-orange white">textLinks.joinUs</button> -->
+          <div id="social-links-container">
+            <a class="social-link orange" target="_blank" href="https://www.facebook.com/Teamcubation">FB</a>
+            <a class="social-link orange" target="_blank" href=" https://twitter.com/Teamcubation_">TWITTER</a>
+            <a class="social-link orange" target="_blank" href="https://www.linkedin.com/company/teamcubation">LI</a>
+          </div>
+        </div>
+      </div>
+  <!-- 
+      <div style="display: flex">
+        <div id="selectLangMobile" class="language-select-mobile">
+          <div class="language-tittle">
+            <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
+            <p data-t>lang.textButton</p>
+          </div>
+          <ul class="language-options">
+            <li data-lang="es">
+              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
+            </li>
+            <li data-lang="en">
+              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
+            </li>
+          </ul>
+        </div>
+        <div class="btn-menu-mobile">
+          <i class="icon ion-md-menu"></i>
+        </div>
       </div> -->
     </div>
-    <div class="btn-menu-mobile">
-      <i class="icon ion-md-menu"></i>
-    </div>
-  </div>
-  <div id="navBarMobile">
-    <div class="navigate-mobile">
-      <a class="what" href="#what">¿Cómo?</a>
-      <a class="how" href="#how">La experiencia</a>
-      <a class="clients" href="#clients">Clientes</a>
-      <a class="team" href="#team">Equipo</a>
-      <a class="contact" href="#contact">Contactanos</a>
-      <a class="devsJuniors" href="#devsJuniors">Devs Junior</a>
-      <a class="devsSeniors" href="#devsSeniors">Devs con experiencia</a>
-    </div>
-  </div>
-</nav>
-
-<div id="pageContent">
-
-  <img id="backToTop" class="scrollToTop" src="media/logo/logo-btn.svg" alt>
+  </nav>
 
   <section id="banner">
-    <div id="bannerLayer">
-      <div id="bannerProblem" class="grid-row align-items-center">
-        <div id="rotateText" class="col-12 top-quotes overflow-hidden">
-          <div class="ah-headline">
-            <div class="ah-words-wrapper">
-              <h4 class="is-visible">“Se nos va la gente”</h4>
-              <h4>“Perdemos oportunidades”</h4>
-              <h4>“Cada vez que contrato se van otros”</h4>
-              <h4>“Cada vez está peor...”</h4>
-              <h4>“No hay más seniors”</h4>
-            </div>
-          </div>
-          <h4 class="down">¿Suena conocido?</h4>
-        </div>
-      </div>
-      <div class="grid-row">
-        <div id="bannersolution" class="col-12">
-          <h1 class="color-gray">ENTRENAMOS DEVELOPERS</h1>
-          <h1 class="color-gray mb-2">PARA TU COMPAÑÍA</h1>
-          <h4 class="subTitle">Mientras desarrollamos software</h4>
-          <h4 class="subTitle">que ustedes necesitan</h4>
-        </div>
-      </div>
+    <div id="banner-layout" class="w-100 h-100 absolute-scroll-position">
+      <img id="desktop-banner-img" src="media/background/banner-min.jpg" class="banner-img">
+      <img id="mobile-banner-img" src="media/background/mobile-banner.png" class="banner-img">
     </div>
-  </section>
-  <section id="process">
-    <img id="dark" src="media/background/dark.svg" alt="banner_img">
-    <div id="processLayer" class="text-r">
-      <h2 class="d-inline color-light-gray">Con</h2>
-      <h2 class="d-inline color-white"> tecnología y un proceso</h2>
-      <h2 class="d-inline color-white"> diseñados para adquirir </h2>
-      <h2 class="d-inline color-white">experiencia</h2>
-      <h2 class="d-inline color-light-gray"> mientras</h2>
-      <h2 class="d-inline color-light-gray">construimos</h2>
-      <h2 class="d-inline color-white"> proyectos reales</h2>
-    </div>
-  </section>
-
-  <section id="what" style="background-image:url('media/background/orange.svg')">
-    <img id="logoOrange" src="media/logo/orange.svg" alt>
-    <div id="weDoLayer">
-      <h3 class="color-dark mb-5">¿CÓMO LO HACEMOS?</h3>
-      <h4 class="color-dark me-1 mt-5 d-inline">Diseñamos una </h4>
-      <h4 class="color-dark me-1 d-inline fw-600">experiencia de 6 meses </h4>
-      <h4 class="color-dark me-1 d-inline">que permite </h4>
-      <h4 class="color-dark me-1 fw-600 d-inline">acelerar el seniority de tus perfiles junior </h4>
-      <h4 class="color-dark me-1 d-inline">mientras desarrollamos un </h4>
-      <h4 class="color-dark me-1 d-inline fw-600">software que tu compañía tiene en el backlog</h4>
-      <h4 class="color-dark me-1 d-inline"></h4>
-      <h4 class="color-dark me-1 d-inline fw-600"></h4>
-      <div class="grid-row mt-5">
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" class="card gradientBlackGray">
-            <h4 class="cardTitle color-light-orange mb-5">LA ORGANIZACIÓN</h4>
-            <svg id="logoCardOrganization" width="106" height="138" viewbox="0 0 106 138" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M52.9825 72.6083L93.7737 17.6043C93.7737 17.6043 86.0448 11.8924 77.4572 5.75735C68.8696 -0.377662 51.0502 -2.70476 37.5247 12.5271C37.5247 12.5271 27.4467 26.2781 10.9029 47.645C-5.64086 69.0119 1.40559 89.9822 11.3325 99.4756C21.2595 108.969 44.8239 125.497 44.8239 125.497C26.3605 104.13 42.2479 86.9939 45.683 82.3397L52.9825 72.6083Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M91.6265 128.459C91.6265 128.459 99.7322 119.563 104.508 111.534L52.5529 73.2432C48.259 79.1667 42.0331 86.7826 42.0331 86.7826C18.846 122.112 69.7281 152.364 91.6265 128.459Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <h3 class="cardCentralText color-white mb-5">Squads</h3>
-            <h6 class="color-white mt-5">Cada uno de los squads estará compuesto por 3 de tus juniors que serán liderados técnicamente por uno de nuestros seniors. Al mismo tiempo, un Leader de squad estará a cargo de seguir el proceso Teamcubation, velar por la evolución de los juniors y asegurar que el software cumpla con los requerimientos</h6>
+    <div id="banner-container">
+      <div id="banner-content">
+        <h1 class="white">Desarrolladores de</h1>
+        <h1 class="white"> experiencia</h1>
+      </div>
+      <div id="partners">
+        <div class="logos">
+          <div>
+            <img src="media/partners/partners.png">
+            <img src="media/partners/partners.png">
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" class="card gradientBlackGray">
-            <h4 class="cardTitle color-light-orange mb-3">EL VALOR AGREGADO</h4>
-            <svg id="logoCardPlus" width="81" height="90" viewbox="0 0 81 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M39.3237 42.9347L32.3433 78.7987C32.3433 78.7987 37.3425 79.8363 42.8489 80.8865C48.3552 81.9367 57.4104 79.0651 60.41 68.6329C60.41 68.6329 62.0978 59.6939 65.1433 45.6054C68.1888 31.5169 60.0391 22.9181 53.1266 20.5382C46.2142 18.1583 31.1746 15.4256 31.1746 15.4256C44.8766 21.6532 41.1809 33.5401 40.5982 36.571L39.3237 42.9347Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M8.10941 24.4971C8.10941 24.4971 6.25867 30.6359 5.80359 35.6063L39.3848 42.5301C40.0892 38.69 41.3322 33.5945 41.3322 33.5945C44.3741 11.2355 13.1381 7.97369 8.10941 24.4971Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <h3 class="cardCentralText color-white">Software que tu</h3>
-            <h3 class="cardCentralText color-white mb-3">compañía necesita</h3>
-            <h6 class="color-white">El mejor desafío para cualquier Junior es participar de un proyecto real. Por eso en Teamcubation desarrollamos un producto que tu compañía tenga en el backlog, pero que nunca logren priorizar.</h6>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" id="cardDuration" class="card gradientBlackGray">
-            <h4 class="cardTitle color-light-orange mb-3">EL TIEMPO</h4>
-            <svg id="logoCardDuration" width="131" height="92" viewbox="0 0 131 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path id="pathDurationOne" d="M28.4717 55.494L50.0291 25.9944C50.0291 25.9944 45.9446 22.931 41.4062 19.6407C36.8678 16.3503 27.4506 15.1023 20.3026 23.2714C20.3026 23.2714 14.9766 30.6463 6.2335 42.1057C-2.50957 53.5652 1.21435 64.812 6.46054 69.9034C11.7067 74.9949 24.1601 83.859 24.1601 83.859C14.4026 72.3995 22.7987 63.2093 24.6141 60.7132L28.4717 55.494Z" stroke="#423B3B" stroke-width="2"/>
-              <path id="pathDurationTwo" d="M48.8944 85.4475C48.8944 85.4475 53.1781 80.6767 55.702 76.3707L28.2447 55.8345C25.9755 59.0114 22.6852 63.0959 22.6852 63.0959C10.4313 82.0437 37.3215 98.2685 48.8944 85.4475Z" stroke="#423B3B" stroke-width="2"/>
-              <path id="pathDurationTrhee" d="M95.924 43.0991L69.6248 78.9899C69.6248 78.9899 74.5942 82.727 80.1159 86.7411C85.6376 90.7553 97.104 92.29 105.822 82.3528C105.822 82.3528 112.319 73.38 122.985 59.4384C133.65 45.4968 129.133 31.7945 122.752 25.5858C116.371 19.3772 101.219 8.56279 101.219 8.56279C113.084 22.5335 102.845 33.7123 100.63 36.7492L95.924 43.0991Z" stroke="#423B3B" stroke-width="2"/>
-              <path id="pathDurationFour" d="M71.0997 6.58931C71.0997 6.58931 65.8754 12.3925 62.795 17.6324L96.2005 42.6849C98.969 38.8197 102.982 33.8506 102.982 33.8506C117.935 10.795 85.2135 -9.006 71.0997 6.58931Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <h3 class="cardCentralText color-white">Seis</h3>
-            <h3 class="cardCentralText color-white mb-3">meses</h3>
-            <h6 class="color-white">“Epa! ¿Qué curso largo no?”</h6>
-            <h6 class="color-white">Es que no es un curso! Vamos a desarrollar un proyecto, los proyectos no se hacen en 2 o 3 meses. 6 meses es el tiempo que diseñamos para recorrer todas las instancias de entrenamiento que queremos hacer con los juniors.</h6>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-out-up" class="card gradientBlackGray">
-            <h4 class="cardTitle color-light-orange mb-3">LA EXPERIENCIA</h4>
-            <svg id="logoCardOurSeniors" width="110" height="141" viewbox="0 0 110 141" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M55.1058 66.4536L16.5847 123.071C16.5847 123.071 24.5394 128.464 33.3693 134.244C42.1993 140.025 60.0985 141.626 72.9936 125.857C72.9936 125.857 82.5042 111.707 98.1655 89.6854C113.827 67.6635 105.934 46.997 95.629 37.9151C85.3242 28.8332 61.1073 13.2772 61.1073 13.2772C80.4241 33.8758 65.2466 51.6434 62.0036 56.4334L55.1058 66.4536Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M14.2223 12.2202C14.2223 12.2202 6.48494 21.4378 2.03965 29.6542L55.5085 65.8013C59.5581 59.7082 65.4692 51.8454 65.4692 51.8454C87.2007 15.6025 35.1307 -12.5559 14.2223 12.2202Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <h3 class="cardCentralText color-white">Nuestros</h3>
-            <h3 class="cardCentralText color-white mb-3">seniors</h3>
-            <h6 class="color-white">Un Senior y un Leader serán asignados a cada squad según el stack tecnológico y las necesidades específicas de tu compañía.</h6>
-            <h6 class="color-white">Ambos son parte del equipo Teamcubation pero serán capacitados en las metodologías de trabajo de tu organización para generar una dinámica en el Squad que simule la experiencia de trabajar en desarrollo de software dentro de tu empresa.</h6>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-out-up" class="card gradientBlackGray">
-            <h4 class="cardTitle color-light-orange mb-3">LAS GANAS</h4>
-            <svg id="logoCardOurJuniorsDouble" width="114" height="78" viewbox="0 0 114 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M28.9107 42.4263L50.8125 12.8933C50.8125 12.8933 46.6627 9.82636 42.0518 6.53232C37.4409 3.23828 27.8732 1.9888 20.611 10.1672C20.611 10.1672 15.1999 17.5504 6.31713 29.0228C-2.56565 40.4953 1.21777 51.7548 6.54779 56.852C11.8778 61.9492 24.5302 70.8234 24.5302 70.8234C14.6167 59.3509 23.147 50.1503 24.9914 47.6513L28.9107 42.4263Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M49.6596 72.4136C49.6596 72.4136 54.0118 67.6375 56.5759 63.3266L28.68 42.7671C26.3745 45.9476 23.0316 50.0367 23.0316 50.0367C10.5819 69.006 37.9018 85.2491 49.6596 72.4136Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M84.9107 39.4263L106.813 9.89326C106.813 9.89326 102.663 6.82636 98.0518 3.53232C93.4409 0.238276 83.8732 -1.0112 76.611 7.16719C76.611 7.16719 71.1999 14.5504 62.3171 26.0228C53.4344 37.4953 57.2178 48.7548 62.5478 53.852C67.8778 58.9492 80.5302 67.8234 80.5302 67.8234C70.6167 56.3509 79.147 47.1503 80.9914 44.6513L84.9107 39.4263Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M105.66 69.4136C105.66 69.4136 110.012 64.6375 112.576 60.3266L84.68 39.7671C82.3745 42.9476 79.0316 47.0367 79.0316 47.0367C66.5819 66.006 93.9018 82.2491 105.66 69.4136Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <svg id="logoCardOurJuniorsSingle" width="58" height="75" viewbox="0 0 58 75" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M28.9107 39.4263L50.8125 9.89326C50.8125 9.89326 46.6627 6.82636 42.0518 3.53232C37.4409 0.238276 27.8732 -1.0112 20.611 7.16719C20.611 7.16719 15.1999 14.5504 6.31713 26.0228C-2.56565 37.4953 1.21777 48.7548 6.54779 53.852C11.8778 58.9492 24.5302 67.8234 24.5302 67.8234C14.6167 56.3509 23.147 47.1503 24.9914 44.6513L28.9107 39.4263Z" stroke="#423B3B" stroke-width="2"/>
-              <path d="M49.6596 69.4136C49.6596 69.4136 54.0118 64.6375 56.5759 60.3266L28.68 39.7671C26.3745 42.9476 23.0316 47.0367 23.0316 47.0367C10.5819 66.006 37.9018 82.2491 49.6596 69.4136Z" stroke="#423B3B" stroke-width="2"/>
-            </svg>
-            <h3 class="cardCentralText color-white">Tus</h3>
-            <h3 class="cardCentralText color-white mb-3">juniors</h3>
-            <h6 class="color-white">Serán parte de tu nómina desde el día cero. Son tus empleados, pero serán liderados y estarán trabajando en equipo con nuestros Seniors, durante el período de 6 meses en el que adquirirán la experiencia que les falta para integrarse a tu organización.</h6>
-          </div>
-        </div>
+        </div>        
       </div>
     </div>
   </section>
 
-  <img id="weDoDivider" src="media/wave/weDoDivider.svg" alt>
-  <div id="scrolltoHow"></div>
-
-  <section id="how">
-    <div class="sceneThree">
-      <div id="parallaxThree" class="parallax">
-        <img data-depth="0.5" src="media/plus/green.svg" alt="plus_orange">
-        <img data-depth="0.4" src="media/plus/light-gray.svg" alt="plus_default">
-        <img data-depth="0.3" src="media/plus/red.svg" alt="plus_default">
-        <img data-depth="0.2" src="media/plus/default.svg" alt="plus_default">
-        <img data-depth="0.1" src="media/plus/light-gray.svg" alt="plus_gray">
-        <img data-depth="0.5" src="media/plus/orange.svg" alt="plus_gray">
-        <img data-depth="0.1" src="media/plus/default.svg" alt="plus_gray">
-      </div>
-    </div>  
-    <div id="howLayer">
-      <h3 class="color-dark mb-5">LA EXPERIENCIA</h3>
-      <h4 class="color-dark me-1 d-inline">Un proceso en 3 etapas en búsqueda de la solución al problema del flujo de software developers.</h4>
-      <div class="grid-row mt-4 mb-5">
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" id="cardDiscovery" class="card">
-            <h4 class="cardTitle color-blue mb-3">INTEGRAR CULTURA Y TECNOLOGÍA</h4>
-            <h3 class="cardCentralText color-dark mb-3">Discovery</h3>
-            <h6 class="color-dark">Relevamos la forma de trabajar de tu organización a través de la observación y el aprendizaje de tus metodologías, stack tecnológico y cultura. Juntos evaluaremos los proyectos para elegir el más indicado.</h6>
+  <div id="scroll-page">
+    <section id="proposal">
+      <div id="proposal-layout" class="layout">
+        <div id="proposal-content">
+          <div class="text-center orange mb-2">
+            <h3>Resolvimos el problema de escasez de</h3>
+            <h3>talento IT de las grandes compañías.</h3>
           </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" id="cardEjecution" class="card">
-            <h4 class="cardTitle color-blue mb-3">DESARROLLAR SOFTWARE</h4>
-            <h3 class="cardCentralText color-dark mb-3">Ejecución</h3>
-            <h6 class="color-dark">La experiencia de 6 meses liderada por nuestros Seniors potencia el desarrollo técnico de los Juniors y el desarrollo de sus habilidades blandas tales como comunicación, trabajo en equipo, manejo del estrés y adaptación al cambio. A la vez, fomenta la integración a la cultura de tu empresa.</h6>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-6 col-xl-4 d-flex">
-          <div data-aos="zoom-in" id="cardDelivery" class="card">
-            <h4 class="cardTitle color-blue mb-3">COMPROMISOS CUMPLIDOS</h4>
-            <h3 class="cardCentralText color-dark mb-3">Delivery</h3>
-            <h6 class="color-dark">Gracias a nuestra plataforma data-driven de analíticas de aprendizaje, Programming Experience Platform (PEP), podremos potenciar a cada Junior en la habilidad que más necesitan trabajar, asegurándonos que al término del proyecto puedan integrarse de manera productiva a los equipos de la organización.</h6>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex">
-        <h4 class="color-dark d-inline mb-5 text-center">Y como ya trabajamos en equipo, hay líderes con experiencia que ya conocen la cultura y las formas de trabajo de la compañía, al finalizar y traspasar los juniors a tus equipos confirmamos un nuevo squad para seguir asegurando la capacidad productiva de tu organización.</h4>
-      </div>
-    </div>
-  </section>
-
-  <section id="clients">
-    <h3 class="color-light-gray my-5 text-center">¿CON QUIÉNES TRABAJAMOS JUNTOS PARA POTENCIAR EL NUEVO TALENTO DIGITAL?</h3>
-    <div class="grid-row my-5 justify-content-center">
-      <div class="col-6 col-xl-3 text-center mb-5">
-        <a target="_blank" href="https://www.byma.com.ar/"><img width="80%" src="media/partners/byma.svg" alt="BYMA"></a>
-      </div>
-      <div class="col-6 col-xl-3 text-center mb-5">
-        <a target="_blank" href="https://www.iovlabs.org/"><img width="80%" src="media/partners/iovLabs.svg" alt="IOVLabs"></a>
-      </div>
-      <div class="col-6 col-xl-3 text-center mb-5">
-        <a target="_blank" href="https://agrotoken.io/"><img width="80%" src="media/partners/agroToken.svg" alt="Agrotoken"></a>
-      </div>
-      <div class="col-6 col-xl-3 text-center mb-5">
-        <a target="_blank" href="https://www.mercadolibre.com/"><img width="80%" src="media/partners/meli.svg" alt="Mercado Libre"></a>
-      </div>
-    </div>
-  </section>
-  
-  <div id="scrolltoTeam"></div>
-
-  <section id="team" style="background-image:url('media/background/red.svg')">
-    <img id="logoRed" width="100%" src="media/logo/red.svg" alt>
-    <img id="plusRedTeamOne" src="media/plus/red.svg" alt="plus_red">
-    <img id="plusRedTeamTwo" src="media/plus/red.svg" alt="plus_red">
-    <img id="plusRedTeamThree" src="media/plus/red.svg" alt="plus_red">
-    <div id="teamLayer">
-    <h2 class="color-white mb-5">EL EQUIPO</h2>
-    <h4 style="margin: 5% 0 8% 22%" class="color-white">Después de años en la industria y en la academia sentimos que faltaba un engranaje que vinculara ambos mundos. El problema está claro y a la vista, enseñamos a mucha gente pero las compañías siguen con faltante de personas que cubran los puestos que necesitan para lograr sus objetivos.</h4>
-    <div class="grid-row">
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/mariano.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Mariano Wechsler</h5>
-          <div id="ceo" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/marianowechsler/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/diego.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Diego Jolodenco</h5>
-          <div id="coo" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/diegojolodenco/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/pina.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Agustin Pina</h5>
-          <div id="training" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/agustin-pina/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/tapi.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Jonathan Tapicer</h5>
-          <div id="cto" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/tapicer/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/eze.jpg" alt>
-          <h5 data-aos="fade-down" class="member-name">Ezequiel Ursztein</h5>
-          <div id="data" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/ezequiel-ursztein-b1b14094/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/flor.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Florencia Diaz</h5>
-          <div id="people" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/mariaflorenciadiaz/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-      <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
-        <div data-aos="zoom-in" class="card-member">
-          <img class="member-img" src="media/team/pablo.png" alt>
-          <h5 data-aos="fade-down" class="member-name">Pablo Rodriguez</h5>
-          <div id="cfo" class="role_container"></div>
-          <a href="https://www.linkedin.com/in/pablo-g-rodriguez/" target="_blank"><i class="icon ion-logo-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-  </div></section>
-
-  <img id="teamDivider" src="media/wave/white.svg" alt="divider">
-
-  <section id="contact">
-    <div class="grid-row justify-content-evenly">
-      <div class="col-12 col-lg-5 mt-2 px-2 d-flex flex-column align-items-center">
-        <h2 class="color-gray-100 my-3">CONTACTANOS</h2>
-        <form class="form-contact" id="form-contact">
-          <div id="formIdenfitication" class="mt-5 w-100 position-relative">
-            <div class="dropdown-select w-100" id="dropdown-select">
-              <div class="select-tc">
-                <textarea class="input-select" disabled placeholder="¿Cómo te identificás?"></textarea>
-                <img class="chevron-select" src="media/chevron-down.svg" alt="arrow">
-              </div>
-              <div style="position: relative; max-width: 100%">
-                <ul class="list-options-tc">
-                  <li>
-                    <div class="option-tc" data-option="organization">Soy una organización, quiero que me contacten para conocer más del servicio</div>
-                  </li>
-                  <li>
-                    <div class="option-tc" data-option="senior">Soy un desarrollador Senior y quiero acompañar a Juniors</div>
-                  </li>
-                  <li>
-                    <div class="option-tc" data-option="junior">Soy un desarrollador Junior/Trainee con conocimientos de programación</div>
-                  </li>
-                  <li>
-                    <div class="option-tc" data-option="no-exp">No sé programar y quiero aprender</div>
-                  </li>
-                  <li>
-                    <div class="option-tc" data-option="other">Otro</div>
-                  </li>
-                </ul>
+          <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div class="col-12 col-md-5">
+              <div class="proposal-card bg-green purple">
+                <h1 id="people-number">0</h1>
+                <h4>Vacantes IT</h4>
+                <p> quedaron sin cubrir el último año.</p>
               </div>
             </div>
-            <div class="form-message" id="juniorsMessage">
-              <h6 class="d-inline fw-600"></h6>
-              <h6 class="d-inline">Si sos Junior, o sea, ya aprendiste pero no tenés experiencia trabajando</h6>
-              <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">postulate acá</a>
-              <h6 class="d-inline">que es donde podemos ayudarte a que una compañía te seleccione para un squad</h6>
+            <div class="col-12 col-md-5">
+              <div>
+                <p class="purple white">En lugar de enfocarnos en la escasez de seniors, desarrollamos el potencial de los nuevos talentos: Así, ayudamos a nuestros clientes a contratar talentos que antes no tenían en cuenta: Diversos, comprometidos, y con ganas de aportar a la compañía que les de su primera oportunidad.</p>
+              </div>
             </div>
-            <div class="form-message" id="seniorsMessage">
-              <h6 class="d-inline fw-400">Si sos dev, tenés experiencia, sos crack y te gusta transmitir habilidades,</h6>
-              <h6 class="d-inline">andá a </h6>
-              <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">este link y postulate a la búsqueda que más se adecúe a tu perfil</a>
-              <h6 class="d-inline">que nos va a permitir entender dónde podemos sumarte en Teamcubation_</h6>
-            </div>
-            <div class="form-message" id="noCodersMessage">
-              <h6 class="d-inline fw-600">Si todavía no aprendiste a programar</h6>
-              <h6 class="d-inline"> te rogamos que lo hagas, te conviertas en developer y después vengas a postularte! Nosotros no damos clases, ni tenemos horarios, ni profes... Nuestra compañía trabaja para empresas permitiendo que adquieras experiencia si ya sabés codear.</h6>
-            </div>    
           </div>
-          <div id="formInformation">
-            <div class="mt-5">
-              <input type="text" class="name" name="name" required placeholder="Nombre">
+          <div id="cost" class="d-flex justify-content-between align-items-center flex-wrap ">
+            <div class="col-12 col-md-5">
+              <div>
+                <p class="purple">Disminuimos el costo de oportunidad. A través de un flujo constante de nuevos colaboradores, garantizamos la capacidad de producción que su compañía necesita para desbloquear nuevas oportunidades de negocio.</p>
+              </div>
             </div>
-            <div class="mt-4">
-              <input type="text" class="organizationContact" placeholder="Compañía">
+            <div class="col-12 col-md-5">
+              <div class="proposal-card bg-purple white">
+                <div>
+                  <h3 class="fw-bold d-inline">US$</h3><h2 class="fw-bold d-inline" id="cost-from-number"> 0</h2>
+                </div>
+                <div>
+                  <h3 class="fw-bold d-inline">a US$</h3><h2 class="fw-bold d-inline" id="cost-to-number"> 0</h2>
+                </div>
+                <p>son los costos relacionados a cada vacante sin cubrir.</p>
+              </div>
             </div>
-            <div class="mt-5">
-              <label for="country-phone-team" class="form-label">Teléfono</label>
+          </div>
+          <div class="d-flex justify-content-between align-items-center flex-wrap">
+            <div class="col-12 col-md-5">
+              <div class="proposal-card bg-orange grey">
+                <h1 id="turnover-number">0</h1>
+                <h4>de los CTOs</h4>
+                <p>consideran que la rotación está afectando la productividad de su equipo.</p>
+              </div>
             </div>
-            <div class="row">
-              <div class="col-md-7 col-sm-12">
-                <div class="row">
-                  <div class="col-3">
-                    <span>+</span>
-                    <input id="country-phone-team" style="width: calc(100% - 15px)" type="text" name="country-phone" class="country-phone" placeholder="País">
+            <div class="col-12 col-md-5">
+              <div>
+                <p class="purple">En lugar de enfocarnos en la escasez de seniors, desarrollamos el potencial de los nuevos talentos: Así, ayudamos a nuestros clientes a contratar talentos que antes no tenían en cuenta: Diversos, comprometidos, y con ganas de aportar a la compañía que les de su primera oportunidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem">
+      <div id="problem-layout" class="layout">
+        <div id="problem-content">
+          <div class="container-content">
+            <div class="white">
+              <h2 class="title-lg">Desarrollamos experiencia en nuevos</h2>
+              <h2 class="title-lg">devs para que logre completar</h2>
+              <h2 class="title-lg">sus equipos en tiempo récord.</h2>
+            </div>
+          </div>
+          <div class="carousel-boos-container">
+            <img class="mt-3 mb-3" id="quote" src="media/orange-quote.png" alt="quote">
+            <div id="problem-slide" data-bs-interval="2000" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner orange">
+                <div class="carousel-item active">
+                  <h3>No hay devs con experiencia</h3>
+                </div>
+                <div class="carousel-item">
+                  <h3>Nunca llegamos a cubrir las posiciones vacantes</h3>
+                </div>
+                <div class="carousel-item">
+                  <h3>Se nos va la gente</h3>
+                </div>
+                <div class="carousel-item">
+                  <h3>Perdemos oportunidades</h3>
+                </div>
+                <div class="carousel-item">
+                  <h3>Nuestros seniors no tienen tiempo de capacitar</h3>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" href="#problem-slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" href="#problem-slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+            <!-- <div id="problem-carrousel">
+              <div class="carousel-section">
+                <div data-name="play" class="carousel-button left">
+                  <img src="media/arrow.svg" alt="">
+                </div>
+                <div data-name="play-reverse" class="carousel-button right">
+                  <img src="media/arrow.svg" alt="">
+                </div>
+                <div id="problem-carousel" class="carousel mt-2">
+                  <div class="problem-item-scroll">
+                    <h3 data-t>noMoreDevs.carouselText.itemOne</h3>
                   </div>
-                  <div class="col-3">
-                    <input type="text" name="area-phone" class="area-phone" placeholder="Área">
+                  <div class="problem-item-scroll">
+                    <h3 data-t>noMoreDevs.carouselText.itemTwo</h3>
                   </div>
-                  <div class="col-6">
-                    <input type="text" name="number-phone" class="number-phone" placeholder="Número">
+                  <div class="problem-item-scroll">
+                    <h3 data-t>noMoreDevs.carouselText.itemThree</h3>
+                  </div>
+                  <div class="problem-item-scroll">
+                    <h3 data-t>noMoreDevs.carouselText.itemFour</h3>
+                  </div>
+                  <div class="problem-item-scroll">
+                    <h3 data-t>noMoreDevs.carouselText.itemFive</h3>
                   </div>
                 </div>
               </div>
-              <div class="col-md-5 col-sm-12 mt-md-0 mt-4">
-                <input type="email" name="email" class="email" required placeholder="E-mail">
+            </div> -->
+          </div>
+          <div class="container-content">
+            <div class="white mt-1">
+              <h6>¿Suena conocido?</h6>
+            </div>
+            <div class="w-100 mt-1">
+              <button class="button contact-button lg-button bg-white purple ms-auto" style="z-index: 1;">¡Contáctanos!</button>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </section>
+
+    <section id="the-wheel">
+      <div id="the-wheel-layout" class="layout">
+        <div id="the-wheel-content">
+          <div class="text-center mb-2">
+            <h3 class="purple">Ni un code school, ni una software factory.</h3>
+            <h3 class="purple"> Una solución a medida de las grandes compañías.</h3>
+          </div>
+          <div id="venn-diagram-container">
+            <div id="control-switch">
+              <div class="d-flex align-items-center mb-1">
+                <input type="checkbox" id="seniors-switch" checked><label class="switch-label" for="seniors-switch">Toggle</label>
+                <h5 class="fw-bold green">SENIORS</h5>
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <input type="checkbox" id="junior-switch" checked><label class="switch-label" for="junior-switch">Toggle</label>
+                <h5 class="fw-bold orange">JUNIOR</h5>
+              </div>
+              <div class="d-flex align-items-center mb-1">
+                <input type="checkbox" id="software-switch" checked><label class="switch-label" for="software-switch">Toggle</label>
+                <h5 class="fw-bold purple">SOFTWARE</h5>
+              </div>  
+            </div>
+            <div id="venn-diagram">
+              <img id="diagram-logo" style="position: absolute; top: 33%; left: 47.2%; z-index: 10; width: 5%" src="media/logo-white.svg" alt="tq">
+              <div id="intersection-seniors-software" class="intersection-seniors-software">
+                <div>
+                  <p class="intersection-seniors-software-leyend">Software</p>
+                  <p class="intersection-seniors-software-leyend">Factory</p>
+                </div>
+                <div>
+                  <img class="arrow-diagram" style="float: right" src="media/diagram-arrow-left.svg" alt="arrow">
+                </div>
+              </div>
+              <div id="intersection-software-junior" class="intersection-software-junior">
+                <div>
+                  <img class="arrow-diagram" style="float: right" src="media/diagram-arrow-right.svg" alt="arrow">
+                </div>
+                <div class="intersection-software-junior-leyend">No existe</div>
+              </div>
+              <div id="intersection-seniors-junior" class="intersection-seniors-junior">
+                <div class="intersection-seniors-junior-leyend">Code School</div>
+                <div>
+                  <img class="arrow-diagram" src="media/diagram-arrow-top.svg" alt="arrow">
+                </div>
+              </div>
+              <div id="seniors-venn-diagram-item" class="venn-diagram-item">
+                <div class="leyend-diagram-item purple">
+                  <div class="sm-text-card fw-bold">SENIORS</div>
+                  <p>Con experiencia</p>
+                  <p>en desarrollo</p>
+                </div>
+              </div>
+              <div id="junior-venn-diagram-item" class="venn-diagram-item">
+                <div class="leyend-diagram-item white">
+                  <div class="sm-text-card fw-bold">JUNIOR</div>
+                  <p>Con ganas</p>
+                  <p>de aprender</p>
+                </div>
+              </div>
+              <div id="software-venn-diagram-item" class="venn-diagram-item">
+                <div class="leyend-diagram-item white">
+                  <div class="sm-text-card fw-bold">SOFTWARE</div>
+                  <p>que necesitas</p>
+                </div>
               </div>
             </div>
-            <div class="mb-4 mt-5">
-              <textarea name="message" class="message" rows="1" required placeholder="Dejanos tu mensaje"></textarea>
-            </div>
           </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <div id="scrollToJuniors"></div>
-
-  <section id="devsJuniors" style="background-image: url('media/background/blue.svg')">
-    <img id="logoBlue" src="media/logo/blue.svg" alt="TEAMCUBATION">
-    <img id="devsJuniorsDivider" src="media/wave/devsJuniorsdivider.svg" alt="divider">
-    <div id="devsJuniorsLayer">
-      <div class="grid-row my-5">
-        <h3 class="color-white">DEVS JUNIORS</h3>
-      </div>
-      <div class="d-flex flex-column justify-content-end my-4">
-        <h3 class="text-r color-light-gray d-inline subtitle-bold">Somos una máquina del tiempo y hacemos que tengas la experiencia de 2 años en 6 meses.</h3>
-        <h3 class="text-r color-white d-inline subtitle-bold">La máquina del tiempo existe.</h3>
-        <h3 class="text-r color-white d-inline subtitle-bold">Hola! Somos Teamcubation.</h3>
-      </div>
-      <div class="grid-row">
-        <div class="col-12 col-sm-6">
-          <h4 class="color-white mt-5">Teamcubation_ trabaja para empresas, las empresas contratan a los juniors y muchas veces nos piden ayuda para encontrarlos. Asi que no lo dudes! Entrá a este link que te dejamos acá y dejanos tus datos para que cuando nos soliciten las empresas perfiles podamos pasar los tuyos o tu información.</h4>
-        </div>
-        <div class="col-12 col-sm-6 mt-5">
-          <a id="linksJuniorsDevs" class="btn-tc btn-tc-lnk" target="_blank" href="https://teamcubation.bamboohr.com/jobs/">Mirá las posiciones abiertas de nuestros clientes para devs sin experiencia<span class=_effect>_</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="devsSeniors">
-    <div id="devsSeniorsLayer">
-      <div class="grid-row my-5">
-        <h3 class="color-white">DEVS CON EXPERIENCIA</h3>
-      </div>
-      <div class="d-flex flex-column justify-content-end my-5 ml-5">
-        <h3 class="text-r color-blue d-inline subtitle-bold">Si ves más allá del software, más allá del framework y entendés que la clave está en las personas, sumate a Teamcubation: </h3>
-        <h3 class="text-r color-light-gray subtitle-bold">aprendé a liderar equipos, mientras desarrollás para grandes compañías y transmitís a otros lo que sabes.</h3>
-      </div>
-      <div class="d-flex flex-column justify-content-start my-5">
-        <a id="devsSeniorsButton" class="btn-tc btn-tc-lnk" target="_blank" href="https://teamcubation.bamboohr.com/jobs/">Mira las posiciones abiertas para devs con experiencia<span class=_effect>_</span></a>
-      </div>
-    </div>
-  </section>
-
-  <footer id="footer">
-    <div class="grid-row align-items-center">
-      <div class="col-8">
-        <div class="grid-row">
-          <div class="col-6 col-md-3">
-            <div class="d-flex flex-column">
-              <a class="what color-light-gray mb-0 navigate-organization" href="#what">¿Cómo?</a>
-              <a class="how color-light-gray mb-0 navigate-organization" href="#how">La experiencia</a>
-              <a class="clients color-light-gray mb-0 navigate-organization" href="#clients">Clientes</a>
-              <a class="team color-light-gray mb-0 navigate-organization" href="#team">Equipo</a>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <div class="d-flex flex-column">
-              <a class="contact color-light-gray mb-0 navigate-organization" href="#contact">Contactanos</a>
-              <a class="devsJuniors color-light-gray mb-0 navigate-organization" href="#devsJuniors">Devs Junior</a>
-              <a class="devsSeniors color-light-gray mb-0 navigate-organization" href="#devsSeniors">Devs con experiencia</a>
-            </div>
+          <div class="d-flex flex-column text-center mb-2" style="position: relative;">
+            <h3 class="purple mb-2">Lo estamos haciendo</h3><br>
+            <video style="border-radius: 15px; border: 1px red" title="Tq" controls>
+              <source src="https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation.mp4">
+            </video>
           </div>
         </div>
       </div>
-      <div class="col-4 d-flex justify-content-end">
-        <div class="grid-row flex-column align-items-center">
-          <img width="100%" id="lovsDevs" src="media/loveDevs.svg" alt="iLoveDevs">
-          <p id="copyright" class="color-light-gray">COPYRIGHT TEAMCUBATION</p>
+    </section>
+    
+    <section id="process">
+      <div id="process-layout" class="layout">
+        <div id="process-content">
+          <div class="text-center" style="margin-bottom: 2em">
+            <h3>¿Cómo lo hacemos?</h3>
+          </div>  
+          <div class="carousel-section">
+            <button class="carousel-control-prev process-next hidden" type="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next process-prev" type="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+            <div id="process-carousel" class="carousel mt-2 mb-2">
+              <div id="divider-process" class="divider">
+                <div class="divider-content"></div>
+                <div id="divider-center-process" class="divider-center"></div>
+              </div>
+              <div class="process-item-scroll">
+                <div class="d-flex">
+                  <div class="d-flex step-number-container">
+                    <div class="step-number">0<span class="step-number-one-one">1</span></div>
+                  </div>
+                  <div id="step-leyend-container-01" class="step-leyend-container">
+                    <div class="step-leyend">
+                      <p class="md-text-card">Discovery</p>
+                      <p>Luego de relevar las metodologías, stack tecnológico y cultura de su organización, evaluamos sus proyectos en conjunto para elegir la opción más adecuada. Si es necesario, lo ayudamos en la búsqueda del talento jr.</p>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+              <div class="process-item-scroll">
+                <div class="d-flex">
+                  <div class="step-number-container">
+                    <div class="step-number">02</div>
+                  </div>
+                  <div id="step-leyend-container-02" class="step-leyend-container">
+                    <div class="step-leyend">
+                      <p class="md-text-card">Ejecución</p>
+                      <p>Durante un período de 6 meses trabajamos junto a sus devs jr en el desarrollo del software que su compañía necesita. Esto brinda a sus nuevos colaboradores la experiencia real de trabajar en sus equipos.</p>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+              <div class="process-item-scroll">
+                <div class="d-flex">
+                  <div class="step-number-container">
+                    <div class="step-number">03</div>
+                  </div>
+                  <div class="step-leyend-container">
+                    <div id="step-leyend-container-03" class="step-leyend">
+                      <p class="md-text-card">Delivery</p>
+                      <p>Al finalizar el sexto mes, su empresa contará con el software listo para implementar y un equipo de 3 devs con experiencia preparado para asumir su próximo proyecto. ¡Felicitaciones! Su nueva fuente de talento especializado completó su primera entrega con éxito.</p>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
         </div>
-      </div>  
-    </div>
-  </footer>
-</div>
+      </div>
+    </section>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-<script src="jquery.animatedheadline/js/jquery.animatedheadline.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-<script type="module" src="index.js?v=21"></script>
+    <section id="squad">
+      <div id="squad-layout" class="layout">
+        <div id="squad-content">
+          <div id="squad-description-layout">
+            <div id="squad-description-content">
+              <div class="d-flex">
+                <h3>Trabajamos en squads para convertir principiantes en talento ready-to-work.</h3>
+              </div>
+              <div class="col-12 col-md-5">
+                <div class="outlined-text">
+                  <p class="fw-bold">Nuestros líderes</p>
+                </div>
+                <p>Especializados y capacitados en el stack tecnológico y metodologías de su compañía, velarán por la evolución de tus juniors y se asegurarán de que el software cumpla con los requerimientos.</p>
+              </div>
+              <div class="col-12 col-md-5">
+                <div class="outlined-text">
+                  <p class="fw-bold">Tus juniors</p>
+                </div>
+                <p>Guiados por nuestros seniors, adquirirán experiencia real mientras desarrollan sus habilidades técnicas y blandas, y se integran a su cultura empresarial.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pep">
+      <div id="pep-layout" class="layout">
+        <div id="pep-content">
+          <div class="w-100 orange">
+            <h3>PEP:</h3>
+            <h3>Programming Experience Platform. </h3>
+          </div>
+          <div class="d-flex mt-5 justify-content-between flex-wrap">
+            <div class="col-10 col-sm-5">
+              <h6 class="md-text-card orange fw-bold">La magia de nuestra metodología está en los datos.</h6>
+            </div>
+            <div class="col-10 col-sm-6">
+              <p class="grey">Nuestro software es el diferencial y gran aliado de nuestro staff. Convierte nuestro entrenamiento en un proceso guiado y medido, para potenciar el desarrollo de cada uno de sus juniors y lograr su mejor versión.</p>
+            </div>
+          </div>
+          <div class="row w-100" style="margin: 0">
+            <div id="pep-attributes-container">
+              <div class="row">
+                <div class="col-12 col-sm-5">
+                  <div class="dropdown-container">
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card orange">Integración a su flujo de trabajo</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">PEP se enlaza con tus herramientas de desarrollo principales como Jira, GitLab, Github, Slack, Discord y más, para recopilar datos clave y optimizar el rendimiento de sus equipos.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-1.png" alt>
+                    </div>
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card">Insights en tiempo real</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">Observa la evolución de sus juniors con métricas precisas sobre el código que desarrollan, las metodologías y herramientas de comunicación.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-2.png" alt>
+                    </div>
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card">Alertas inteligentes</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">Nos mantienen al tanto del desempeño de sus juniors con notificaciones que identifican comportamientos que no se alinean con las expectativas, necesarias para mejorar la calidad y coherencia del trabajo en su equipo.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-3.png" alt>
+                    </div>
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card">Seguimiento personalizable</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">Evaluamos aspectos clave del desarrollo personal de sus juniors mediante acciones y encuestas a medida que aportan un enfoque humano en el proceso de entrenamiento.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-4.png" alt>
+                    </div>
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card">Conoce a tus colaboradores:</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">1. A través de tests cognitivos y conductuales, tales como PDA (Personal Development Analysis), obtenemos una visión clara de los perfiles de sus colaboradores para gestionar su talento, desarrollar habilidades y obtener su mejor versión.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-5.png" alt>
+                    </div>
+                    <div class="card dropdown-standard-item">
+                      <div class="card-standard-header">
+                        <div class="fw-bold sm-text-card">Pulso emocional</div>
+                        <div class="dropdown-item-button">
+                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                        </div>
+                      </div>
+                      <div class="collapsed-content">
+                        <div class="card-collapse-content">
+                          <p class="sm-text-card light-grey">Integración con IA que analiza respuestas y detecta automáticamente los sentimientos y emociones del equipo para intervenir oportunamente cuando sea necesario, asegurando un entorno laboral positivo y productivo.</p>
+                        </div>
+                      </div>
+                      <img class="hidden" src="media/pep/pep-6.png" alt>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-7">
+                  <div id="pep-img-container">
+                    <img style="max-width: 100%;" src="media/pep/pep-1.png" alt="pep">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="team">
+      <div id="team-layout" class="layout">
+        <div id="team-content">
+          <div class="text-center orange">
+            <h2 class="fw-bold">Nuestro Equipo</h2>
+          </div>
+          <div class="d-flex flex-wrap mt-7 justify-content-center">
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/marianowechsler.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/marianowechsler/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Mariano Wechsler</h5>
+                    <div class="role_container">CEO</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/diegojolodenco.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around  mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/diegojolodenco/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Diego Jolodenco</h5>
+                    <div class="role_container">COO</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/agustinpina.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around  mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/agustin-pina/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Agustin Pina</h5>
+                    <div class="role_container">Head of Training</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/tapicer.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around  mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/tapicer/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Jonathan Tapicer</h5>
+                    <div id="ceo" class="role_container">CTO</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/ezequielursztein.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around  mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/ezequiel-ursztein-b1b14094/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Ezequiel Ursztein</h5>
+                    <div class="role_container">Head of Data & Analytics</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div id="ceo" class="container-img">
+                  <img class="member-img" src="media/team/mariaflorenciadiaz.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around  mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/mariaflorenciadiaz/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Florencia Diaz</h5>
+                    <div class="role_container">Head of People</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+              <div class="card-member">
+                <div class="container-img">
+                  <img class="member-img" src="media/team/pablorodriguez.png" alt>
+                  <div class="card-member-hover">
+                    <img class="member-quotes" src="media/quote.png" alt>
+                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <img class="member-quotes" src="media/quote.png" alt>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-around mt-2">
+                  <div>
+                    <a href="https://www.linkedin.com/in/pablo-g-rodriguez/" target="_blank"><img src="media/arrow-menu.svg" alt></a>
+                  </div>
+                  <div class="text-start">
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Pablo Rodriguez</h5>
+                    <div class="role_container">CFO</div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </section>
+
+    <section id="results">
+      <div id="results-layout" class="layout">
+        <div class="section-divider"></div>
+        <div class="static-content">
+          <div class="text-center orange">
+            <h2 class="fw-bold">Los resultados</h2>
+          </div>
+        </div>
+        <div id="carousel-content">
+          <div class="carousel-boos-container">
+            <div id="results-slide-desktop" data-bs-interval="false" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner orange">
+                <div class="carousel-item active">
+                  <div class="container-card-results">
+                    <div class="card results-card">
+                      <img src="media/results_1.png" alt="results">
+                      <div class="d-flex justify-content-between mt-2">
+                        <h5 class="md-text-card">Onboarding sin fricciones</h5>
+                        <img src="media/icons/01.svg" alt>
+                      </div>
+                      <p class="mt-2">Candidatos alineados con la cultura y los frameworks de su compañía.</p>
+                    </div>
+                    <div class="card results-card">
+                      <img src="media/results_2.png" alt="results">
+                      <div class="d-flex justify-content-between mt-2">
+                        <h5 class="md-text-card">Foco de trabajo</h5>
+                        <img src="media/icons/02.svg" alt>
+                      </div>
+                      <p class="mt-2">Sus seniors dedicados 100% a generar resultados para su negocio.</p>
+                    </div>
+                    <div class="card results-card">
+                      <img src="media/results_3.png" alt="results">
+                      <div class="d-flex justify-content-between mt-2">
+                        <h5 class="md-text-card">Capacidad productiva</h5>
+                        <img src="media/icons/03.svg" alt>
+                      </div>
+                      <p class="mt-2">Flujo constante de candidatos que minimiza el impacto de la rotación.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="container-card-results">
+                      <div class="card results-card">
+                        <img src="media/results_4.png" alt="results">
+                        <div class="d-flex justify-content-between mt-2">
+                          <h5 class="md-text-card">Fidelización de talento</h5>
+                          <img src="media/icons/05.svg" alt>
+                        </div>
+                        <p class="mt-2">Colaboradores más comprometidos y motivados.</p>
+                      </div>
+                    <div class="card results-card">
+                      <img src="media/results_5.png" alt="results">
+                      <div class="d-flex justify-content-between mt-2">
+                        <h5 class="md-text-card">Proceso de TA fluído</h5>
+                        <img src="media/icons/04.svg" alt>
+                      </div>
+                      <p class="mt-2">Simplificando la selección de talento, eliminando los puntos de dolor.</p>
+                    </div>
+                    <div class="card results-card">
+                      <img src="media/results_6.png" alt="results">
+                      <div class="d-flex justify-content-between mt-2">
+                        <h5 class="md-text-card">Branding</h5>
+                        <img src="media/icons/06.svg" alt>
+                      </div>
+                      <p class="mt-2">Impacto positivo en el desarrollo de marca empleadora y cultura organizacional.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" href="#results-slide-desktop" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" href="#results-slide-desktop" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+
+            <div id="results-slide-mobile" data-bs-interval="false" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner orange">
+                <div class="carousel-item active">
+                  <div class="card results-card">
+                    <img src="media/results_1.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Onboarding sin fricciones</h5>
+                      <img src="media/icons/01.svg" alt>
+                    </div>
+                    <p class="mt-2">Candidatos alineados con la cultura y los frameworks de su compañía.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card results-card">
+                    <img src="media/results_2.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Foco de trabajo</h5>
+                      <img src="media/icons/02.svg" alt>
+                    </div>
+                    <p class="mt-2">Sus seniors dedicados 100% a generar resultados para su negocio.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card results-card">
+                    <img src="media/results_3.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Capacidad productiva</h5>
+                      <img src="media/icons/03.svg" alt>
+                    </div>
+                    <p class="mt-2">Flujo constante de candidatos que minimiza el impacto de la rotación.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card results-card">
+                    <img src="media/results_4.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Fidelización de talento</h5>
+                      <img src="media/icons/05.svg" alt>
+                    </div>
+                    <p class="mt-2">Colaboradores más comprometidos y motivados.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card results-card">
+                    <img src="media/results_5.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Proceso de TA fluído</h5>
+                      <img src="media/icons/04.svg" alt>
+                    </div>
+                    <p class="mt-2">Simplificando la selección de talento, eliminando los puntos de dolor.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card results-card">
+                    <img src="media/results_6.png" alt="results">
+                    <div class="d-flex justify-content-between mt-2">
+                      <h5 class="md-text-card">Branding</h5>
+                      <img src="media/icons/06.svg" alt>
+                    </div>
+                    <p class="mt-2">Impacto positivo en el desarrollo de marca empleadora y cultura organizacional.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" href="#results-slide-mobile" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" href="#results-slide-mobile" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="static-content">
+          <div class="carousel-layout bg-white">
+            <div class="carousel-container">
+              <div class="carousel-trainers">
+                <img src="media/Contactanos.png">
+              </div>
+            </div>
+            <div class="carousel-info-content purple">
+              <h3>¡Nunca más pierda oportunidades por falta de talento IT!</h3>
+              <button class="button contact-button lg-button bg-orange purple mt-2">¡Contáctanos!</button>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div id="footer-content">
+        <div class="col-5 col-md-3">
+          <div class="d-flex flex-column">
+            <div class="link-footer">
+              <a class="animated-underline" href="#proposal">Propuesta</a>
+            </div>
+            <div class="link-footer">
+              <a class="animated-underline" href="#problem">Problema</a>
+            </div>
+            <div class="link-footer">
+              <a class="animated-underline" href="#">Casos</a>
+            </div>
+            <div class="link-footer">
+              <a class="animated-underline" href="/privacy-policy.html">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 col-md-3">
+          <div class="d-flex flex-column">
+            <div class="link-footer">
+              <a class="animated-underline" href="#process">Proceso</a>
+            </div>
+            <div class="link-footer">
+              <a class="animated-underline" href="#methodology">Metodología</a>
+            </div>
+            <div class="link-footer">
+              <a class="animated-underline" href="#team">Quienes somos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-md-4">
+          <div id="footer-logo" class="navigate-home">
+            <img src="media/logotipo.svg" alt="TeamCubation">
+            <p id="copyright" class="white">COPYRIGHT TEAMCUBATION</p>
+          </div>
+        </div>  
+      </div>
+    </footer>
+  
+
+    <div id="form-modal" class="hidden d-flex">
+      <div id="form-container">
+        <div class="col-12 d-flex flex-column align-items-center">
+          <form class="form-contact" id="form-contact">
+            <div type="button" id="close-modal" style="float: right; padding: 0 0 2em 0"><img src="media/close-icon.svg" alt="close-icon"></div>
+            <div id="formIdenfitication" class="mt-2 w-100 position-relative">
+              <div class="dropdown-select w-100" id="dropdown-select">
+                <div class="select-tc">
+                  <textarea class="input-select" disabled placeholder="¿Cómo te identificás?"></textarea>
+                  <span class="open-dropdown-select" style="width: 100%; height: 100%; position:absolute"></span>
+                  <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
+                </div>
+                <div style="position: relative; max-width: 100%">
+                  <ul class="list-options-tc">
+                    <li>
+                      <div class="option-tc" data-option="organization">Soy una organización, quiero que me contacten para conocer más del servicio</div>
+                    </li>
+                    <li>
+                      <div class="option-tc" data-option="senior">Soy un desarrollador Senior y quiero acompañar a Juniors</div>
+                    </li>
+                    <li>
+                      <div class="option-tc" data-option="junior">Soy un desarrollador Junior/Trainee con conocimientos de programación</div>
+                    </li>
+                    <li>
+                      <div class="option-tc" data-option="no-exp">No sé programar y quiero aprender</div>
+                    </li>
+                    <li>
+                      <div class="option-tc" data-option="other">Otro</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-message" id="juniorsMessage">
+                <p class="d-inline fw-600"></p>
+                <p class="d-inline">Si sos Junior, o sea, ya aprendiste pero no tenés experiencia trabajando</p>
+                <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">postulate acá</a>
+                <p class="d-inline">que es donde podemos ayudarte a que una compañía te seleccione para un squad</p>
+              </div>
+              <div class="form-message" id="seniorsMessage">
+                <p class="d-inline fw-400">Si sos dev, tenés experiencia, sos crack y te gusta transmitir habilidades,</p>
+                <p class="d-inline">andá a </p>
+                <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">este link y postulate a la búsqueda que más se adecúe a tu perfil</a>
+                <p class="d-inline">que nos va a permitir entender dónde podemos sumarte en Teamcubation_</p>
+              </div>
+              <div class="form-message" id="noCodersMessage">
+                <p class="d-inline fw-600">Si todavía no aprendiste a programar</p>
+                <p class="d-inline"> te rogamos que lo hagas, te conviertas en developer y después vengas a postularte! Nosotros no damos clases, ni tenemos horarios, ni profes... Nuestra compañía trabaja para empresas permitiendo que adquieras experiencia si ya sabés codear.</p>
+              </div>    
+            </div>
+            <div id="formInformation">
+              <div class="mt-2">
+                <input type="text" class="name" name="name" required placeholder="Nombre">
+              </div>
+              <div class="mt-2">
+                <input type="text" class="organizationContact" placeholder="Compañía">
+              </div>
+              <div class="mt-2">
+                <label for="country-phone-team" class="form-label">Teléfono</label>
+              </div>
+              <div class="row">
+                <div class="col-md-7 col-sm-12">
+                  <div class="row">
+                    <div class="col-3">
+                      <span>+</span>
+                      <input id="country-phone-team" style="width: calc(100% - 15px)" type="text" name="country-phone" class="country-phone" placeholder="País">
+                    </div>
+                    <div class="col-3">
+                      <input type="text" name="area-phone" class="area-phone" placeholder="Área">
+                    </div>
+                    <div class="col-6">
+                      <input type="text" name="number-phone" class="number-phone" placeholder="Número">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5 col-sm-12 mt-md-0 mt-4">
+                  <input type="email" name="email" class="email" required placeholder="E-mail">
+                </div>
+              </div>
+              <div class="mb-4 mt-2">
+                <textarea name="message" class="message" rows="1" required placeholder="Dejanos tu mensaje"></textarea>
+              </div>
+            </div>
+            <button type="submit" name="submit-contact" class="button submit-contact bg-white purple" style="float: right;">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script type="module" src="index.js?v=40"></script>
 
 </body>
 </html>
