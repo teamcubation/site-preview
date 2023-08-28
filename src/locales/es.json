@@ -26,10 +26,8 @@
     }      
   },
   "proposal":{
-    "centralText":{
-      "lineOne": "Resolvimos el problema de escasez de",
-      "lineTwo": "talento IT de las grandes compañías."
-    },
+    "centralText": "Resolvimos el problema de escasez de talento IT de las grandes compañías.",
+    
     "people": {
       "title": {
         "centralText": "Vacantes IT",
@@ -42,8 +40,11 @@
     },
     "cost": {
       "title":{
-        "centralText":"a US$", 
-        "text": "son los costos relacionados a cada vacante sin cubrir."
+        "centralText":"hasta US$", 
+        "text":{
+          "title": "Son los costos",
+          "leyend": "relacionados a cada vacante sin cubrir."
+        }
       },
       "text": {
         "title": "Disminuimos el costo de oportunidad:",
@@ -62,11 +63,7 @@
     }
   },
   "noMoreDevs":{
-    "centralText":{
-      "lineOne": "Desarrollamos experiencia en nuevos",
-      "lineTwo": "devs para que logre completar",
-      "lineThree": "sus equipos en tiempo récord."
-    },
+    "centralText": "Desarrollamos experiencia en nuevos devs para que logre completar sus equipos en tiempo récord.",
     "carouselText":{
       "itemOne": "No hay devs con experiencia",
       "itemTwo": "Nunca llegamos a cubrir las posiciones vacantes",
@@ -78,10 +75,7 @@
     "contactButton": "¡Contáctanos!" 
   },
   "theWheel":{
-    "centralText": {
-      "lineOne": "Ni un code school, ni una software factory.",
-      "lineTwo": " Una solución a medida de las grandes compañías."
-    },
+    "centralText": "Ni un coding school, ni una software factory. Una solución a medida de las grandes compañías.",
     "veenDiagram":{
       "seniors": {
         "lineOne": "Con experiencia",
@@ -99,7 +93,7 @@
       "intersections":{
         "one": "Software Factory",
         "two": "No existe",
-        "three": "Code School"
+        "three": "Coding School"
       }
     },
     "centralTextTwo": "Lo estamos haciendo"

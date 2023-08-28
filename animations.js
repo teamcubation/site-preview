@@ -65,7 +65,7 @@ const incrementCounter = (element, counterValue, targetValue, incrementAmount, t
       if (currentNumber > targetValue) {
         currentNumber = targetValue;
       }
-      element.textContent = `${text?.prev ?? ''} ${currentNumber}${text?.next ?? ''}`;
+      element.textContent = `${text?.prev ?? ''} ${currentNumber.toLocaleString()}${text?.next ?? ''}`;
     }, i * delay);
   }
 }

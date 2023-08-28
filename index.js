@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // incrementCounter
 const peopleNumber = document.getElementById("people-number");
 let incrementAmountPeopleNumber = false;
-const costFromNumber = document.getElementById("cost-from-number");
+// const costFromNumber = document.getElementById("cost-from-number");
 let incrementAmountCostFromNumber = false;
 const costTopNumber = document.getElementById("cost-to-number");
 const turnoverNumber = document.getElementById("turnover-number");
@@ -398,9 +398,10 @@ window.addEventListener('scroll', (e) => {
         incrementCounter(turnoverNumber, 0, 78, 1, text);
         incrementAmountTurnoverNumber = true;
       }
-      if(costFromNumber.getBoundingClientRect().top <= 500 && !incrementAmountCostFromNumber){
-        incrementCounter(costFromNumber, 0, 10000, 125);
-        incrementCounter(costTopNumber, 0, 14000, 125);
+      if(costTopNumber.getBoundingClientRect().top <= 500 && !incrementAmountCostFromNumber){
+        // incrementCounter(costFromNumber, 0, 10000, 125);
+        const text={prev: '', next: 'K'}
+        incrementCounter(costTopNumber, 0, 14, 1, text);
         incrementAmountCostFromNumber = true;
       }
       // if(window.scrollY < 500){
@@ -662,10 +663,10 @@ dropdowns.forEach(dropdown => {
 }); 
 
 // restore in top sin scrollTop
-history.scrollRestoration = "manual";
-$(window).on('beforeunload', function(){
-  $(window).scrollTop(0);
-});
+// history.scrollRestoration = "manual";
+// $(window).on('beforeunload', function(){
+//   $(window).scrollTop(0);
+// });
 
 const video = document.getElementById("video-cases")
 video.addEventListener('ended', function() {
