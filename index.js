@@ -1,4 +1,4 @@
-import {CarouselAnimator, incrementCounter} from './animations.js';
+import {CarouselAnimator, CounterAnimator} from './animations.js';
 
 const url = "https://teamcubation.com/";
 const initialLocation = document.location.href;
@@ -307,6 +307,7 @@ let incrementAmountPeopleNumber = {
   targetValue: 22,
   step: 0,
 }
+const incrementAmountPeopleNumberAnimation = new CounterAnimator();
 
 const costTopNumber = document.getElementById("cost-to-number");
 let incrementAmountCostNumber = {
@@ -315,6 +316,7 @@ let incrementAmountCostNumber = {
   acumulate: 4000,
   step: 0,
 }
+const incrementAmountCosTopNumberAnimation = new CounterAnimator();
 
 const turnoverNumber = document.getElementById("turnover-number");
 let incrementAmountTurnOverNumber = {
@@ -323,6 +325,7 @@ let incrementAmountTurnOverNumber = {
   acumulate: 26,
   step: 0,
 }
+const incrementAmountturnoverNumberAnimation = new CounterAnimator();
 
 // navBar effect to - top
 const navBar = document.getElementsByTagName('nav'); 
@@ -414,30 +417,59 @@ window.addEventListener('scroll', (e) => {
 
   if(peopleNumber.getBoundingClientRect().top <= 500 && incrementAmountPeopleNumber.step < 2){
     const text={prev: '', next: '%'}
-    const ejecute = incrementCounter(peopleNumber, incrementAmountPeopleNumber.counterValue, incrementAmountPeopleNumber.targetValue, 1, text);
-    if(!ejecute){
+    if(!incrementAmountPeopleNumberAnimation.animationInProgress){
+      incrementAmountPeopleNumberAnimation.play(
+        peopleNumber, 
+        incrementAmountPeopleNumber.counterValue, 
+        incrementAmountPeopleNumber.targetValue, 
+        1, 
+        text
+      )  
       incrementAmountPeopleNumber.step += 1;
       incrementAmountPeopleNumber.counterValue+= incrementAmountPeopleNumber.targetValue;
       incrementAmountPeopleNumber.targetValue+= incrementAmountPeopleNumber.targetValue;  
     }
   }
-  if(costTopNumber.getBoundingClientRect().top <= 600 && incrementAmountCostNumber.step < 3){
-    const ejecute = incrementCounter(costTopNumber, incrementAmountCostNumber.counterValue, incrementAmountCostNumber.targetValue, 150);
-    if(!ejecute){
+
+  if(costTopNumber.getBoundingClientRect().top <= 800 && incrementAmountCostNumber.step < 3){
+    if(!incrementAmountCosTopNumberAnimation.animationInProgress){
+      incrementAmountCosTopNumberAnimation.play(
+        costTopNumber, 
+        incrementAmountCostNumber.counterValue, 
+        incrementAmountCostNumber.targetValue, 
+        200, 
+      )  
       incrementAmountCostNumber.step += 1;
       incrementAmountCostNumber.counterValue+= incrementAmountCostNumber.acumulate;
       incrementAmountCostNumber.targetValue+= incrementAmountCostNumber.acumulate;  
     }
   }
-  if(turnoverNumber.getBoundingClientRect().top <= 700 && incrementAmountTurnOverNumber.step < 3){
+
+  if(turnoverNumber.getBoundingClientRect().top <= 800 && incrementAmountTurnOverNumber.step < 3){
     const text={prev: '', next: '%'}
-    const ejecute = incrementCounter(turnoverNumber, incrementAmountTurnOverNumber.counterValue, incrementAmountTurnOverNumber.targetValue, 1, text);
-    if(!ejecute){
+    if(!incrementAmountturnoverNumberAnimation.animationInProgress){
+      incrementAmountturnoverNumberAnimation.play(
+        turnoverNumber, 
+        incrementAmountTurnOverNumber.counterValue, 
+        incrementAmountTurnOverNumber.targetValue, 
+        1,
+        text 
+      )  
       incrementAmountTurnOverNumber.step += 1;
       incrementAmountTurnOverNumber.counterValue+= incrementAmountTurnOverNumber.acumulate;
       incrementAmountTurnOverNumber.targetValue+= incrementAmountTurnOverNumber.acumulate;  
     }
   }
+
+  // if(turnoverNumber.getBoundingClientRect().top <= 700 && incrementAmountTurnOverNumber.step < 3){
+  //   const text={prev: '', next: '%'}
+  //   const ejecute = incrementCounter(turnoverNumber, incrementAmountTurnOverNumber.counterValue, incrementAmountTurnOverNumber.targetValue, 1, text);
+  //   if(!ejecute){
+  //     incrementAmountTurnOverNumber.step += 1;
+  //     incrementAmountTurnOverNumber.counterValue+= incrementAmountTurnOverNumber.acumulate;
+  //     incrementAmountTurnOverNumber.targetValue+= incrementAmountTurnOverNumber.acumulate;  
+  //   }
+  // }
   const bannerContentToTop = bannerContent.getBoundingClientRect().top; 
   if(bannerContentToTop <= 200 && direction == 'down'){
     navBar[0].classList.add('nav-to-top');

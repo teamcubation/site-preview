@@ -54,34 +54,40 @@ class CarouselAnimator {
     }
   }
 
-let isCounterAnimating = false;
-
-const incrementCounter = (element, counterValue, targetValue, incrementAmount, text) => {
-  if (isCounterAnimating) {
-    return true;
+class CounterAnimator {
+  constructor() {
+    this.animationInProgress = false;
   }
-  isCounterAnimating = true;
 
-  const delay = 20;
-  const divisor = Math.ceil(targetValue / incrementAmount);
-  let currentNumber = counterValue;
-
-  const increment = () => {
-    currentNumber += incrementAmount;
-    if (currentNumber > targetValue) {
-      currentNumber = targetValue;
+  play(element, counterValue, targetValue, incrementAmount, text) {
+    
+    if (this.animationInProgress) {
+      return true;
     }
-    element.textContent = `${text?.prev ?? ''} ${currentNumber.toLocaleString()}${text?.next ?? ''}`;
 
-    if (currentNumber < targetValue) {
-      setTimeout(increment, delay);
-    } else {
-      isCounterAnimating = false;
-    }
-  };
+    this.animationInProgress = true;
 
-  increment();
-};
+    const delay = 20;
+    const divisor = Math.ceil(targetValue / incrementAmount);
+    let currentNumber = counterValue;
+
+    const increment = () => {
+      currentNumber += incrementAmount;
+      if (currentNumber > targetValue) {
+        currentNumber = targetValue;
+      }
+      element.textContent = `${text?.prev ?? ''} ${currentNumber.toLocaleString()}${text?.next ?? ''}`;
+
+      if (currentNumber < targetValue) {
+        setTimeout(increment, delay);
+      } else {
+        this.animationInProgress = false;
+      }
+    };
+
+    increment();
+  }
+}
   
-export { CarouselAnimator, incrementCounter};
+export { CarouselAnimator, CounterAnimator};
   
