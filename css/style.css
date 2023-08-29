@@ -177,6 +177,7 @@ ul{
 	position: relative;
 	width: 100%;
 }
+
 .container-content{
 	position: relative;
 	display: flex;
@@ -189,6 +190,7 @@ ul{
 	margin: 0 auto;
 
 }
+
 .grid-row{
 	max-width: 100%;
 	display: flex;
@@ -1216,10 +1218,15 @@ nav{
 	flex-wrap: wrap;
 	max-width: 1440px ;	
 	padding: var(--container-padding);
-	padding-top: 7em;
-	padding-bottom: 5em;
+	padding-top: 5em;
+	padding-bottom: 0em;
 	margin: 0 auto;
 	justify-content: center;
+}
+
+.footer-navigate{
+	display: flex;
+	width: 100%;
 }
 
 #copyright{
@@ -1232,7 +1239,7 @@ nav{
 	display: flex;
 	flex-direction: column;
 	text-align: left;
-	width: 230px;
+	max-width: 230px;
 }
 
 #footer-logo > img{
@@ -2029,19 +2036,31 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 	#results-slide-desktop{
 		display: none;
 	}
-	
+	.carousel-button{
+		top: 0;
+	}
+
+	.results-card{
+		width: 70%;
+		margin: 0 15%;
+	}
+
+
 }
 
 @media only screen and (max-width: 574px) {
 	h3{
 		font-size: calc(0.8em + 3vw);;
 	}
+
 	.option-tc{
 		font-size: 1.3em;
 	}
+
 	input, textarea, select {
 		font-size: 1.4em;
 	}
+
 	a{
 		font-size: 1.4em;
 	}
@@ -2104,9 +2123,11 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		margin-top: 0;
 		border-radius: 0;
 	}
+
 	#problem-layout{
 		min-height: 80vh;
 	}
+
 	#problem-content {
 		align-items: start;
 		text-align: left;
@@ -2226,34 +2247,39 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 	.card-member{
 		margin: 5% 5%;
 	}
-
+	
 	.results-item-scroll {
 		flex: 0 0 90vw;
 	}
+
 	.carousel-boos-container{
 		width: 100vw;
 	}
+
 	.carousel-item{
 		min-height: 5em;
 	}
-	/* .carousel-control-next{
-		height: 50%;
-	}
-	.carousel-control-prev{
-		top: -50%;
-	} */
+
     #problem-slide > .carousel-control-next,
     #problem-slide > .carousel-control-prev{
 		display: none;
 	}
-	#footer-content {
+
+	/* #footer-content {
 		padding: 4em;
+	} */
+
+	.footer-navigate{
+		flex-direction: column;
+		gap: 2em;
 	}
+
 	#squad-description-layout {
 		margin: 0 2em;
 		padding: 4em;
 		margin-bottom: 5%;
 	}
+
 	#form-container{
 		height: 80vh;
 		width: 90vw;
