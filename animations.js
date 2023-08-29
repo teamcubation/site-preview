@@ -54,21 +54,34 @@ class CarouselAnimator {
     }
   }
 
+let isCounterAnimating = false;
+
 const incrementCounter = (element, counterValue, targetValue, incrementAmount, text) => {
+  if (isCounterAnimating) {
+    return true;
+  }
+  isCounterAnimating = true;
+
   const delay = 20;
   const divisor = Math.ceil(targetValue / incrementAmount);
   let currentNumber = counterValue;
 
-  for (let i = 1; i <= divisor; i++) {
-    setTimeout(() => {
-      currentNumber += incrementAmount;
-      if (currentNumber > targetValue) {
-        currentNumber = targetValue;
-      }
-      element.textContent = `${text?.prev ?? ''} ${currentNumber.toLocaleString()}${text?.next ?? ''}`;
-    }, i * delay);
-  }
-}
+  const increment = () => {
+    currentNumber += incrementAmount;
+    if (currentNumber > targetValue) {
+      currentNumber = targetValue;
+    }
+    element.textContent = `${text?.prev ?? ''} ${currentNumber.toLocaleString()}${text?.next ?? ''}`;
+
+    if (currentNumber < targetValue) {
+      setTimeout(increment, delay);
+    } else {
+      isCounterAnimating = false;
+    }
+  };
+
+  increment();
+};
   
 export { CarouselAnimator, incrementCounter};
   

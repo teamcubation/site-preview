@@ -302,27 +302,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // incrementCounter
 const peopleNumber = document.getElementById("people-number");
-let incrementAmountPeopleNumber = false;
-// const costFromNumber = document.getElementById("cost-from-number");
-let incrementAmountCostFromNumber = false;
+let incrementAmountPeopleNumber = {
+  counterValue: 0,
+  targetValue: 22,
+  step: 0,
+}
+
 const costTopNumber = document.getElementById("cost-to-number");
+let incrementAmountCostNumber = {
+  counterValue: 0,
+  targetValue: 4000,
+  acumulate: 4000,
+  step: 0,
+}
+
 const turnoverNumber = document.getElementById("turnover-number");
-let incrementAmountTurnoverNumber = false;
+let incrementAmountTurnOverNumber = {
+  counterValue: 0,
+  targetValue: 26,
+  acumulate: 26,
+  step: 0,
+}
+
+// navBar effect to - top
+const navBar = document.getElementsByTagName('nav'); 
+
 
 // carousel animation
-const bannerNav = document.getElementById("banner-layout");
+
+// const bannerNav = document.getElementById("banner-layout");
 const bannerContent = document.getElementById("banner-content");
-const partners = document.getElementById("partners");
+
+// const partners = document.getElementById("partners");
 const proposal = document.getElementById("proposal");
 
 // problem
-const noMoreDevs = document.getElementById('problem');
-const noMoreDevsPositionHeight = noMoreDevs.offsetTop;
-const carouselNoMoreDevs = document.getElementById("problem-carousel");
+// const noMoreDevs = document.getElementById('problem');
+// const noMoreDevsPositionHeight = noMoreDevs.offsetTop;
+// const carouselNoMoreDevs = document.getElementById("problem-carousel");
 // const noMoreDevsCarouselItemWidth = document.querySelector(".problem-item-scroll").scrollWidth;
 
 // process
-const howDo = document.getElementById('process');
+// const howDo = document.getElementById('process');
 const howDoCarousel = document.getElementById("process-carousel");
 const howDoCarouselItemWidth = document.querySelector(".process-item-scroll").scrollWidth;
 
@@ -388,78 +409,97 @@ window.addEventListener("click", function (e) {
 });
 
 window.addEventListener('scroll', (e) => {
-  // if(screen.width > 768){
-      if(peopleNumber.getBoundingClientRect().top <= 500 && !incrementAmountPeopleNumber){
-        incrementCounter(peopleNumber, 0, 20000, 250);
-        incrementAmountPeopleNumber = true;
-      }
-      if(turnoverNumber.getBoundingClientRect().top <= 500 && !incrementAmountTurnoverNumber){
-        const text={prev: '', next: '%'}
-        incrementCounter(turnoverNumber, 0, 78, 1, text);
-        incrementAmountTurnoverNumber = true;
-      }
-      if(costTopNumber.getBoundingClientRect().top <= 500 && !incrementAmountCostFromNumber){
-        // incrementCounter(costFromNumber, 0, 10000, 125);
-        const text={prev: '', next: 'K'}
-        incrementCounter(costTopNumber, 0, 14, 1, text);
-        incrementAmountCostFromNumber = true;
-      }
-      // if(window.scrollY < 500){
-      //   // noMoreDevsAnimation.animate('reverse');
-      //   // howDoAnimation.animate('reverse');
-      //   resultsAnimation.animate('reverse');
-      // }
-      
-      const currentPositionScroll = window.scrollY;
-      // const proposalToTop = proposal.getBoundingClientRect();
-      // const noMoreDevsToTop = noMoreDevs.getBoundingClientRect();
-      // const howDoToTop = howDo.getBoundingClientRect();
-      const resultsToTop = results.getBoundingClientRect();
-      const direction = scrollDirection(lastScrollTop, currentPositionScroll);
-      
-      // effect fix cards at top
-      // if(proposalToTop.top <= 100 && direction == 'down'){
-      //   bannerNav.classList.add('fixed-scroll-position');
-      //   proposal.classList.add('sticky-scroll-position');
-      //   bannerContent.classList.add('display-none');
-      //   partners.classList.add('display-none');
-      // }
+  const currentPositionScroll = window.scrollY;
+  const direction = scrollDirection(lastScrollTop, currentPositionScroll);
 
-    if(resultsToTop.top <= 100  && direction === 'down'){
-      // results.classList.add('sticky-scroll-position');
-      // if(resultsAnimation.loopCarousel < 2){
-      //   resultsAnimation.animate('play');
-      // };
-    };
+  if(peopleNumber.getBoundingClientRect().top <= 500 && incrementAmountPeopleNumber.step < 2){
+    const text={prev: '', next: '%'}
+    const ejecute = incrementCounter(peopleNumber, incrementAmountPeopleNumber.counterValue, incrementAmountPeopleNumber.targetValue, 1, text);
+    if(!ejecute){
+      incrementAmountPeopleNumber.step += 1;
+      incrementAmountPeopleNumber.counterValue+= incrementAmountPeopleNumber.targetValue;
+      incrementAmountPeopleNumber.targetValue+= incrementAmountPeopleNumber.targetValue;  
+    }
+  }
+  if(costTopNumber.getBoundingClientRect().top <= 600 && incrementAmountCostNumber.step < 3){
+    const ejecute = incrementCounter(costTopNumber, incrementAmountCostNumber.counterValue, incrementAmountCostNumber.targetValue, 150);
+    if(!ejecute){
+      incrementAmountCostNumber.step += 1;
+      incrementAmountCostNumber.counterValue+= incrementAmountCostNumber.acumulate;
+      incrementAmountCostNumber.targetValue+= incrementAmountCostNumber.acumulate;  
+    }
+  }
+  if(turnoverNumber.getBoundingClientRect().top <= 700 && incrementAmountTurnOverNumber.step < 3){
+    const text={prev: '', next: '%'}
+    const ejecute = incrementCounter(turnoverNumber, incrementAmountTurnOverNumber.counterValue, incrementAmountTurnOverNumber.targetValue, 1, text);
+    if(!ejecute){
+      incrementAmountTurnOverNumber.step += 1;
+      incrementAmountTurnOverNumber.counterValue+= incrementAmountTurnOverNumber.acumulate;
+      incrementAmountTurnOverNumber.targetValue+= incrementAmountTurnOverNumber.acumulate;  
+    }
+  }
+  const bannerContentToTop = bannerContent.getBoundingClientRect().top; 
+  if(bannerContentToTop <= 200 && direction == 'down'){
+    navBar[0].classList.add('nav-to-top');
+  }else{
+    navBar[0].classList.remove('nav-to-top');
+  }
+  // if(window.scrollY < 500){
+  //   // noMoreDevsAnimation.animate('reverse');
+  //   // howDoAnimation.animate('reverse');
+  //   resultsAnimation.animate('reverse');
+  // }
+  
+  // const proposalToTop = proposal.getBoundingClientRect();
+  // const noMoreDevsToTop = noMoreDevs.getBoundingClientRect();
+  // const howDoToTop = howDo.getBoundingClientRect();
+  // const resultsToTop = results.getBoundingClientRect();
+  
+  
+  
+  // effect fix cards at top
+  // if(proposalToTop.top <= 100 && direction == 'down'){
+  //   bannerNav.classList.add('fixed-scroll-position');
+  //   proposal.classList.add('sticky-scroll-position');
+  //   bannerContent.classList.add('display-none');
+  //   partners.classList.add('display-none');
+  // }
 
-    // if(howDoToTop.top <= 0 && !howDoAnimation.finished){
-    //   howDo.classList.add('sticky-scroll-position');
-    //   if(howDoAnimation.loopCarousel < 2){
-    //     howDoAnimation.animate('play');
+  // if(resultsToTop.top <= 100  && direction === 'down'){
+  //   results.classList.add('sticky-scroll-position');
+  //   if(resultsAnimation.loopCarousel < 2){
+  //     resultsAnimation.animate('play');
+  //   };
+  // };
+
+  // if(howDoToTop.top <= 0 && !howDoAnimation.finished){
+  //   howDo.classList.add('sticky-scroll-position');
+  //   if(howDoAnimation.loopCarousel < 2){
+  //     howDoAnimation.animate('play');
+  //   }
+  // }
+
+  // no more devs
+    // if(direction === 'down' && noMoreDevsToTop.top <= 0 && !noMoreDevsAnimation.finished){
+    //   noMoreDevs.classList.add('sticky-scroll-position');
+    //   if(noMoreDevsAnimation.loopCarousel < 4){
+    //     noMoreDevsAnimation.animate('play');
     //   }
     // }
 
-    // no more devs
-      // if(direction === 'down' && noMoreDevsToTop.top <= 0 && !noMoreDevsAnimation.finished){
-      //   noMoreDevs.classList.add('sticky-scroll-position');
-      //   if(noMoreDevsAnimation.loopCarousel < 4){
-      //     noMoreDevsAnimation.animate('play');
-      //   }
-      // }
 
-
-    // }
-    // if(noMoreDevsAnimation.finished && currentPositionScroll >= noMoreDevsPositionHeight  && direction === 'down'){
-    //   // proposal.classList.remove('sticky-scroll-position');
-    //   noMoreDevs.classList.remove('sticky-scroll-position');
-    //   bannerNav.classList.remove('fixed-scroll-position');
-    // }
-    // if(howDoAnimation.finished  && direction === 'down'){
-    //   howDo.classList.remove('sticky-scroll-position')
-    // }
-    // if(resultsAnimation.finished && direction === 'down'){
-    //   results.classList.remove('sticky-scroll-position')
-    // }
+  // }
+  // if(noMoreDevsAnimation.finished && currentPositionScroll >= noMoreDevsPositionHeight  && direction === 'down'){
+  //   // proposal.classList.remove('sticky-scroll-position');
+  //   noMoreDevs.classList.remove('sticky-scroll-position');
+  //   bannerNav.classList.remove('fixed-scroll-position');
+  // }
+  // if(howDoAnimation.finished  && direction === 'down'){
+  //   howDo.classList.remove('sticky-scroll-position')
+  // }
+  // if(resultsAnimation.finished && direction === 'down'){
+  //   results.classList.remove('sticky-scroll-position')
+  // }
   // lastScrollTop = currentPositionScroll;
 });
 
@@ -663,18 +703,28 @@ dropdowns.forEach(dropdown => {
 }); 
 
 // restore in top sin scrollTop
-// history.scrollRestoration = "manual";
-// $(window).on('beforeunload', function(){
-//   $(window).scrollTop(0);
-// });
+history.scrollRestoration = "manual";
+$(window).on('beforeunload', function(){
+  $(window).scrollTop(0);
+});
 
-const video = document.getElementById("video-cases")
+// video 
+const video = document.getElementById("video-cases");
+let initTime = 9 
+video.currentTime = initTime;
+
+video.addEventListener("seeked", function() {
+  if(video.currentTime != 9){initTime = video.currentTime}
+});
+
 video.addEventListener('ended', function() {
+  video.currentTime = 9;
   $(".video-overlay").css("display", "block");
   $("#link-button-video-container").css("display", "block");
 });
 
 video.addEventListener('play', function() {
+ if( video.currentTime == 9) video.currentTime = 0;
   $(".video-overlay").css("display", "none");
   $("#link-button-video-container").css("display", "none");
 });

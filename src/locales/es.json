@@ -30,9 +30,8 @@
     
     "people": {
       "title": {
-        "centralText": "Vacantes IT",
-        "text": " quedaron sin cubrir el último año."
-      },
+        "centralText": "de las vacantes IT  no logran cubrirse en LATAM por año."
+     },
       "text": {
         "title": "En lugar de enfocarnos en la escasez de seniors, desarrollamos el potencial de los nuevos talentos:",
         "leyend": "así, ayudamos a nuestros clientes a contratar talentos que antes no tenían en cuenta: Diversos, comprometidos, y con ganas de aportar a la compañía que les de su primera oportunidad."
@@ -40,10 +39,9 @@
     },
     "cost": {
       "title":{
-        "centralText":"hasta US$", 
+        "centralText":"US$", 
         "text":{
-          "title": "Son los costos",
-          "leyend": "relacionados a cada vacante sin cubrir."
+          "title": "en promedio, son los costos relacionados a cada vacante sin cubrir."
         }
       },
       "text": {
@@ -53,8 +51,7 @@
     },
     "turnover": {
       "title":{
-        "centralText": "de los CTOs",
-        "text": "consideran que la rotación está afectando la productividad de su equipo."
+        "centralText": "de los CTOs afirman que la rotación está perjudicando al equipo."
       },
       "text": {
         "title": "Desarrollamos experiencia laboral real:",
