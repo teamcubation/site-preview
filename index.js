@@ -173,21 +173,15 @@ const clearForm = () => {
     .height('40px');
 };
 
-$(".language-select").hover(
-  function () {
-    if (screen.width > 1024) {
-      $(`.language-options li`).each(function () {
-        if ($(this).data("lang") === lang) {
-          $(this).find("a").addClass("a-disbled");
-        }
-      });
-      $(`.language-options`).toggle();
-    }
-  },
-  function () {
-    $(`.language-options`).toggle();
-  }
-);
+$("#language-select").on("click", function () {
+    // if (screen.width > 1024) {
+    $(`.language-options li`).each(function () {
+      if ($(this).data("lang") === lang) {
+        $(this).find("a").addClass("hidden");
+      }
+    });
+    $('#language-select .collapsed-content').slideToggle('slow');
+});
 
 $(".language-select-mobile").on("click", function () {
   $(`.language-options li`).each(function () {
@@ -198,8 +192,8 @@ $(".language-select-mobile").on("click", function () {
   $(`.language-options`).toggle();
 });
 
-// input select //
 
+// input select //
 $(".open-dropdown-select").on("click", function () {
   if ($(".option-tc").is(":visible")) {
     $(".list-options-tc").slideUp();
@@ -307,7 +301,7 @@ let incrementAmountPeopleNumber = {
   targetValue: 22,
   step: 0,
 }
-const incrementAmountPeopleNumberAnimation = new CounterAnimator();
+const incrementPeopleAnimation = new CounterAnimator();
 
 const costTopNumber = document.getElementById("cost-to-number");
 let incrementAmountCostNumber = {
@@ -316,7 +310,7 @@ let incrementAmountCostNumber = {
   acumulate: 4000,
   step: 0,
 }
-const incrementAmountCosTopNumberAnimation = new CounterAnimator();
+const incrementCostAnimation = new CounterAnimator();
 
 const turnoverNumber = document.getElementById("turnover-number");
 let incrementAmountTurnOverNumber = {
@@ -325,7 +319,7 @@ let incrementAmountTurnOverNumber = {
   acumulate: 26,
   step: 0,
 }
-const incrementAmountturnoverNumberAnimation = new CounterAnimator();
+const incrementTurnOverAnimation = new CounterAnimator();
 
 // navBar effect to - top
 const navBar = document.getElementsByTagName('nav'); 
@@ -369,7 +363,6 @@ const scrollDirection = (prevPosition, currentPosition) => {
 
 $(".process-prev").on("click", function(){
   howDoAnimation.animate('play');
-  console.log('process prev')
   if(howDoAnimation.loopCarousel >= 0){
     $(".process-next").removeClass('hidden')
   }else{
@@ -417,8 +410,8 @@ window.addEventListener('scroll', (e) => {
 
   if(peopleNumber.getBoundingClientRect().top <= 500 && incrementAmountPeopleNumber.step < 2){
     const text={prev: '', next: '%'}
-    if(!incrementAmountPeopleNumberAnimation.animationInProgress){
-      incrementAmountPeopleNumberAnimation.play(
+    if(!incrementPeopleAnimation.animationInProgress){
+      incrementPeopleAnimation.play(
         peopleNumber, 
         incrementAmountPeopleNumber.counterValue, 
         incrementAmountPeopleNumber.targetValue, 
@@ -432,8 +425,8 @@ window.addEventListener('scroll', (e) => {
   }
 
   if(costTopNumber.getBoundingClientRect().top <= 800 && incrementAmountCostNumber.step < 3){
-    if(!incrementAmountCosTopNumberAnimation.animationInProgress){
-      incrementAmountCosTopNumberAnimation.play(
+    if(!incrementCostAnimation.animationInProgress){
+      incrementCostAnimation.play(
         costTopNumber, 
         incrementAmountCostNumber.counterValue, 
         incrementAmountCostNumber.targetValue, 
@@ -447,8 +440,8 @@ window.addEventListener('scroll', (e) => {
 
   if(turnoverNumber.getBoundingClientRect().top <= 800 && incrementAmountTurnOverNumber.step < 3){
     const text={prev: '', next: '%'}
-    if(!incrementAmountturnoverNumberAnimation.animationInProgress){
-      incrementAmountturnoverNumberAnimation.play(
+    if(!incrementTurnOverAnimation.animationInProgress){
+      incrementTurnOverAnimation.play(
         turnoverNumber, 
         incrementAmountTurnOverNumber.counterValue, 
         incrementAmountTurnOverNumber.targetValue, 
@@ -461,21 +454,13 @@ window.addEventListener('scroll', (e) => {
     }
   }
 
-  // if(turnoverNumber.getBoundingClientRect().top <= 700 && incrementAmountTurnOverNumber.step < 3){
-  //   const text={prev: '', next: '%'}
-  //   const ejecute = incrementCounter(turnoverNumber, incrementAmountTurnOverNumber.counterValue, incrementAmountTurnOverNumber.targetValue, 1, text);
-  //   if(!ejecute){
-  //     incrementAmountTurnOverNumber.step += 1;
-  //     incrementAmountTurnOverNumber.counterValue+= incrementAmountTurnOverNumber.acumulate;
-  //     incrementAmountTurnOverNumber.targetValue+= incrementAmountTurnOverNumber.acumulate;  
-  //   }
-  // }
   const bannerContentToTop = bannerContent.getBoundingClientRect().top; 
   if(bannerContentToTop <= 200 && direction == 'down'){
     navBar[0].classList.add('nav-to-top');
   }else{
     navBar[0].classList.remove('nav-to-top');
   }
+
   // if(window.scrollY < 500){
   //   // noMoreDevsAnimation.animate('reverse');
   //   // howDoAnimation.animate('reverse');
@@ -519,7 +504,6 @@ window.addEventListener('scroll', (e) => {
     //   }
     // }
 
-
   // }
   // if(noMoreDevsAnimation.finished && currentPositionScroll >= noMoreDevsPositionHeight  && direction === 'down'){
   //   // proposal.classList.remove('sticky-scroll-position');
@@ -547,11 +531,10 @@ $(".navigate-home").on("click", function(){
 
 $(".link-button").on("click", function (e) {
   e.preventDefault();
-  var section = $(this).data('navigate');
+  const section = $(this).data('navigate');
   location.href = `#${section}`;
   closeMenu();
 });
-
 
 const openMenu = () => {
   $("#menu").removeClass('hidden');
@@ -559,6 +542,10 @@ const openMenu = () => {
   $("#footer-menu").removeClass('hidden');
   $('#logo').addClass('hidden');
   $('#logo-orange').removeClass('hidden');
+  $('#language-select').addClass('language-menu-open');
+  $('#language-title').addClass('language-menu-open');
+  $('#language-options').addClass('language-menu-open');  
+
   if(screen.width < 574){
     $("#navbar-content").addClass('open-menu-mobile');
   }
@@ -575,6 +562,9 @@ const closeMenu = () => {
   }
   $('#logo').removeClass('hidden');
   $('#logo-orange').addClass('hidden');
+  $('#language-select').removeClass('language-menu-open');
+  $('#language-title').removeClass('language-menu-open');
+  $('#language-options').removeClass('language-menu-open');  
 };
 
 const handleControlMenu = (action) => {
@@ -596,18 +586,20 @@ window.addEventListener('scroll', (e) => {
   const currentPositionScroll = window.scrollY;
   const direction = scrollDirection(lastScrollTop, currentPositionScroll);
   const isOpen = $(".open-menu").is(":visible");
-
+  $('#language-select .collapsed-content').slideUp('slow');
+  
   if(currentPositionScroll > 600){
     $('#logo').addClass('navigate-home');
   }
-  else{
-    $('#logo').removeClass('navigate-home');
-  }
+
   if(currentPositionScroll < proposalToTop){
     $('#navbar-content').removeClass('display-nav');
     if(!isOpen){
       $('#logo').removeClass('hidden');
       $('#logo-orange').addClass('hidden');
+      $('#language-select').removeClass('language-menu-open');
+      $('#language-title').removeClass('language-menu-open');
+      $('#language-options').removeClass('language-menu-open');  
     }
   }
   if(currentPositionScroll > proposalToTop && direction == "down"){
@@ -619,6 +611,9 @@ window.addEventListener('scroll', (e) => {
     $('#navbar-content').addClass('display-nav');
     $('#logo').addClass('hidden');
     $('#logo-orange').removeClass('hidden');
+    $('#language-select').addClass('language-menu-open');
+    $('#language-title').addClass('language-menu-open');
+    $('#language-options').addClass('language-menu-open');  
   }
   lastScrollTop = currentPositionScroll <= 0 ? 0 : currentPositionScroll;
 });

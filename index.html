@@ -41,21 +41,26 @@
             <img id="logo-orange" class="navigate-home hidden" src="media/logotipo-orange.svg" alt="Teamcubation">
           </div>
           <div class="navigate">
-            <!-- <div class="language-select">
-              <div class="language-tittle">
-                <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
-                <p data-t>lang.textButton</p>
+            <div style="position: relative;">
+              <div id="language-select" class="language-select">
+                <div id="language-title" class="language-title ">
+                  <img id="globe-white-icon" src="media/globe_icon.png" alt="redirect_lang">
+                  <img id="globe-orange-icon" class="hidden" src="media/globe-orange-icon.png" alt="redirect_lang">
+                  <p>Español</p>
+                  <img src="media/arrow-white.png" alt="arrow">
+                  <img src="media/arrow-orange.png" class="hidden" alt="arrow">
+                </div>
+                <ul id="language-options" class="language-options collapsed-content">
+                  <li data-lang="es">
+                    <a href="http://localhost:5503/en/index.html">Español</a>
+                  </li>
+                  <li data-lang="en">
+                    <a href="http://localhost:5503/en/index.html">Inglés</a>
+                  </li>
+                </ul>
               </div>
-              <ul class="language-options">
-                <li data-lang="es">
-                  <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
-                </li>
-                <li data-lang="en">
-                  <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
-                </li>
-              </ul>
-            </div> -->
-            <button class="button outlined contact-button">Contáctanos</button>
+            </div>
+            <button class="button outlined contact-button" style="margin-left: 1em;">Contáctanos</button>
             <button id="menu-button" class="menu-button">
               <i class="icon ion-md-menu"></i>
             </button>      
@@ -111,7 +116,7 @@
   <!-- 
       <div style="display: flex">
         <div id="selectLangMobile" class="language-select-mobile">
-          <div class="language-tittle">
+          <div class="language-title">
             <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
             <p data-t>lang.textButton</p>
           </div>

@@ -3,8 +3,8 @@
   "description": "Teamcubation es el engranaje faltante entre el sistema educativo y laboral. Solucionamos la escasez de talento en la industria digital incubando y entrenando equipos de desarrollo para transformar juniors en recursos con experiencia",
   "lang": {
     "text": "es",
-    "textButton": "Lenguaje",
-    "iconButton": "media/worl_icon.svg",
+    "textButton": "Español",
+    "iconButton": "media/globe_icon.png",
     "spanish": "Español",
     "english": "Inglés"
   },
@@ -19,6 +19,7 @@
       "joinUs": "¡Unite!"
   },
   "banner":{
+    "url-local" : "http://localhost:5503/en/index.html",
     "url": "https://teamcubation.com/en",
     "centralText" :{
       "lineOne": "Desarrolladores de",
@@ -82,7 +83,6 @@
       "juniors": {
         "lineOne": "Con ganas",
         "lineTwo": "de aprender"
-
       },
       "software": {
         "lineOne": "que necesitas"
