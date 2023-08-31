@@ -6,7 +6,7 @@
   <meta name="description" content="Teamcubation is the missing link between the educational and work systems. We address the talent shortage in the digital industry by incubating and training development teams to transform juniors into experienced resources.">
   <meta property="og:title" content="Teamcubation - The First Software Developer Training Company">
   <meta property="og:description" content="Teamcubation is the missing link between the educational and work systems. We address the talent shortage in the digital industry by incubating and training development teams to transform juniors into experienced resources.">
-  <meta property="og:image" content="https://teamcubation.com/media/logo-og.png">
+  <meta property="og:image" content="https://teamcubation.com/media/logo.png">
   <title>Teamcubation - The First Software Developer Training Company</title>
   <link rel="icon" href="../media/favicon.ico">
   <link rel="apple-touch-icon" href="../logo192.png">
@@ -30,7 +30,7 @@
 
 <body>
   <!-- logo on top for google -->
-  <img style="display: none" src="../media/logotipo.svg" alt="Teamcubation">
+  <img style="display: none" src="../media/logo.png" alt="Teamcubation">
 
   <nav>
     <div id="navbar">
@@ -46,16 +46,16 @@
                 <div id="language-title" class="language-title ">
                   <img id="globe-white-icon" src="../media/globe_icon.png" alt="redirect_lang">
                   <img id="globe-orange-icon" class="hidden" src="../media/globe-orange-icon.png" alt="redirect_lang">
-                  <p>Eglish</p>
+                  <p>English</p>
                   <img src="../media/arrow-white.png" alt="arrow">
                   <img src="../media/arrow-orange.png" class="hidden" alt="arrow">
                 </div>
                 <ul id="language-options" class="language-options collapsed-content">
                   <li data-lang="es">
-                    <a href="http://localhost:5503/index.html">Spanish</a>
+                    <a href="https://teamcubation.com/en">Spanish</a>
                   </li>
                   <li data-lang="en">
-                    <a href="http://localhost:5503/index.html">English</a>
+                    <a href="https://teamcubation.com/en">English</a>
                   </li>
                 </ul>
               </div>
@@ -74,7 +74,24 @@
             <div class="vertical-divider-menu"></div>
             <div class="vertical-divider-menu"></div>
             <div class="vertical-divider-menu" style="visibility: hidden;"></div>
-          </div>  
+          </div>
+          <div id="language-select-mobile" class="language-select">
+            <div id="language-title" class="language-title">
+              <img id="globe-white-icon" src="../media/globe_icon.png" alt="redirect_lang">
+              <img id="globe-orange-icon" class="hidden" src="../media/globe-orange-icon.png" alt="redirect_lang">
+              <p>English</p>
+              <img src="../media/arrow-white.png" alt="arrow">
+              <img src="../media/arrow-orange.png" class="hidden" alt="arrow">
+            </div>
+            <ul id="language-options-mobile" class="language-options collapsed-content">
+              <li data-lang="es">
+                <a href="http://localhost:5503/index.html">Spanish</a>
+              </li>
+              <li data-lang="en">
+                <a href="http://localhost:5503/index.html">English</a>
+              </li>
+            </ul>
+          </div>
           <div class="navigate-menu">
             <div data-navigate="proposal" class="link-button">
               <a id="proposal-link" class="proposal" href="#proposal">Proposal</a>
@@ -113,26 +130,6 @@
           </div>
         </div>
       </div>
-  <!-- 
-      <div style="display: flex">
-        <div id="selectLangMobile" class="language-select-mobile">
-          <div class="language-title">
-            <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
-            <p data-t>lang.textButton</p>
-          </div>
-          <ul class="language-options">
-            <li data-lang="es">
-              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
-            </li>
-            <li data-lang="en">
-              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
-            </li>
-          </ul>
-        </div>
-        <div class="btn-menu-mobile">
-          <i class="icon ion-md-menu"></i>
-        </div>
-      </div> -->
     </div>
   </nav>
 
@@ -143,8 +140,8 @@
     </div>
     <div id="banner-container">
       <div id="banner-content">
-        <h1 class="white">Experienced</h1>
-        <h1 class="white"> Developers</h1>
+        <h1 class="white">Experience</h1>
+        <h1 class="white"> developers</h1>
       </div>
       <div id="partners">
         <div class="logos">
@@ -169,10 +166,9 @@
               <div class="proposal-card bg-green purple">
                 <h1 id="people-number">0</h1>
                 <h4>of IT vacancies go unfilled in LATAM per year.</h4>
-                <!-- <p data-t>proposal.people.title.text</p> -->
               </div>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold md-text-card">Rather than focusing on senior shortages, we develop the potential of new talents:</p>
                 <p class="grey white">this way, we help our clients hire talents they previously overlooked: Diverse, committed, and eager to contribute to the company that gives them their first opportunity.</p>
@@ -180,7 +176,7 @@
             </div>
           </div>
           <div id="cost" class="d-flex justify-content-between align-items-center flex-wrap ">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold  md-text-card">We reduce opportunity costs:</p>
                 <p class="grey">through a constant flow of new collaborators, we ensure the production capacity your company needs to unlock new business opportunities.</p>
@@ -192,9 +188,6 @@
                   <h1 class="fw-bold d-inline" id="cost-to-number"> 0</h1><h4 class="d-inline" style="font-weight: bold">US$</h4>
                 </div>
                 <h4>on average, are the costs related to each unfilled vacancy.</h4>
-                <!-- <p data-t>proposal.cost.title.text.leyend</p> -->
-
-                <!-- <p data-t>proposal.cost.title.text</p> -->
               </div>
             </div>
           </div>
@@ -203,10 +196,9 @@
               <div class="proposal-card bg-orange white">
                 <h1 id="turnover-number">0</h1>
                 <h4>of CTOs claim turnover is harming the team.</h4>
-                <!-- <p data-t >proposal.turnover.title.text</p> -->
               </div>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold md-text-card">We develop real work experience:</p>
                 <p class="grey">the backlog projects that can't be prioritized due to lack of team are the perfect opportunity for our seniors to lead on-the-job training for your new devs, under your company's requirements and technologies.</p>
@@ -361,7 +353,7 @@
             </div>
           </div>
           <div id="cases" class="mb-1">
-            <h3 class="purple">We're making it happen</h3><br>
+            <h3 class="purple">We're making it happen</h3>
             <div id="video-container">
               <div class="video-overlay"></div>
               <div id="link-button-video-container">
@@ -378,19 +370,22 @@
     
     <section id="process">
       <div id="process-layout" class="layout">
+        <div class="button-carousel-containter">
+          <button class=" button carousel-central-button process-next disabled" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class=" button carousel-central-button process-prev" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+
         <div id="process-content">
-          <div class="text-center" style="margin-bottom: 2em">
+          <div class="text-center">
             <h3>How do we do it?</h3>
-          </div>  
+          </div> 
           <div class="carousel-section">
-            <button class="carousel-control-prev process-next hidden" type="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next process-prev" type="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
             <div id="process-carousel" class="carousel mt-2 mb-2">
               <div id="divider-process" class="divider">
                 <div class="divider-content"></div>
@@ -552,7 +547,7 @@
                       </div>
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">1. Through cognitive and behavioral tests, such as the Personal Development Analysis (PDA), we gain a clear insight into your collaborators' profiles to manage their talents, develop skills, and bring out their best version.</p>
+                          <p class="sm-text-card light-grey">Through cognitive and behavioral tests, such as the Personal Development Analysis (PDA), we gain a clear insight into your collaborators' profiles to manage their talents, develop skills, and bring out their best version.</p>
                         </div>
                       </div>
                       <img class="hidden" src="../media/pep/pep-5.png" alt>
@@ -589,16 +584,16 @@
       <div id="team-layout" class="layout">
         <div id="team-content">
           <div class="text-center orange">
-            <h2 class="fw-bold">THE TEAM</h2>
+            <h2 class="fw-bold">Our Team</h2>
           </div>
           <div class="d-flex flex-wrap mt-7 justify-content-center">
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/marianowechsler.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.mariano</p>
+                    <p class="card-team-text">I envision Teamcubation solving companies' huge problems and providing first job opportunities to thousands of people.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -613,13 +608,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/diegojolodenco.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.diego</p>
+                    <p class="card-team-text">I envision continuing to grow and scale with excellence.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -634,13 +629,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/agustinpina.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.agustin</p>
+                    <p class="card-team-text">I envision Teamcubation being recognized for democratizing access to work in the software industry.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -655,13 +650,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/tapicer.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.tapi</p>
+                    <p class="card-team-text">I envision Teamcubation setting the comprehensive standard for training and onboarding new talents in companies worldwide.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -676,13 +671,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/ezequielursztein.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.eze</p>
+                    <p class="card-team-text">I envision data, used transparently and collaboratively, being the innovation engine that allows us to raise the standard in talent integration worldwide.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -697,13 +692,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div id="ceo" class="container-img">
                   <img class="member-img" src="../media/team/mariaflorenciadiaz.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.flor</p>
+                    <p class="card-team-text">I envision an amazing place to work, where people always want to come back.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -718,13 +713,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="../media/team/pablorodriguez.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="../media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">team.pablo</p>
+                    <p class="card-team-text">I envision Teamcubation being an exemplary model of operational efficiency, strategic agility, and collaborative culture.</p>
                     <img class="member-quotes" src="../media/quote.png" alt>
                   </div>
                 </div>
@@ -813,11 +808,11 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-button" href="#results-slide-desktop" data-bs-slide="prev">
+              <div class="carousel-left-button" href="#results-slide-desktop" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
               </div>
-              <div class="carousel-button" href="#results-slide-desktop" data-bs-slide="next">
+              <div class="carousel-right-button" href="#results-slide-desktop" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
               </div>
@@ -886,11 +881,11 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-button" href="#results-slide-mobile" data-bs-slide="prev">
+              <div class="carousel-left-button" href="#results-slide-mobile" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
               </div>
-              <div class="carousel-button" href="#results-slide-mobile" data-bs-slide="next">
+              <div class="carousel-right-button" href="#results-slide-mobile" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
               </div>
@@ -1045,7 +1040,7 @@
                 <textarea name="message" class="message" rows="1" required placeholder="Leave us a message"></textarea>
               </div>
             </div>
-            <button type="submit" name="submit-contact" class="button submit-contact bg-white purple" style="float: right;">Enviar</button>
+            <button type="submit" name="submit-contact" class="button submit-contact bg-white purple" style="float: right;">Submit</button>
           </form>
         </div>
       </div>

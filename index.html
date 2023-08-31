@@ -6,7 +6,7 @@
   <meta name="description" content="Teamcubation es el engranaje faltante entre el sistema educativo y laboral. Solucionamos la escasez de talento en la industria digital incubando y entrenando equipos de desarrollo para transformar juniors en recursos con experiencia">
   <meta property="og:title" content="Teamcubation - La primera empresa de entrenamiento de software developers">
   <meta property="og:description" content="Teamcubation es el engranaje faltante entre el sistema educativo y laboral. Solucionamos la escasez de talento en la industria digital incubando y entrenando equipos de desarrollo para transformar juniors en recursos con experiencia">
-  <meta property="og:image" content="https://teamcubation.com/media/logo-og.png">
+  <meta property="og:image" content="https://teamcubation.com/media/logo.png">
   <title>Teamcubation - La primera empresa de entrenamiento de software developers</title>
   <link rel="icon" href="media/favicon.ico">
   <link rel="apple-touch-icon" href="logo192.png">
@@ -30,7 +30,7 @@
 
 <body>
   <!-- logo on top for google -->
-  <img style="display: none" src="media/logotipo.svg" alt="Teamcubation">
+  <img style="display: none" src="media/logo.png" alt="Teamcubation">
 
   <nav>
     <div id="navbar">
@@ -52,10 +52,10 @@
                 </div>
                 <ul id="language-options" class="language-options collapsed-content">
                   <li data-lang="es">
-                    <a href="http://localhost:5503/en/index.html">Español</a>
+                    <a href="https://teamcubation.com/en">Español</a>
                   </li>
                   <li data-lang="en">
-                    <a href="http://localhost:5503/en/index.html">Inglés</a>
+                    <a href="https://teamcubation.com/en">Inglés</a>
                   </li>
                 </ul>
               </div>
@@ -74,7 +74,24 @@
             <div class="vertical-divider-menu"></div>
             <div class="vertical-divider-menu"></div>
             <div class="vertical-divider-menu" style="visibility: hidden;"></div>
-          </div>  
+          </div>
+          <div id="language-select-mobile" class="language-select">
+            <div id="language-title" class="language-title">
+              <img id="globe-white-icon" src="media/globe_icon.png" alt="redirect_lang">
+              <img id="globe-orange-icon" class="hidden" src="media/globe-orange-icon.png" alt="redirect_lang">
+              <p>Español</p>
+              <img src="media/arrow-white.png" alt="arrow">
+              <img src="media/arrow-orange.png" class="hidden" alt="arrow">
+            </div>
+            <ul id="language-options-mobile" class="language-options collapsed-content">
+              <li data-lang="es">
+                <a href="http://localhost:5503/en/index.html">Español</a>
+              </li>
+              <li data-lang="en">
+                <a href="http://localhost:5503/en/index.html">Inglés</a>
+              </li>
+            </ul>
+          </div>
           <div class="navigate-menu">
             <div data-navigate="proposal" class="link-button">
               <a id="proposal-link" class="proposal" href="#proposal">Propuesta</a>
@@ -113,26 +130,6 @@
           </div>
         </div>
       </div>
-  <!-- 
-      <div style="display: flex">
-        <div id="selectLangMobile" class="language-select-mobile">
-          <div class="language-title">
-            <img class="flag" data-attr-t data-attr-t-interpolate src-t="{{lang.iconButton}}" alt="redirect_lang">
-            <p data-t>lang.textButton</p>
-          </div>
-          <ul class="language-options">
-            <li data-lang="es">
-              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
-            </li>
-            <li data-lang="en">
-              <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
-            </li>
-          </ul>
-        </div>
-        <div class="btn-menu-mobile">
-          <i class="icon ion-md-menu"></i>
-        </div>
-      </div> -->
     </div>
   </nav>
 
@@ -169,10 +166,9 @@
               <div class="proposal-card bg-green purple">
                 <h1 id="people-number">0</h1>
                 <h4>de las vacantes IT  no logran cubrirse en LATAM por año.</h4>
-                <!-- <p data-t>proposal.people.title.text</p> -->
               </div>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold md-text-card">En lugar de enfocarnos en la escasez de seniors, desarrollamos el potencial de los nuevos talentos:</p>
                 <p class="grey white">así, ayudamos a nuestros clientes a contratar talentos que antes no tenían en cuenta: Diversos, comprometidos, y con ganas de aportar a la compañía que les de su primera oportunidad.</p>
@@ -180,7 +176,7 @@
             </div>
           </div>
           <div id="cost" class="d-flex justify-content-between align-items-center flex-wrap ">
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold  md-text-card">Disminuimos el costo de oportunidad:</p>
                 <p class="grey">a través de un flujo constante de nuevos colaboradores, garantizamos la capacidad de producción que su compañía necesita para desbloquear nuevas oportunidades de negocio.</p>
@@ -192,9 +188,6 @@
                   <h1 class="fw-bold d-inline" id="cost-to-number"> 0</h1><h4 class="d-inline" style="font-weight: bold">US$</h4>
                 </div>
                 <h4>en promedio, son los costos relacionados a cada vacante sin cubrir.</h4>
-                <!-- <p data-t>proposal.cost.title.text.leyend</p> -->
-
-                <!-- <p data-t>proposal.cost.title.text</p> -->
               </div>
             </div>
           </div>
@@ -203,10 +196,9 @@
               <div class="proposal-card bg-orange white">
                 <h1 id="turnover-number">0</h1>
                 <h4>de los CTOs afirman que la rotación está perjudicando al equipo.</h4>
-                <!-- <p data-t >proposal.turnover.title.text</p> -->
               </div>
             </div>
-            <div class="col-12 col-md-5">
+            <div class="col-12 col-md-6">
               <div>
                 <p class="purple fw-bold md-text-card">Desarrollamos experiencia laboral real:</p>
                 <p class="grey">los proyectos en su backlog que no se logran priorizar por falta de equipo, son la oportunidad ideal para que nuestros seniors lideren el entrenamiento on-the-job de sus nuevos devs, bajo los requerimientos y tecnologías de su compañía.</p>
@@ -361,7 +353,7 @@
             </div>
           </div>
           <div id="cases" class="mb-1">
-            <h3 class="purple">Lo estamos haciendo</h3><br>
+            <h3 class="purple">Lo estamos haciendo</h3>
             <div id="video-container">
               <div class="video-overlay"></div>
               <div id="link-button-video-container">
@@ -378,19 +370,22 @@
     
     <section id="process">
       <div id="process-layout" class="layout">
+        <div class="button-carousel-containter">
+          <button class=" button carousel-central-button process-next disabled" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class=" button carousel-central-button process-prev" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+
         <div id="process-content">
-          <div class="text-center" style="margin-bottom: 2em">
+          <div class="text-center">
             <h3>¿Cómo lo hacemos?</h3>
-          </div>  
+          </div> 
           <div class="carousel-section">
-            <button class="carousel-control-prev process-next hidden" type="button" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next process-prev" type="button" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
             <div id="process-carousel" class="carousel mt-2 mb-2">
               <div id="divider-process" class="divider">
                 <div class="divider-content"></div>
@@ -552,7 +547,7 @@
                       </div>
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">1. A través de tests cognitivos y conductuales, tales como PDA (Personal Development Analysis), obtenemos una visión clara de los perfiles de sus colaboradores para gestionar su talento, desarrollar habilidades y obtener su mejor versión.</p>
+                          <p class="sm-text-card light-grey">A través de tests cognitivos y conductuales, tales como PDA (Personal Development Analysis), obtenemos una visión clara de los perfiles de sus colaboradores para gestionar su talento, desarrollar habilidades y obtener su mejor versión.</p>
                         </div>
                       </div>
                       <img class="hidden" src="media/pep/pep-5.png" alt>
@@ -592,13 +587,13 @@
             <h2 class="fw-bold">Nuestro Equipo</h2>
           </div>
           <div class="d-flex flex-wrap mt-7 justify-content-center">
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/marianowechsler.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text"> Imagino a Teamcubation resolviendo el problema gigante de las compañias y brindando oportunidades de primer empleo a miles de personas.</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -613,13 +608,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/diegojolodenco.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino seguir creciendo y escalando con excelencia</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -634,13 +629,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/agustinpina.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino que Teamcubation será reconocida por democratizar el acceso al trabajo en la industria del software.</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -655,13 +650,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/tapicer.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino que Teamcubation definirá el estándar integral para entrenar y hacer onboarding de nuevos talentos en empresas de todo el mundo.</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -676,13 +671,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/ezequielursztein.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino que los datos, utilizados de manera transparente y colaborativa, serán el motor de innovación que nos permitirá elevar el estándar en la integración de talentos en todo el mundo.</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -697,13 +692,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div id="ceo" class="container-img">
                   <img class="member-img" src="media/team/mariaflorenciadiaz.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino un lugar increible para trabajar, a donde la gente siempre quiera volver</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -718,13 +713,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center">
+            <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
                   <img class="member-img" src="media/team/pablorodriguez.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt>
-                    <p class="white fw-bold" style="margin-bottom: 0;">Imagina el futuro de TeamCubation (cada uno desde su rol / área)</p>
+                    <p class="card-team-text">Imagino que Teamcubation será un modelo ejemplar de eficiencia operativa, agilidad estratégica y cultura colaborativa.</p>
                     <img class="member-quotes" src="media/quote.png" alt>
                   </div>
                 </div>
@@ -813,11 +808,11 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-button" href="#results-slide-desktop" data-bs-slide="prev">
+              <div class="carousel-left-button" href="#results-slide-desktop" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
               </div>
-              <div class="carousel-button" href="#results-slide-desktop" data-bs-slide="next">
+              <div class="carousel-right-button" href="#results-slide-desktop" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
               </div>
@@ -886,11 +881,11 @@
                   </div>
                 </div>
               </div>
-              <div class="carousel-button" href="#results-slide-mobile" data-bs-slide="prev">
+              <div class="carousel-left-button" href="#results-slide-mobile" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Anterior</span>
               </div>
-              <div class="carousel-button" href="#results-slide-mobile" data-bs-slide="next">
+              <div class="carousel-right-button" href="#results-slide-mobile" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Siguiente</span>
               </div>
