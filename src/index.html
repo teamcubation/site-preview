@@ -6,7 +6,7 @@
   <meta data-attr-t data-attr-t-interpolate name="description" content-t="{{description}}"/>
   <meta data-attr-t data-attr-t-interpolate property="og:title" content-t="{{title}}"/>
   <meta data-attr-t data-attr-t-interpolate property="og:description" content-t="{{description}}"/>
-  <meta property="og:image" content="https://teamcubation.com/media/logo.png"/>
+  <meta property="og:image" content="https://teamcubation.com/media/logo-og-full.png"/>
   <title data-t>title</title>
   <link rel="icon" href="media/favicon.ico"/>
   <link rel="apple-touch-icon" href="logo192.png"/>
@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=40">
+  <link rel="stylesheet" href="css/style.css?v=2.3">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
   <!-- Google Tag Manager -->
@@ -30,7 +30,7 @@
 
 <body>
   <!-- logo on top for google -->
-  <img style="display: none" src="media/logo.png" alt="Teamcubation">
+  <img style="display: none" src="media/logo-og-full.png" alt="Teamcubation">
 
   <nav>
     <div id="navbar">
@@ -55,7 +55,10 @@
                     <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
                   </li>
                   <li data-lang="en">
-                    <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
+                    <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url-en}}">lang.english</a>
+                  </li>
+                  <li data-lang="pt">
+                    <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url-pt}}">lang.portugues</a>
                   </li>
                 </ul>
               </div>
@@ -85,10 +88,10 @@
             </div>
             <ul id="language-options-mobile" class="language-options collapsed-content">
               <li data-lang="es">
-                <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url-local}}">lang.spanish</a>
+                <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.spanish</a>
               </li>
               <li data-lang="en">
-                <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url-local}}">lang.english</a>
+                <a data-t data-attr-t data-attr-t-interpolate href-t="{{banner.url}}">lang.english</a>
               </li>
             </ul>
           </div>
@@ -146,8 +149,7 @@
       <div id="partners">
         <div class="logos">
           <div>
-            <img src="media/partners/partners.png">
-            <img src="media/partners/partners.png">
+            <img src="media/partners/partners.png?v=2">
           </div>
         </div>        
       </div>
@@ -357,10 +359,13 @@
             <div id="video-container">
               <div class="video-overlay"></div>
               <div id="link-button-video-container">
-                <button id="button-redirect-youtube" class="button button-link-video">Ver mas testimonios</button>
-              </div>  
-              <video id="video-cases" title="Tq" controls>
-                <source src="https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation.mp4">
+                <button id="button-redirect-youtube" class="button button-link-video" data-t>theWheel.moreTestimonials</button>
+              </div>
+              <div class="video-pre-overlay">
+                <a id="video-play"></a>
+              </div>
+              <video id="video-cases" controls>
+                <source data-attr-t data-attr-t-interpolate src-t="{{theWheel.videoUrl}}">
               </video>
             </div>
           </div>
@@ -480,7 +485,7 @@
           <div class="row w-100" style="margin: 0">
             <div id="pep-attributes-container">
               <div class="row">
-                <div class="col-12 col-sm-5">
+                <div class="col-12 col-lg-5">
                   <div class="dropdown-container">
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -489,12 +494,12 @@
                           <img class="dropdown-arrow" src="media/arrow-dropdowns.svg" alt="arrow">
                         </div>
                       </div>
-                      <div class="collapsed-content">
+                      <div id="pep-one" class="collapsed-content d-flex">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.one.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-1.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-1.png"  alt="">
                     </div>
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -506,9 +511,9 @@
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.two.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-2.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-2.png"  alt="">
                     </div>
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -520,9 +525,9 @@
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.three.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-3.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-3.png"  alt="">
                     </div>
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -534,9 +539,9 @@
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.four.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-4.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-4.png"  alt="">
                     </div>
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -548,9 +553,9 @@
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.five.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-5.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-5.png"  alt="">
                     </div>
                     <div class="card dropdown-standard-item">
                       <div class="card-standard-header">
@@ -562,15 +567,15 @@
                       <div class="collapsed-content">
                         <div class="card-collapse-content">
                           <p class="sm-text-card light-grey" data-t>pep.dropDown.six.leyend</p>
+                          <img class="img-responsive hidden" src="media/pep/pep-6.png"  alt="">
                         </div>
                       </div>
-                      <img class="hidden" src="media/pep/pep-6.png"  alt="">
                     </div>
                   </div>
                 </div>
-                <div class="col-12 col-sm-7">
+                <div class="col-12 col-lg-7">
                   <div id="pep-img-container">
-                    <img style="max-width: 100%;" src="media/pep/pep-1.png" alt="pep">
+                    <img class="img-responsive" src="media/pep/pep-1.png"  alt="">
                   </div>
                 </div>
               </div>
@@ -709,14 +714,14 @@
                   <div class="text-start">
                     <h5 class="member-name" style="margin-bottom: 0.5em;">Florencia Diaz</h5>
                     <div class="role_container">Head of People</div>
-                  </div>  
+                  </div>
                 </div>
               </div>
             </div>
             <div class="col-12 col-sm-5 col-md-4 col-xl-3 text-center">
               <div class="card-member">
                 <div class="container-img">
-                  <img class="member-img"  src="media/team/pablorodriguez.png" alt>
+                  <img class="member-img"  src="media/team/tom.png" alt>
                   <div class="card-member-hover">
                     <img class="member-quotes" src="media/quote.png" alt="">
                     <p data-t class="card-team-text">team.pablo</p>
@@ -725,10 +730,10 @@
                 </div>
                 <div class="d-flex justify-content-around mt-2">
                   <div>
-                    <a href="https://www.linkedin.com/in/pablo-g-rodriguez/" target="_blank"><img src="media/arrow-menu.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/in/tomasmunoz/" target="_blank"><img src="media/arrow-menu.svg" alt=""></a>
                   </div>
                   <div class="text-start">
-                    <h5 class="member-name" style="margin-bottom: 0.5em;">Pablo Rodriguez</h5>
+                    <h5 class="member-name" style="margin-bottom: 0.5em;">Tomás Muñoz</h5>
                     <div class="role_container">CFO</div>
                   </div>  
                 </div>
@@ -946,11 +951,14 @@
               </div>
             </div>
           </div>
+          <div class="col-2 col-md-1">
+            <img id="holon_iq" src="media/badges/holon_iq.png" alt="holon_iq_badge">
+          </div>
         </div>  
         <div class="footer-navigate">
           <div class="col-12">
             <div class="d-flex w-100 flex-wrap justify-content-end mt-2 mb-2" style="color: #b1b1b187; border-top: 1px solid #b1b1b187">
-              <p style="margin-right: 10px; font-size: 0.8rem">© 2023, </p>
+              <p style="margin-right: 10px; font-size: 0.8rem">©  <span id="currentYear"></span>, </p>
               <p style="font-size: 0.9rem">Teambucation</p>
             </div>
           </div>    
@@ -1053,7 +1061,7 @@
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="index.js?v=40"></script>
+  <script type="module" src="index.js?v=2.3"></script>
 
 </body>
 </html>

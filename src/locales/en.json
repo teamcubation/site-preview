@@ -6,7 +6,8 @@
   "textButton": "English",
   "iconButton": "media/world_icon.svg",
   "spanish": "Spanish",
-  "english": "English"
+  "english": "English",
+  "portugues": "Portuguese"
   },
   "textLinks": {
   "proposal": "Proposal",
@@ -20,7 +21,9 @@
   },
   "banner": {
     "url-local" : "http://localhost:5503/index.html",
-    "url": "https://teamcubation.com/en",
+    "url": "https://teamcubation.com/",
+    "url-en": "https://teamcubation.com/en",
+    "url-pt": "https://teamcubation.com/pt",
   "centralText": {
   "lineOne": "Experience",
   "lineTwo": " developers"
@@ -91,7 +94,9 @@
   "three": "Coding School"
   }
   },
-  "centralTextTwo": "We're making it happen"
+  "centralTextTwo": "We're making it happen",
+  "videoUrl": "https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation_en.mp4",
+  "moreTestimonials": "See more testimonials"
   },
   "howDo": {
   "centralText": "How do we do it?",

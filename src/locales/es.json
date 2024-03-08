@@ -6,7 +6,8 @@
     "textButton": "Español",
     "iconButton": "media/globe_icon.png",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "portugues": "Português"
   },
   "textLinks": {
       "proposal": "Propuesta",
@@ -20,7 +21,9 @@
   },
   "banner":{
     "url-local" : "http://localhost:5503/en/index.html",
-    "url": "https://teamcubation.com/en",
+    "url": "https://teamcubation.com",
+    "url-en": "https://teamcubation.com/en",
+    "url-pt": "https://teamcubation.com/pt",
     "centralText" :{
       "lineOne": "Desarrolladores de",
       "lineTwo": " experiencia"
@@ -93,7 +96,9 @@
         "three": "Coding School"
       }
     },
-    "centralTextTwo": "Lo estamos haciendo"
+    "centralTextTwo": "Lo estamos haciendo",
+    "videoUrl": "https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation.mp4",
+    "moreTestimonials": "Ver mas testimonios"
   },
   "howDo": {
     "centralText": "¿Cómo lo hacemos?",

@@ -5,13 +5,22 @@ const initialLocation = document.location.href;
 const lang = document.documentElement.lang;
 var shortenedURL = initialLocation.match(/^(https?:\/\/[^\/]+)/)[1];
 
-
 let json_path;
 $(document).ready(
   document.documentElement.lang === "es"
     ? (json_path = "./src/locales/es.json")
     : (json_path = "./src/locales/en.json"),
 );
+
+$(function(){
+  if (window.location.hash === '#contact') {
+    $('#form-modal').removeClass('hidden');
+  }
+});
+
+const currentYear = document.getElementById("currentYear");
+const year = new Date().getFullYear();
+currentYear.textContent = year;
 
 const dataByLang = {
   home: {
@@ -36,7 +45,9 @@ const dataByLang = {
     btnSend: lang === "es" ? "Enviar" : "Submit",
     btnSending: lang === "es" ? "Enviando..." : "Sending...",
     originExtraPlaceholder:
-      lang === "es" ? "¿Cómo te identificás?" : "How do you identify yourself?",
+    lang === "es" ? "¿Cómo te identificás?" :
+    lang === "pt" ? "Como você se identifica?" :
+    "How do you identify yourself?",    
     originExtraOhterOption: lang === "es" ? "otro" : "other",
     validation: {
       noOptionSelected:
@@ -60,6 +71,7 @@ const dataByLang = {
 
 $(".contact-button").on("click", () => {
   $("#form-modal").toggleClass('hidden');
+  window.location.hash = '#contact';
 });
 
 $("#close-modal").on("click", (e) => {
@@ -553,7 +565,6 @@ const openMenu = () => {
   $('#language-options').addClass('language-menu-open');
   $('#language-options-mobile').addClass('language-menu-open');  
   
-
   if(screen.width < 574){
     $("#navbar-content").addClass('open-menu-mobile');
     $('#language-select-mobile').addClass('language-menu-open');
@@ -625,8 +636,6 @@ window.addEventListener('scroll', (e) => {
     $('#logo').addClass('hidden');
     $('#logo-orange').removeClass('hidden');
     $('#language-select').addClass('language-menu-open');
-    // $('#language-select-mobile').addClass('language-menu-open');
-
     $('.language-title').addClass('language-menu-open');
     $('#language-options').addClass('language-menu-open');
     $('#language-options-mobile').addClass('language-menu-open');  
@@ -715,12 +724,21 @@ dividerCenter.style.left = `calc(${itemTwo - itemOne}px)`;
 
 // pep
 const dropdowns = document.querySelectorAll('.dropdown-standard-item');
+const imageContainer = document.getElementById('pep-img-container');
+const initOpen = document.getElementById("pep-one");
+const imgInitOpen = initOpen.querySelector('img');
+
+if(window.innerWidth < 992){
+  imgInitOpen.classList.remove('hidden');
+  const img = imageContainer.querySelector("img");
+  imageContainer.removeChild(img)
+}
 
 dropdowns.forEach(dropdown => {
   const button = dropdown.querySelector('.card-standard-header .dropdown-item-button');
   const title = dropdown.querySelector('.card-standard-header .sm-text-card');
   const content = dropdown.querySelector('.collapsed-content');
-  const image = dropdown.querySelector('.hidden');
+  const image = content.querySelector('img');
   const iconbutton = button.querySelector('img');
 
   dropdown.addEventListener('click', () => {
@@ -732,16 +750,16 @@ dropdowns.forEach(dropdown => {
       }
     });
   
-  iconbutton.src = `${shortenedURL}/media/arrow-dropdowns.svg`;
-  content.classList.add('d-flex');
-  title.style.color = '#F34E1E';
-   
-  const imageContainer = document.getElementById('pep-img-container');
-  imageContainer.innerHTML = '';
-  const newImage = document.createElement('img');
-  newImage.style.maxWidth = '100%';
-  newImage.src = image.src;
-  imageContainer.appendChild(newImage);
+    iconbutton.src = `${shortenedURL}/media/arrow-dropdowns.svg`;
+    content.classList.add('d-flex');
+    title.style.color = '#F34E1E';
+    image.classList.remove('hidden');
+
+    if(window.innerWidth > 992){
+      imageContainer.innerHTML = '';
+      imageContainer.appendChild(image);
+    }
+
   });
 }); 
 
@@ -753,25 +771,26 @@ $(window).on('beforeunload', function(){
 
 // video 
 const video = document.getElementById("video-cases");
-let initTime = 9 
-video.currentTime = initTime;
-
-video.addEventListener("seeked", function() {
-  if(video.currentTime != 9){initTime = video.currentTime}
-});
 
 video.addEventListener('ended', function() {
-  video.currentTime = 9;
   $(".video-overlay").css("display", "block");
   $("#link-button-video-container").css("display", "block");
 });
 
 video.addEventListener('play', function() {
- if( video.currentTime == 9) video.currentTime = 0;
   $(".video-overlay").css("display", "none");
   $("#link-button-video-container").css("display", "none");
+});
+
+$('#video-play, .video-pre-overlay').click(function() {
+  $('.video-pre-overlay').hide();
+  video.play();
 });
 
 document.getElementById('button-redirect-youtube').addEventListener('click', function() {
   window.open('https://www.youtube.com/@teamcubation/videos', '_blank');
 });
+
+$('#holon_iq').click(function(){
+  window.open('https://credentials.holoniq.com/credentials/6bb15f13-623b-4c19-a87f-78874dd4680a', '_blank');
+})

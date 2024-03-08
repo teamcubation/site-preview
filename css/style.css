@@ -167,7 +167,11 @@ ul{
 .mb-7{
 	margin-bottom: 7em!important;
 }
-
+.img-responsive{
+	max-width: 90%;
+	height: auto;
+	margin: 5%
+}
 /* components layouts */
 
 .layout{
@@ -627,6 +631,12 @@ html[lang="es"] .intersection-software-junior {
 	right: -4%; 
 }
 
+html[lang="pt"] .intersection-software-junior {
+	top: 46%; 
+	right: -7%; 
+}
+
+
 html[lang="en"] .intersection-software-junior {
 	top: 46%; 
 	right: -9.5%; 
@@ -659,6 +669,11 @@ html[lang="en"] .intersection-software-junior {
 	color: var(--color-logo-orange);
 }
 
+html[lang="pt"] .intersection-seniors-junior {
+	top: -11.5%;
+    right: 32.7%;
+}
+
 #diagram-logo{
 	position: absolute; 
 	top: 33%; 
@@ -686,7 +701,7 @@ html[lang="en"] .intersection-software-junior {
 
 .video-overlay{
 	display: none;
-	background-color: #561872b2;
+	background-color: #000000c2;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -700,6 +715,47 @@ html[lang="en"] .intersection-software-junior {
 	width: 100%;
 	height: auto;
 	max-height: 70vh;
+}
+
+.video-pre-overlay{
+	background: url('/media/video-overlay.jpg') no-repeat;
+	background-size: cover;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#video-play{
+	width: 100px;
+	height: 100px;
+	background-color: var(--color-logo-orange);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	color: #fff;
+	padding: 6px 0 0 10px;
+	border: 3px solid white;
+}
+
+#video-play::before {
+	content: "\25B6";
+	font-size: 48px;
+	color: #fff;
+}
+
+#video-play:hover {
+	background-color: var(--color-green);
 }
 
 #link-button-video-container{
@@ -831,6 +887,7 @@ html[lang="en"] .intersection-software-junior {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0 auto;
 }
 
 /* team */
@@ -1236,6 +1293,7 @@ html[lang="en"] .intersection-software-junior {
 .footer-navigate{
 	display: flex;
 	width: 100%;
+	justify-content: space-between;
 }
 
 #copyright{
@@ -1258,6 +1316,13 @@ html[lang="en"] .intersection-software-junior {
 .link-footer{
 	font-size: 1.1rem;
 	margin-bottom: 10px;
+}
+
+#holon_iq{
+	max-width: 100%;
+	width: 80%;
+	cursor: pointer;
+	float: right;
 }
 
 .animated-underline {
@@ -1369,7 +1434,7 @@ html[lang="en"] .intersection-software-junior {
 .button-link-video{
 	color: var(--color-logo-orange);
 	border: 1px solid var(--color-logo-orange);
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 .button-link-video:hover{
@@ -1932,6 +1997,18 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 }
 
 @media only screen and (max-width: 767px) {
+	.footer-navigate{
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	#holon_iq{
+		max-width: 100%;
+		width: 90%;
+		cursor: pointer;
+		float: left;
+	}
+	
 	body{
 		font-size: 12px;
 	}
@@ -2106,7 +2183,7 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 
 	#footer-content{
 		justify-content: start;
-		gap: 4em;
+		/* gap: 2em; */
 	}
 
 
@@ -2130,6 +2207,9 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 }
 
 @media only screen and (max-width: 574px) {
+	html[lang="en"] h1{
+		font-size: calc(1.5em + 10vw);
+	}
 	h3{
 		font-size: calc(0.8em + 3vw);;
 	}
@@ -2321,6 +2401,11 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		margin-bottom: 0.5em;
 	}
 
+	html[lang="pt"] .intersection-seniors-junior {
+		top: -8%;
+		right: 27.3%;
+	}
+	
 	#squad-description-layout {
 		margin: 0 2em;
 		padding: 4em 2em;
@@ -2367,12 +2452,6 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		margin-left: 25%;
 	}
 	
-
-	.footer-navigate{
-		flex-direction: column;
-		gap: 2em;
-	}
-
 	#squad-description-layout {
 		margin: 0 2em;
 		padding: 4em;
