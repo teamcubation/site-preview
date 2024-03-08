@@ -21,9 +21,9 @@
   },
   "banner": {
     "url-local" : "http://localhost:5503/index.html",
-    "url": "https://teamcubation.com/",
-    "url-en": "https://teamcubation.com/en",
-    "url-pt": "https://teamcubation.com/pt",
+    "url": "https://preview.teamcubation.com/",
+    "url-en": "https://preview.teamcubation.com/en",
+    "url-pt": "https://preview.teamcubation.com/pt",
   "centralText": {
   "lineOne": "Experience",
   "lineTwo": " developers"
