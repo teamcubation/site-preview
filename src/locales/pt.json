@@ -25,20 +25,20 @@
       "url-en": "https://teamcubation.com/en",
       "url-pt": "https://teamcubation.com/pt",
         "centralText" :{
-        "lineOne": "Experiência",
-        "lineTwo": "desenvolvedores"
+        "lineOne": "Upskilling, Reskilling e.",
+        "lineTwo": "desenvolvimento de Experiência."
       }      
     },
     "proposal":{
-      "centralText": "Resolvemos o problema da escassez de talentos de TI em grandes empresas.",
+      "centralText": "Resolvemos o problema de escassez de talentos de TI nas grandes empresas.",
       
       "people": {
         "title": {
           "centralText": "das vagas de TI não são preenchidas na LATAM por ano."
        },
         "text": {
-          "title": "Em vez de focar na falta de seniores, desenvolvemos o potencial de novos talentos:",
-          "leyend": "dessa forma, ajudamos nossos clientes a contratarem talentos que anteriormente eram ignorados: Diversos, comprometidos e ansiosos para contribuir com a empresa que lhes dá a primeira oportunidade."
+          "title": "Em vez de focar na escassez de seniors, desenvolvemos o potencial dos talentos:",
+          "leyend": "Assim, ajudamos nossos clientes a contratar, fazer upskilling ou reskilling de talentos que antes não eram considerados: diversos, comprometidos e dispostos a contribuir com a empresa que lhes dá a oportunidade de crescimento."
         }
       },
       "cost": {
@@ -50,7 +50,7 @@
         },
         "text": {
           "title": "Reduzimos os custos de oportunidade:",
-          "leyend": "por meio de um fluxo constante de novos colaboradores, garantimos a capacidade de produção que sua empresa precisa para desbloquear novas oportunidades de negócios."
+          "leyend": "Através de um fluxo constante de colaboradores prontos para trabalhar, garantimos a capacidade de produção que sua empresa precisa para desbloquear novas oportunidades de negócios."
         }
       },
       "turnover": {
@@ -59,12 +59,12 @@
         },
         "text": {
           "title": "Desenvolvemos experiência de trabalho real:",
-          "leyend": "os projetos de backlog que não podem ser priorizados devido à falta de equipe são a oportunidade perfeita para nossos seniores liderarem o treinamento no trabalho para seus novos desenvolvedores, sob os requisitos e tecnologias da sua empresa."
+          "leyend": "Toda a nossa metodologia é baseada no desenvolvimento de projetos reais para sua empresa. Backlog não priorizado, inovação e qualquer projeto que não seja realizado devido à falta de equipe são a oportunidade ideal para que nossos seniors liderem o treinamento on-the-job de seus desenvolvedores, de acordo com os requisitos e tecnologias da sua empresa."
         }
       }
     },
     "noMoreDevs":{
-      "centralText": "Desenvolvemos experiência em novos devs para ajudá-lo a completar suas equipes em tempo recorde.",
+      "centralText": "Desenvolvemos experiência em desenvolvedores de software para que nossos clientes possam completar suas equipes em tempo recorde.",
       "carouselText":{
         "itemOne": "Não há devs experientes",
         "itemTwo": "Nunca preenchemos vagas",
@@ -97,25 +97,25 @@
         }
       },
       "centralTextTwo": "Estamos fazendo acontecer",
-      "videoUrl": "https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation.mp4",
+      "videoUrl": "https://tq-prod-api-addonsstack-1hk-tqstoragebucketbucket-18dt1u3ncepot.s3.amazonaws.com/presentation_en.mp4",
       "moreTestimonials": "Veja mais depoimentos"
     },
     "howDo": {
       "centralText": "Como fazemos isso?",
       "carousel": {
-        "itemOne": {"title": "Descoberta", "text": "Após avaliar suas metodologias, pilha tecnológica e cultura da empresa, avaliamos seus projetos juntos para escolher a opção mais adequada. Se necessário, auxiliamos na busca de talentos juniores."},
-        "itemTwo": {"title": "Execução", "text": "Durante um período de 6 meses, trabalhamos ao lado de seus desenvolvedores juniores para desenvolver o software que sua empresa precisa. Isso fornece a seus novos colaboradores a experiência real de trabalhar em suas equipes."},
-        "itemThree": {"title": "Entrega", "text": "No final do sexto mês, sua empresa terá o software pronto para implementação e uma equipe de 3 desenvolvedores experientes preparados para assumir seu próximo projeto. Parabéns! Sua nova fonte de talento especializado concluiu com sucesso sua primeira entrega."}
+        "itemOne": {"title": "Descoberta", "text": "Após avaliar as metodologias, stack tecnológico e cultura da sua organização, avaliamos seus projetos em conjunto para escolher a opção mais adequada. Se necessário, ajudamos na busca de talentos juniors ou avaliamos a equipe interna para entender quais habilidades precisam ser melhoradas."},
+        "itemTwo": {"title": "Execução", "text": "Durante o período dos projetos, trabalhamos junto com seus desenvolvedores no desenvolvimento do software que sua empresa necessita. Isso proporciona aos seus colaboradores a experiência real de trabalhar em equipes de alta performance."},
+        "itemThree": {"title": "Entrega", "text": "Ao final do processo, sua empresa terá o software pronto para implementar e uma equipe de desenvolvedores experientes preparados para assumir seu próximo projeto. Parabéns! Sua nova fonte de talento especializado completou sua primeira entrega com sucesso."}
       }
     },
     "squad": {
-      "centralText": "Trabalhamos em squads para transformar iniciantes em talentos prontos para o trabalho.",
+      "centralText": "Trabalhamos em squads para melhorar ou requalificar desenvolvedores, integrando novas habilidades em suas equipes existentes ou incorporando juniors prontos para trabalhar.",
       "leaders": {
         "title": "Nossos líderes",
         "leyend": "Especializados e treinados na pilha tecnológica e metodologias de sua empresa, eles supervisionarão a evolução de seus juniores e garantirão que o software atenda aos requisitos."
       },
       "juniors": {
-        "title": "Seus juniores",
+        "title": "Seus desenvolvedores",
         "leyend": "Orientados por nossos seniores, eles ganharão experiência real enquanto desenvolvem habilidades técnicas e interpessoais, integrando-se à cultura de sua empresa."
       }
     },
@@ -134,14 +134,14 @@
         },
         "three": {
           "title": "Alertas inteligentes",
-          "leyend": "Acompanhe o desempenho de seus juniores com notificações que identificam comportamentos desalinhados com as expectativas, essenciais para melhorar a qualidade e consistência do trabalho da sua equipe.<"
+          "leyend": "Acompanhe o desempenho de seus juniores com notificações que identificam comportamentos desalinhados com as expectativas, essenciais para melhorar a qualidade e consistência do trabalho da sua equipe."
         },
         "four": {
           "title": "Rastreamento personalizável",
           "leyend": "Avalie aspectos-chave do desenvolvimento pessoal de seus juniores por meio de ações e pesquisas personalizadas que fornecem um foco humano no processo de treinamento."
         },
         "five": {
-          "title": "Conheça seus colaboradores:",
+          "title": "Conheça seus colaboradores",
           "leyend": "Através de testes cognitivos e comportamentais, como a Análise de Desenvolvimento Pessoal (PDA), obtemos uma visão clara dos perfis de seus colaboradores para gerenciar seus talentos, desenvolver habilidades e trazer à tona a melhor versão deles."
         },
         "six": {
@@ -194,7 +194,7 @@
         },
         "three": {
           "title": "Capacidade Produtiva",
-          "leyend": "Um fluxo constante de candidatos minimizando o impacto da rotatividade."
+          "leyend": "Fluxo constante de candidatos ou upskilling interno que minimiza o impacto da rotatividade."
         },
         "four": {
           "title": "Retenção de Talentos",
@@ -202,7 +202,7 @@
         },
         "five": {
           "title": "Processo de TA Suave",
-          "leyend": "Simplificando a seleção de talentos, eliminando pontos de dor."
+          "leyend": "Simplificando a seleção de talentos internos e externos, eliminando os pontos de dor."
         },
         "six": {
           "title": "Branding",
@@ -247,13 +247,13 @@
         }
       },
       "form":{
-        "centralText": "CONTACTANOS",
-        "name": "Nombre",
-        "organization": "Compañía",
+        "centralText": "CONTATE-NOS",
+        "name": "Nome",
+        "organization": "Empresa",
         "telephone": {
           "label": "Telefone",
           "country": "País",
-          "area": "Área",
+            "area": "Área",
           "number" : "Número"
         },
         "email": "E-mail",
@@ -271,8 +271,8 @@
         "btn_text": "Enviar",
         "btn_sending": "Enviando...",
         "submit-response": {
-          "success": "Su mensaje se ha enviado correctamente, gracias!",
-          "error": "Ocurrió un error durante el envío del formulario, por favor vuelva a intentarlo"
+          "success": "Sua mensagem foi enviada com sucesso, obrigado!",
+          "error": "Ocorreu um erro durante o envio do formulário, tente novamente"
         }
       }
     },
