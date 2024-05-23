@@ -21,10 +21,10 @@
     },
     "banner":{
       "url-local" : "http://localhost:5503/en/index.html",
-      "url": "https://teamcubation.com/",
-      "url-en": "https://teamcubation.com/en",
-      "url-pt": "https://teamcubation.com/pt",
-        "centralText" :{
+      "url": "/",
+      "url-en": "/en",
+      "url-pt": "/pt",
+      "centralText" :{
         "lineOne": "Upskilling, Reskilling e.",
         "lineTwo": "desenvolvimento de Experiência."
       }      

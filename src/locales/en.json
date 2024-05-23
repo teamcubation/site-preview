@@ -21,13 +21,13 @@
   },
   "banner": {
     "url-local" : "http://localhost:5503/index.html",
-    "url": "https://teamcubation.com/",
-    "url-en": "https://teamcubation.com/en",
-    "url-pt": "https://teamcubation.com/pt",
-  "centralText": {
-  "lineOne": "Upskilling, Reskilling, ",
-  "lineTwo": "and Experience Development."
-  }
+    "url": "/",
+    "url-en": "/en",
+    "url-pt": "/pt",
+    "centralText": {
+      "lineOne": "Upskilling, Reskilling, ",
+      "lineTwo": "and Experience Development."
+    }
   },
   "proposal": {
   "centralText": "We solved the IT talent shortage problem for large companies.",
