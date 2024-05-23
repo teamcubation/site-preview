@@ -24,10 +24,10 @@
     "url": "/",
     "url-en": "/en",
     "url-pt": "/pt",
-    "centralText": {
-      "lineOne": "Upskilling, Reskilling, ",
-      "lineTwo": "and Experience Development."
-    }
+  "centralText": {
+  "lineOne": "On-the-job upskilling",
+  "lineTwo": "and reskilling guided by data."
+  }
   },
   "proposal": {
   "centralText": "We solved the IT talent shortage problem for large companies.",
