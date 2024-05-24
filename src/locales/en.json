@@ -30,13 +30,13 @@
   }
   },
   "proposal": {
-  "centralText": "We solved the IT talent shortage problem for large companies.",
+  "centralText": "We tackle the IT shortage for leading companies",
   "people": {
   "title": {
-  "centralText": "of IT vacancies go unfilled in LATAM per year."
+  "centralText": "of IT vacancies go unfilled in Latin America per year."
   },
   "text": {
-  "title": "Instead of focusing on the shortage of seniors, we develop the potential of talents:",
+  "title": "Instead of focusing on the shortage of seniors, we focus on developing potential:",
   "leyend": "Thus, we help our clients hire, upskill, or reskill talents they hadn't considered before: diverse, committed, and eager to contribute to the company that gives them their growth opportunity."
   }
   },
@@ -49,7 +49,7 @@
   },
   "text": {
   "title": "We reduce opportunity costs:",
-  "leyend": "Through a constant flow of ready-to-work collaborators, we guarantee the production capacity your company needs to unlock new business opportunities."
+  "leyend": "Through a flow of ready-to-work collaborators, we guarantee the constant production capacity your company needs to unlock new business opportunities."
   }
   },
   "turnover": {
@@ -68,14 +68,14 @@
   "itemOne": "There's no experienced devs",
   "itemTwo": "We never fill vacant positions",
   "itemThree": "We're losing people",
-  "itemFour": "We're missing out on opportunities",
-  "itemFive": "Our seniors don't have time to train"
+  "itemFour": "We're missing out on business opportunities",
+  "itemFive": "Our seniors don't have time to train others"
   },
-  "inlineText": "Sound familiar?",
+  "inlineText": "Sounds familiar?",
   "contactButton": "Contact Us!"
   },
   "theWheel": {
-  "centralText": "Not a coding school, not a software factory. A customized solution for large companies.",
+  "centralText": "We are not a coding school, we are not a software factory. We arew a customized solution for large companies.",
   "veenDiagram": {
   "seniors": {
   "lineOne": "Experienced",
