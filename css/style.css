@@ -34,6 +34,11 @@ h2{
 	margin-bottom: 0;
 }
 
+h2.sub {
+	font-size: 2em;
+	padding-top: 0.5em;
+}
+
 h3{
 	font-size: 3.125em;
 	margin-bottom: 0;
@@ -417,7 +422,7 @@ nav{
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	gap: 5em;
+	gap: 2em;
 	max-width: 1440px ;	
 	padding: var(--container-padding);
 	padding-top: 10em;
@@ -1318,11 +1323,14 @@ html[lang="pt"] .intersection-seniors-junior {
 	margin-bottom: 10px;
 }
 
-#holon_iq{
+#holon_iq, #south_summit{
 	max-width: 100%;
-	width: 80%;
+	width: 40%;
 	cursor: pointer;
 	float: right;
+}
+#south_summit {
+	margin-right: 10px;
 }
 
 .animated-underline {
@@ -2002,9 +2010,9 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		gap: 2em;
 	}
 
-	#holon_iq{
+	#holon_iq, #south_summit{
 		max-width: 100%;
-		width: 90%;
+		width: 40%;
 		cursor: pointer;
 		float: left;
 	}
