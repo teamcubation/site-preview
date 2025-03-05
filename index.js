@@ -51,11 +51,31 @@ const dataByLang = {
   },
 };
 
+let selectedService = '';
+
+const openContacFormModal = () => {
+  const modal = $("#form-modal");
+  if (modal.hasClass("hidden")) {
+    modal.removeClass("hidden");
+    window.location.hash = "#contact";
+  } else {
+    modal.addClass("hidden");
+    history.replaceState(null, null, " ");
+  }
+}
+
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const serviceName = this.getAttribute('data-service');
+    selectedService = serviceName;
+    openContacFormModal();
+  });
+});
 
 $(".contact-button").on("click", () => {
-  $("#form-modal").toggleClass('hidden');
-  window.location.hash = '#contact';
+  openContacFormModal()
 });
+
 
 $("#close-modal").on("click", (e) => {
   e.preventDefault();
@@ -92,62 +112,63 @@ $(".form-contact").on("submit", function (ev) {
       ? (data_origin_extra = null)
       : (data_origin_extra = `${data_origin_extra}: ${inputSelectText}`);
   }
-  if (data_origin_extra) {
-    $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
-    btn.text(dataByLang.formContact.btnSending[lang]);
-    $.ajax({
-      url: "https://api.prod.tq.teamcubation.com/contact",
-      type: "POST",
-      contentType: "application/json",
-      data: JSON.stringify({
-        full_name: data_name,
-        message: data_message,
-        organization: data_organization,
-        phone_number: data_number,
-        email: data_email,
-        origin_extra: data_origin_extra,
-        lang: lang,
-      }),
-      dataType: "json",
-      success: (r) => {
-        $(".alert").remove();
-        $(".form-contact").prepend(
-          '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
-        );
-        $(".alert").text(dataByLang.formContact.submitResponse.success[lang]);
-        $(".alert")
-          .fadeTo(2000, 500)
-          .slideUp(500, function () {
-            $(".alert").slideUp(500);
-          });
-          btn.text(dataByLang.formContact.btnSend[lang]);
-        clearForm();
-      },
-      error: (r) => {
-        $(".alert").remove();
-        $(".form-contact").prepend(
-          '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
-        );
-        $(".alert").text(dataByLang.formContact.submitResponse.error[lang]);
-        $(".alert")
-          .fadeTo(2000, 500)
-          .slideUp(500, function () {
-            $(".alert").slideUp(500);
-          });
-          btn.text(dataByLang.formContact.btnSend[lang]);
-        clearForm();
-      },
-    });
-    return false;
-  } else {
-    $(".select-tc").css("border-bottom", "2px solid red");
-    $(".dropdown-select").append(
-      '<p class="text-error" style="color: red">' +
-        data_origin_extra_error_message +
-        "</p>"
-    );
-    return false;
-  }
+  // if (data_origin_extra) {
+  //   $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
+  //   btn.text(dataByLang.formContact.btnSending[lang]);
+  //   $.ajax({
+  //     url: "https://api.prod.tq.teamcubation.com/contact",
+  //     type: "POST",
+  //     contentType: "application/json",
+  //     data: JSON.stringify({
+  //       full_name: data_name,
+  //       message: data_message,
+  //       organization: data_organization,
+  //       phone_number: data_number,
+  //       email: data_email,
+  //       origin_extra: data_origin_extra,
+  //       lang: lang,
+          //  selectedService
+  //     }),
+  //     dataType: "json",
+  //     success: (r) => {
+  //       $(".alert").remove();
+  //       $(".form-contact").prepend(
+  //         '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
+  //       );
+  //       $(".alert").text(dataByLang.formContact.submitResponse.success[lang]);
+  //       $(".alert")
+  //         .fadeTo(2000, 500)
+  //         .slideUp(500, function () {
+  //           $(".alert").slideUp(500);
+  //         });
+  //         btn.text(dataByLang.formContact.btnSend[lang]);
+  //       clearForm();
+  //     },
+  //     error: (r) => {
+  //       $(".alert").remove();
+  //       $(".form-contact").prepend(
+  //         '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
+  //       );
+  //       $(".alert").text(dataByLang.formContact.submitResponse.error[lang]);
+  //       $(".alert")
+  //         .fadeTo(2000, 500)
+  //         .slideUp(500, function () {
+  //           $(".alert").slideUp(500);
+  //         });
+  //         btn.text(dataByLang.formContact.btnSend[lang]);
+  //       clearForm();
+  //     },
+  //   });
+  //   return false;
+  // } else {
+  //   $(".select-tc").css("border-bottom", "2px solid red");
+  //   $(".dropdown-select").append(
+  //     '<p class="text-error" style="color: red">' +
+  //       data_origin_extra_error_message +
+  //       "</p>"
+  //   );
+  //   return false;
+  // }
 });
 
 const clearForm = () => {
@@ -396,136 +417,27 @@ $(".process-next").on("click", function(){
   }
 });
 
-window.addEventListener("click", function (e) {
-  if (!document.getElementById("dropdown-select").contains(e.target)) {
-    $(".list-options-tc").slideUp();
-    $(".chevron-select").removeClass("chevron-effect");
-    $(".select-tc").css(
-      "border-bottom",
-      "2px solid rgba(128, 128, 128, 0.507)"
-    );
-    if ($(".input-select").val() !== "") $(".text-error").remove();
-  }
-  if (!document.getElementById("form-container").contains(e.target)) {
-    if(!$('.contact-button').is(event.target)) {
-      $("#form-modal").addClass('hidden'); 
-    }
-  }
+$("#services_button").on("click", function() {
+  let target = $("#proposal").offset().top; 
+  window.scrollTo({
+    top: target, 
+    behavior: "smooth" 
+  });
 });
+
+$("#success_stories_button").on("click", function() {
+  let target = $("#cases").offset().top - 25; 
+  window.scrollTo({
+    top: target, 
+    behavior: "smooth" 
+  });
+});
+
 
 window.addEventListener('scroll', (e) => {
   const currentPositionScroll = window.scrollY;
   const direction = scrollDirection(lastScrollTop, currentPositionScroll);
 
-  // if(peopleNumber.getBoundingClientRect().top <= 500 && incrementAmountPeopleNumber.step < 2){
-  //   const text={prev: '', next: '%'}
-  //   if(!incrementPeopleAnimation.animationInProgress){
-  //     incrementPeopleAnimation.play(
-  //       peopleNumber, 
-  //       incrementAmountPeopleNumber.counterValue, 
-  //       incrementAmountPeopleNumber.targetValue, 
-  //       1, 
-  //       text
-  //     )  
-  //     incrementAmountPeopleNumber.step += 1;
-  //     incrementAmountPeopleNumber.counterValue+= incrementAmountPeopleNumber.targetValue;
-  //     incrementAmountPeopleNumber.targetValue+= incrementAmountPeopleNumber.targetValue;  
-  //   }
-  // }
-
-  // if(costTopNumber.getBoundingClientRect().top <= 800 && incrementAmountCostNumber.step < 3){
-  //   if(!incrementCostAnimation.animationInProgress){
-  //     incrementCostAnimation.play(
-  //       costTopNumber, 
-  //       incrementAmountCostNumber.counterValue, 
-  //       incrementAmountCostNumber.targetValue, 
-  //       200, 
-  //     )  
-  //     incrementAmountCostNumber.step += 1;
-  //     incrementAmountCostNumber.counterValue+= incrementAmountCostNumber.acumulate;
-  //     incrementAmountCostNumber.targetValue+= incrementAmountCostNumber.acumulate;  
-  //   }
-  // }
-
-  // if(turnoverNumber.getBoundingClientRect().top <= 800 && incrementAmountTurnOverNumber.step < 3){
-  //   const text={prev: '', next: '%'}
-  //   if(!incrementTurnOverAnimation.animationInProgress){
-  //     incrementTurnOverAnimation.play(
-  //       turnoverNumber, 
-  //       incrementAmountTurnOverNumber.counterValue, 
-  //       incrementAmountTurnOverNumber.targetValue, 
-  //       1,
-  //       text 
-  //     )  
-  //     incrementAmountTurnOverNumber.step += 1;
-  //     incrementAmountTurnOverNumber.counterValue+= incrementAmountTurnOverNumber.acumulate;
-  //     incrementAmountTurnOverNumber.targetValue+= incrementAmountTurnOverNumber.acumulate;  
-  //   }
-  // }
-
-  // const bannerContentToTop = bannerContent.getBoundingClientRect().top; 
-  // if(bannerContentToTop <= 200 && direction == 'down'){
-  //   navBar[0].classList.add('nav-to-top');
-  // }else{
-  //   navBar[0].classList.remove('nav-to-top');
-  // }
-
-  // if(window.scrollY < 500){
-  //   // noMoreDevsAnimation.animate('reverse');
-  //   // howDoAnimation.animate('reverse');
-  //   resultsAnimation.animate('reverse');
-  // }
-  
-  // const proposalToTop = proposal.getBoundingClientRect();
-  // const noMoreDevsToTop = noMoreDevs.getBoundingClientRect();
-  // const howDoToTop = howDo.getBoundingClientRect();
-  // const resultsToTop = results.getBoundingClientRect();
-  
-  
-  
-  // effect fix cards at top
-  // if(proposalToTop.top <= 100 && direction == 'down'){
-  //   bannerNav.classList.add('fixed-scroll-position');
-  //   proposal.classList.add('sticky-scroll-position');
-  //   bannerContent.classList.add('display-none');
-  //   partners.classList.add('display-none');
-  // }
-
-  // if(resultsToTop.top <= 100  && direction === 'down'){
-  //   results.classList.add('sticky-scroll-position');
-  //   if(resultsAnimation.loopCarousel < 2){
-  //     resultsAnimation.animate('play');
-  //   };
-  // };
-
-  // if(howDoToTop.top <= 0 && !howDoAnimation.finished){
-  //   howDo.classList.add('sticky-scroll-position');
-  //   if(howDoAnimation.loopCarousel < 2){
-  //     howDoAnimation.animate('play');
-  //   }
-  // }
-
-  // no more devs
-    // if(direction === 'down' && noMoreDevsToTop.top <= 0 && !noMoreDevsAnimation.finished){
-    //   noMoreDevs.classList.add('sticky-scroll-position');
-    //   if(noMoreDevsAnimation.loopCarousel < 4){
-    //     noMoreDevsAnimation.animate('play');
-    //   }
-    // }
-
-  // }
-  // if(noMoreDevsAnimation.finished && currentPositionScroll >= noMoreDevsPositionHeight  && direction === 'down'){
-  //   // proposal.classList.remove('sticky-scroll-position');
-  //   noMoreDevs.classList.remove('sticky-scroll-position');
-  //   bannerNav.classList.remove('fixed-scroll-position');
-  // }
-  // if(howDoAnimation.finished  && direction === 'down'){
-  //   howDo.classList.remove('sticky-scroll-position')
-  // }
-  // if(resultsAnimation.finished && direction === 'down'){
-  //   results.classList.remove('sticky-scroll-position')
-  // }
-  // lastScrollTop = currentPositionScroll;
 });
 
 // navbar and menu
