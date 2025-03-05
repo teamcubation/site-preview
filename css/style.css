@@ -2461,10 +2461,6 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		position: relative;
 		float: right;
 		right: 0;
-<<<<<<< HEAD
-=======
-		/* width: 100px; */
->>>>>>> b61982bbca47f51ffdd754f1c54951117c4a186a
 		border-radius: 20px;
 	}
 
@@ -2679,6 +2675,10 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 
 	#mobile-banner-img{
 		display: block;
+	}
+	.md-button{
+		padding: 0.8em 1.7em;
+		font-size: 12px;
 	}
 
 }
