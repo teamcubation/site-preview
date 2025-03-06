@@ -112,63 +112,63 @@ $(".form-contact").on("submit", function (ev) {
       ? (data_origin_extra = null)
       : (data_origin_extra = `${data_origin_extra}: ${inputSelectText}`);
   }
-  // if (data_origin_extra) {
-  //   $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
-  //   btn.text(dataByLang.formContact.btnSending[lang]);
-  //   $.ajax({
-  //     url: "https://api.prod.tq.teamcubation.com/contact",
-  //     type: "POST",
-  //     contentType: "application/json",
-  //     data: JSON.stringify({
-  //       full_name: data_name,
-  //       message: data_message,
-  //       organization: data_organization,
-  //       phone_number: data_number,
-  //       email: data_email,
-  //       origin_extra: data_origin_extra,
-  //       lang: lang,
-          //  selectedService
-  //     }),
-  //     dataType: "json",
-  //     success: (r) => {
-  //       $(".alert").remove();
-  //       $(".form-contact").prepend(
-  //         '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
-  //       );
-  //       $(".alert").text(dataByLang.formContact.submitResponse.success[lang]);
-  //       $(".alert")
-  //         .fadeTo(2000, 500)
-  //         .slideUp(500, function () {
-  //           $(".alert").slideUp(500);
-  //         });
-  //         btn.text(dataByLang.formContact.btnSend[lang]);
-  //       clearForm();
-  //     },
-  //     error: (r) => {
-  //       $(".alert").remove();
-  //       $(".form-contact").prepend(
-  //         '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
-  //       );
-  //       $(".alert").text(dataByLang.formContact.submitResponse.error[lang]);
-  //       $(".alert")
-  //         .fadeTo(2000, 500)
-  //         .slideUp(500, function () {
-  //           $(".alert").slideUp(500);
-  //         });
-  //         btn.text(dataByLang.formContact.btnSend[lang]);
-  //       clearForm();
-  //     },
-  //   });
-  //   return false;
-  // } else {
-  //   $(".select-tc").css("border-bottom", "2px solid red");
-  //   $(".dropdown-select").append(
-  //     '<p class="text-error" style="color: red">' +
-  //       data_origin_extra_error_message +
-  //       "</p>"
-  //   );
-  //   return false;
-  // }
+  if (data_origin_extra) {
+    // $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
+    btn.text(dataByLang.formContact.btnSending[lang]);
+    $.ajax({
+      url: "https://api.prod.tq.teamcubation.com/contact",
+      type: "POST",
+      contentType: "application/json",
+      data: JSON.stringify({
+        full_name: data_name,
+        message: data_message,
+        organization: data_organization,
+        phone_number: data_number,
+        email: data_email,
+        origin_extra: data_origin_extra,
+        lang: lang,
+           selectedService
+      }),
+      dataType: "json",
+      success: (r) => {
+        $(".alert").remove();
+        $(".form-contact").prepend(
+          '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
+        );
+        $(".alert").text(dataByLang.formContact.submitResponse.success[lang]);
+        $(".alert")
+          .fadeTo(2000, 500)
+          .slideUp(500, function () {
+            $(".alert").slideUp(500);
+          });
+          btn.text(dataByLang.formContact.btnSend[lang]);
+        clearForm();
+      },
+      error: (r) => {
+        $(".alert").remove();
+        $(".form-contact").prepend(
+          '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
+        );
+        $(".alert").text(dataByLang.formContact.submitResponse.error[lang]);
+        $(".alert")
+          .fadeTo(2000, 500)
+          .slideUp(500, function () {
+            $(".alert").slideUp(500);
+          });
+          btn.text(dataByLang.formContact.btnSend[lang]);
+        clearForm();
+      },
+    });
+    return false;
+  } else {
+    $(".select-tc").css("border-bottom", "2px solid red");
+    $(".dropdown-select").append(
+      '<p class="text-error" style="color: red">' +
+        data_origin_extra_error_message +
+        "</p>"
+    );
+    return false;
+  }
 });
 
 const clearForm = () => {
@@ -182,7 +182,7 @@ const clearForm = () => {
   $(".organizationContact").val("");
   $(".list-options-tc").slideUp();
   $(".chevron-select").removeClass("chevron-effect");
-  $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
+  // $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
   $(".input-select")
     .prop("disabled", true)
     .val("")
@@ -201,25 +201,18 @@ $(".language-title").on("click", function (e) {
     $('.language-select .collapsed-content').slideToggle('slow');
 });
 
-// $(".language-select-mobile").on("click", function () {
-//   $(`.language-options li`).each(function () {
-//     if ($(this).data("lang") === lang) {
-//       $(this).find("a").addClass("a-disbled");
-//     }
-//   });
-//   $(`.language-options`).toggle();
-// });
-
-
 // input select //
 $(".open-dropdown-select").on("click", function () {
-  if ($(".option-tc").is(":visible")) {
-    $(".list-options-tc").slideUp();
+  let inputHeight = $("#identify-input-select").outerHeight();
+  let dropdown = $(this).closest(".dropdown-select").find(".list-options-tc");
+
+  if (dropdown.is(":visible")) {
+    dropdown.slideUp();
     $(this).find(".chevron-select").removeClass("chevron-effect");
   } else {
-    $(".list-options-tc").slideDown();
+    dropdown.css("top", 73 + "px"); 
+    dropdown.slideDown();
     $(this).find(".chevron-select").addClass("chevron-effect");
-    $(".select-tc").css("border-bottom", " 2px solid #551872");
   }
 });
 
@@ -265,18 +258,18 @@ $(".option-tc").on("click", function () {
     valueOption === "junior" && $("#juniorsMessage").css('display', 'block');
     valueOption === "no-exp" && $('#noCodersMessage').css('display', 'block');
   }
-  adjustContactTextareaHeight();
+  // adjustContactTextareaHeight();
   $(".list-options-tc").slideUp();
   $(".chevron-select").removeClass("chevron-effect");
 });
 
-function adjustContactTextareaHeight() {
-  const selectHeight = $('.input-select')[0].scrollHeight;
-  const height = !selectHeight || selectHeight == 0 ? 50 : selectHeight;   
-  $('.input-select').height(height - 4);
-}
+// function adjustContactTextareaHeight() {
+//   const selectHeight = $('.input-select')[0].scrollHeight;
+//   const height = !selectHeight || selectHeight == 0 ? 50 : selectHeight;   
+//   $('.input-select').height(height - 4);
+// }
 
-$(adjustContactTextareaHeight);
+// $(adjustContactTextareaHeight);
 
 // navbar - scroll
 const heigthNav = document.getElementById("navbar").clientHeight;
@@ -350,36 +343,11 @@ const incrementTurnOverAnimation = new CounterAnimator();
 // navBar effect to - top
 const navBar = document.getElementsByTagName('nav'); 
 
-
-// carousel animation
-
-// const bannerNav = document.getElementById("banner-layout");
-const bannerContent = document.getElementById("banner-content");
-
-// const partners = document.getElementById("partners");
 const proposal = document.getElementById("proposal");
-
-// problem
-// const noMoreDevs = document.getElementById('problem');
-// const noMoreDevsPositionHeight = noMoreDevs.offsetTop;
-// const carouselNoMoreDevs = document.getElementById("problem-carousel");
-// const noMoreDevsCarouselItemWidth = document.querySelector(".problem-item-scroll").scrollWidth;
-
-// process
-// const howDo = document.getElementById('process');
 const howDoCarousel = document.getElementById("process-carousel");
 const howDoCarouselItemWidth = document.querySelector(".process-item-scroll").scrollWidth;
-
-// results
 const results = document.getElementById('results');
-// const resultsCarousel = document.getElementById("results-carousel");
-// let resultsCarouselItemWidth = document.querySelector(".results-item-scroll").scrollWidth;
-// const margin= parseFloat(getComputedStyle(document.querySelector(".results-item-scroll")).marginRight);
-// resultsCarouselItemWidth= margin * 2 + resultsCarouselItemWidth;
-// const cardsToMove = window.innerWidth > 600 ? 3 : 1;
-// const noMoreDevsAnimation = new CarouselAnimator(carouselNoMoreDevs, noMoreDevsCarouselItemWidth, 4);
 const howDoAnimation = new CarouselAnimator(howDoCarousel, howDoCarouselItemWidth, 2);
-// const resultsAnimation = new CarouselAnimator(resultsCarousel, (resultsCarouselItemWidth) * cardsToMove , 6 / cardsToMove - 1);
 
 let lastScrollTop = 0;
 
@@ -505,6 +473,21 @@ const handleControlMenu = (action) => {
 $(".menu-button").on("click", function () {
   const isOpen = $(".open-menu").is(":visible") ? 'close' : 'open';
   handleControlMenu(isOpen);
+});
+
+window.addEventListener("click", function (e) {
+  if (!document.getElementById("dropdown-select").contains(e.target)) {
+    $(".list-options-tc").slideUp();
+    $(".chevron-select").removeClass("chevron-effect");
+    if ($(".input-select").val() !== "") $(".text-error").remove();
+  }
+  if (
+    !document.getElementById("form-container").contains(e.target) &&
+    !e.target.closest(".service-card") &&
+    !$(".contact-button").is(e.target)
+  ) {
+    $("#form-modal").addClass("hidden");
+  }
 });
 
 window.addEventListener('scroll', (e) => {

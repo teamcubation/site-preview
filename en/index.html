@@ -195,7 +195,7 @@
           <div class="services-container">
             <div class="col-12 col-md-6 col-lg-4">
               <div style="padding: 0 14px; height: 100%">
-                <div class="service-card " data-service="talentIncubation">
+                <div class="service-card" data-service="talentIncubation">
                   <div class="service-card-content">
                     <h6>Talent Incubation</h6>
                     <p>We develop custom software while training talent for your team. You get technology and professionals aligned and ready to integrate into your company.</p>
@@ -227,7 +227,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
               <div style="padding: 0 14px; height: 100%">
-                <div class="service-card " data-service="BoosterAI">
+                <div class="service-card" data-service="BoosterAI">
                   <div class="service-card-content">
                     <div class="d-flex justify-content-between align-items-center">
                       <h6 style="margin-right: 0.5em;">BoosterAI®</h6>
@@ -286,33 +286,6 @@
                 <span class="visually-hidden">Siguiente</span>
               </button>
             </div>
-            <!-- <div id="problem-carrousel">
-              <div class="carousel-section">
-                <div data-name="play" class="carousel-button left">
-                  <img src="media/arrow.svg" alt="">
-                </div>
-                <div data-name="play-reverse" class="carousel-button right">
-                  <img src="media/arrow.svg" alt="">
-                </div>
-                <div id="problem-carousel" class="carousel mt-2">
-                  <div class="problem-item-scroll">
-                    <h3 data-t>noMoreDevs.carouselText.itemOne</h3>
-                  </div>
-                  <div class="problem-item-scroll">
-                    <h3 data-t>noMoreDevs.carouselText.itemTwo</h3>
-                  </div>
-                  <div class="problem-item-scroll">
-                    <h3 data-t>noMoreDevs.carouselText.itemThree</h3>
-                  </div>
-                  <div class="problem-item-scroll">
-                    <h3 data-t>noMoreDevs.carouselText.itemFour</h3>
-                  </div>
-                  <div class="problem-item-scroll">
-                    <h3 data-t>noMoreDevs.carouselText.itemFive</h3>
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
           <div class="container-content">
             <div class="white mt-1">
@@ -1011,89 +984,115 @@
   
     <div id="form-modal" class="hidden d-flex">
       <div id="form-container">
-        <div class="col-12 d-flex flex-column align-items-center">
           <form class="form-contact" id="form-contact">
-            <div type="button" id="close-modal" style="float: right; padding: 0 0 2em 0"><img src="../media/close-icon.svg" alt="close-icon"></div>
-            <div id="formIdenfitication" class="mt-2 w-100 position-relative">
-              <div class="dropdown-select w-100" id="dropdown-select">
-                <div class="select-tc">
-                  <textarea class="input-select" disabled placeholder="How do you identify yourself?"></textarea>
-                  <span class="open-dropdown-select" style="width: 100%; height: 100%; position:absolute"></span>
-                  <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
+            <div style="padding: 0 14px;">
+              <h6 class="inter-font" style="font-size: 22px; font-weight: 600; margin-bottom: 0">Contact</h6>
+            </div>
+            <!-- <div type="button" id="close-modal" style="float: right; padding: 0 0 2em 0"><img src="media/close-icon.svg" alt="close-icon"></div> -->
+            <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
+              <div class="col-12 col-md-6">
+                <div style="padding: 0 14px;">
+                  <div id="formIdenfitication" class=" w-100">
+                    <div class="dropdown-select w-100" id="dropdown-select">
+                      <label>How do you identify yourself?</label>
+                      <div class="select-tc">
+                        <textarea class="input-select" id="identify-input-select" disabled></textarea>
+                        <span class="open-dropdown-select" style="width: 100%; height: 100%; position:absolute"></span>
+                        <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
+                      </div>
+                      <div style="max-width: 100%">
+                        <ul class="list-options-tc">
+                          <li>
+                            <div class="option-tc" data-option="organization">I am an organization, I want to be contacted to learn more about the service</div>
+                          </li>
+                          <li>
+                            <div class="option-tc" data-option="senior">I am a Senior developer and want to accompany Juniors</div>
+                          </li>
+                          <li>
+                            <div class="option-tc" data-option="junior">I am a Junior/Trainee developer with programming knowledge</div>
+                          </li>
+                          <li>
+                            <div class="option-tc" data-option="no-exp">I don't know how to code and want to learn</div>
+                          </li>
+                          <li>
+                            <div class="option-tc" data-option="other">Other</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="form-message" id="juniorsMessage">
+                      <p class="d-inline fw-600"></p>
+                      <p class="d-inline">If you are a junior, meaning you have already learned but have no professional experience,</p>
+                      <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">apply here</a>
+                      <p class="d-inline">which is where we can help you be selected by a company for a squad.</p>
+                    </div>
+                    <div class="form-message" id="seniorsMessage">
+                      <p class="d-inline fw-400">If you are a developer, have experience, are skilled, and like to transmit knowledge,</p>
+                      <p class="d-inline">go to </p>
+                      <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">this link and apply for the position that best suits your profile,</a>
+                      <p class="d-inline">which will allow us to understand where we can fit you in Teamcubation.</p>
+                    </div>
+                    <div class="form-message" id="noCodersMessage">
+                      <p class="d-inline fw-600">If you haven't learned to code yet,</p>
+                      <p class="d-inline"> we implore you to do so, become a developer, and then come apply! We don't give classes, nor do we have schedules or teachers... Our company works for other companies, allowing you to gain experience if you already know how to code.</p>
+                    </div>    
+                  </div>
                 </div>
-                <div style="position: relative; max-width: 100%">
-                  <ul class="list-options-tc">
-                    <li>
-                      <div class="option-tc" data-option="organization">I am an organization, I want to be contacted to learn more about the service</div>
-                    </li>
-                    <li>
-                      <div class="option-tc" data-option="senior">I am a Senior developer and want to accompany Juniors</div>
-                    </li>
-                    <li>
-                      <div class="option-tc" data-option="junior">I am a Junior/Trainee developer with programming knowledge</div>
-                    </li>
-                    <li>
-                      <div class="option-tc" data-option="no-exp">I don't know how to code and want to learn</div>
-                    </li>
-                    <li>
-                      <div class="option-tc" data-option="other">Other</div>
-                    </li>
-                  </ul>
+              </div> 
+              <div class="col-12 col-md-6">
+                <div style="padding: 0 14px;">
+                  <label>Name</label>
+                  <input type="text" class="name" name="name" required>
                 </div>
-              </div>
-              <div class="form-message" id="juniorsMessage">
-                <p class="d-inline fw-600"></p>
-                <p class="d-inline">If you are a junior, meaning you have already learned but have no professional experience,</p>
-                <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">apply here</a>
-                <p class="d-inline">which is where we can help you be selected by a company for a squad.</p>
-              </div>
-              <div class="form-message" id="seniorsMessage">
-                <p class="d-inline fw-400">If you are a developer, have experience, are skilled, and like to transmit knowledge,</p>
-                <p class="d-inline">go to </p>
-                <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">this link and apply for the position that best suits your profile,</a>
-                <p class="d-inline">which will allow us to understand where we can fit you in Teamcubation.</p>
-              </div>
-              <div class="form-message" id="noCodersMessage">
-                <p class="d-inline fw-600">If you haven't learned to code yet,</p>
-                <p class="d-inline"> we implore you to do so, become a developer, and then come apply! We don't give classes, nor do we have schedules or teachers... Our company works for other companies, allowing you to gain experience if you already know how to code.</p>
-              </div>    
+              </div> 
             </div>
             <div id="formInformation">
-              <div class="mt-2">
-                <input type="text" class="name" name="name" required placeholder="Name">
-              </div>
-              <div class="mt-2">
-                <input type="text" class="organizationContact" placeholder="Company">
-              </div>
-              <div class="mt-2">
-                <label for="country-phone-team" class="form-label">Phone</label>
-              </div>
-              <div class="row">
-                <div class="col-md-7 col-sm-12">
-                  <div class="row">
-                    <div class="col-3">
-                      <span>+</span>
-                      <input id="country-phone-team" style="width: calc(100% - 15px)" type="text" name="country-phone" class="country-phone" placeholder="Country">
-                    </div>
-                    <div class="col-3">
-                      <input type="text" name="area-phone" class="area-phone" placeholder="Area">
-                    </div>
-                    <div class="col-6">
-                      <input type="text" name="number-phone" class="number-phone" placeholder="Number">
+              <!-- <div class="mt-2">
+                <label data-t>contact.form.organization</label>
+                <input data-attr-t data-attr-t-interpolate type="text" class="organizationContact">
+              </div> -->
+              <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
+                <div class="col-12 col-md-6">
+                  <div style="padding: 0 14px;">
+                    <label>Email</label>
+                    <input type="email" name="email" class="email" required>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div style="padding: 0 8px 0 14px;">
+                    <label>Phone</label>
+                    <div class="row">
+                      <div class="col-3">
+                        <div style="padding: 0 6px;">
+                          <span>+</span>
+                          <input id="country-phone-team" style="width: calc(100% - 15px)" type="text" name="country-phone" class="country-phone" placeholder="Country">
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div style="padding: 0 6px;">
+                          <input type="text" name="area-phone" class="area-phone" placeholder="Area">
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div style="padding: 0 6px;">
+                          <input type="text" name="number-phone" class="number-phone" placeholder="Number">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-5 col-sm-12 mt-md-0 mt-4">
-                  <input type="email" name="email" class="email" required placeholder="Email">
+              </div>
+              <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
+                <div class="col-12">
+                  <div style="padding: 0 14px;">
+                    <label>Leave your message</label>
+                    <textarea name="message" class="message" rows="1" required style="height: 109px;"></textarea>
+                    <button type="submit" name="submit-contact" class="w-100 button submit-contact bg-orange white" style="margin-top: 32px">Send</button>
+                  </div>
                 </div>
               </div>
-              <div class="mb-4 mt-2">
-                <textarea name="message" class="message" rows="1" required placeholder="Leave your message"></textarea>
-              </div>
             </div>
-            <button type="submit" name="submit-contact" class="button submit-contact purple" style="float: right;">Send</button>
           </form>
-        </div>
       </div>
     </div>
   </div>
