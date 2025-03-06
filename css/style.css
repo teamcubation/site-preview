@@ -1787,7 +1787,7 @@ textarea{height: 50px;}
 	width: 100%;
 	display: flex;
 	align-items: center;
-	border: 1px solid #ccc;
+	border: 1px solid #BBB;
 	border-radius: 8px;
 	overflow: hidden;
 }
@@ -1810,7 +1810,8 @@ textarea{height: 50px;}
 	border-radius: 8px;
 	margin: 10px 5px;
 	padding: 10px 15px;
-	font-size: calc(1em + 0.1vw);
+	font-size: calc(0.8em + 0.1vw);
+
 	line-height: 1.1em;
 	background-color: white;
 	transition: 1s;
