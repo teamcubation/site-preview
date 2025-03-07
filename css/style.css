@@ -1586,7 +1586,7 @@ html[lang="pt"] .intersection-seniors-junior {
 
 .outlined{
 	color: white;
-	border: 1px solid rgb(255, 255, 255);
+	border: 2px solid rgba(255, 255, 255, 0.30);
 	background-color: transparent;
 }
 
@@ -1607,8 +1607,7 @@ html[lang="pt"] .intersection-seniors-junior {
 .collapsed-menu .outlined,
 .collapsed-menu ion-icon {
 	color: white;
-	border: 1px solid white;
-
+	border: 2px solid rgba(255, 255, 255, 0.30);
 }
 
 .open-menu .menu-button,
@@ -1894,6 +1893,7 @@ ion-icon {
 }
 
 .language-select{
+	/* height: 100%; */
 	color: white;
 	position: absolute;
 	z-index: 100;
@@ -1902,7 +1902,7 @@ ion-icon {
 	flex-direction: column;
 	text-align: left;
 	min-height: 3em;
-    border: 1px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.30);
     padding: 0.5em 1em;
     border-radius: 20px;
 }
@@ -2466,11 +2466,11 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 	}
 
 	#navbar-content{
-		padding: 2em;
+		padding: 2em 2em 1em 2em;
 	}
 
 	.open-menu-mobile #navbar-container{
-		margin-bottom: 2em;
+		margin-bottom: 1em;
 	}
 
 	.open-menu-mobile #navbar-content{
