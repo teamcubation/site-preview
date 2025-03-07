@@ -80,6 +80,7 @@ let selectedService = '';
 
 const openContacFormModal = () => {
   const modal = $("#form-modal");
+  closeMenu();
   if (modal.hasClass("hidden")) {
     modal.removeClass("hidden");
     window.location.hash = "#contact";
