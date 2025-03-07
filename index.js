@@ -66,6 +66,9 @@ const dataByLang = {
   },
 };
 
+
+///////////////////////////////// navbar functions 
+
 $(".language-title").on("click", function (e) {
   // e.preventDefault();
   $(`.language-options li`).each(function () {
@@ -77,16 +80,26 @@ $(".language-title").on("click", function (e) {
 });
 
 let selectedService = '';
+const modal = $("#form-modal");
 
-const openContacFormModal = () => {
-  const modal = $("#form-modal");
+const openFormModal = () => {
   closeMenu();
+  $('#navbar').addClass("hidden");
+  modal.removeClass("hidden");
+  window.location.hash = "#contact";
+}
+
+const closeFormModal = () => {
+  modal.addClass("hidden");
+  $('#navbar').removeClass("hidden");
+  history.replaceState(null, null, " ");
+};
+
+const handleControlFormModal = () => {
   if (modal.hasClass("hidden")) {
-    modal.removeClass("hidden");
-    window.location.hash = "#contact";
+    openFormModal();
   } else {
-    modal.addClass("hidden");
-    history.replaceState(null, null, " ");
+    closeFormModal();
   }
 }
 
@@ -94,20 +107,93 @@ document.querySelectorAll('.service-card').forEach(card => {
   card.addEventListener('click', function() {
     const serviceName = this.getAttribute('data-service');
     selectedService = serviceName;
-    openContacFormModal();
+    handleControlFormModal();
   });
 });
 
 $(".contact-button").on("click", () => {
-  openContacFormModal()
+  handleControlFormModal()
 });
 
 
 $("#close-modal").on("click", (e) => {
   e.preventDefault();
-  $("#form-modal").toggleClass('hidden');
+  handleControlFormModal();
 });
 
+const openMenu = () => {
+  $("#menu").removeClass('hidden');
+  $("#navbar-content").addClass('open-menu');
+  $("#footer-menu").removeClass('hidden');
+  $('#logo').addClass('hidden');
+  $('#logo-orange').removeClass('hidden');
+  $('#language-select').addClass('language-menu-open');
+  $('.language-title').addClass('language-menu-open');
+  $('#language-options').addClass('language-menu-open');
+  $('#language-options-mobile').addClass('language-menu-open');  
+  
+  if(screen.width < 574){
+    $("#navbar-content").addClass('open-menu-mobile');
+    $('#language-select-mobile').addClass('language-menu-open');
+  }
+};
+
+const closeMenu = () => {
+  $("#menu").addClass('hidden');
+  $("#navbar-content").removeClass('open-menu');
+  $("#navbar-content").removeClass('open-mobile-menu');
+  $("#footer-menu").addClass('hidden');
+  $("#form-modal").addClass('hidden');
+  if( $(".display-nav").is(":visible")){
+    return
+  }
+  $('#logo').removeClass('hidden');
+  $('#logo-orange').addClass('hidden');
+  $('#language-select').removeClass('language-menu-open');
+  $('.language-title').removeClass('language-menu-open');
+  $('#language-options').removeClass('language-menu-open');
+  $('#language-options-mobile').removeClass('language-menu-open');  
+  
+};
+
+const handleControlMenu = (action) => {
+  $('#navbar').removeClass('background-nav');
+  if(action == 'open'){
+    openMenu();
+  } 
+  else{
+    closeMenu();
+  }
+}
+
+$(".link-button").on("click", function (e) {
+  e.preventDefault();
+  const section = $(this).data('navigate');
+  location.href = `#${section}`;
+  closeMenu();
+});
+
+$(".menu-button").on("click", function () {
+  const isOpen = $(".open-menu").is(":visible") ? 'close' : 'open';
+  handleControlMenu(isOpen);
+});
+
+window.addEventListener("click", function (e) {
+  if (!document.getElementById("dropdown-select").contains(e.target)) {
+    $(".list-options-tc").slideUp();
+    $(".chevron-select").removeClass("chevron-effect");
+    if ($(".input-select").val() !== "") $(".text-error").remove();
+  }
+  if (
+    !document.getElementById("form-container").contains(e.target) &&
+    !e.target.closest(".service-card") &&
+    !$(".contact-button").is(e.target)
+  ) {
+    closeFormModal();
+  }
+});
+
+//  submit form contact
 $(".form-contact").on("submit", function (ev) {
   ev.preventDefault();
   let data_origin_extra_error_message = dataByLang.formContact.validation.noOptionSelected[lang];
@@ -392,64 +478,6 @@ $(".navigate-home").on("click", function(){
   })
 })
 
-$(".link-button").on("click", function (e) {
-  e.preventDefault();
-  const section = $(this).data('navigate');
-  location.href = `#${section}`;
-  closeMenu();
-});
-
-const openMenu = () => {
-  $("#menu").removeClass('hidden');
-  $("#navbar-content").addClass('open-menu');
-  $("#footer-menu").removeClass('hidden');
-  $('#logo').addClass('hidden');
-  $('#logo-orange').removeClass('hidden');
-  $('#language-select').addClass('language-menu-open');
-  $('.language-title').addClass('language-menu-open');
-  $('#language-options').addClass('language-menu-open');
-  $('#language-options-mobile').addClass('language-menu-open');  
-  
-  if(screen.width < 574){
-    $("#navbar-content").addClass('open-menu-mobile');
-    $('#language-select-mobile').addClass('language-menu-open');
-  }
-};
-
-const closeMenu = () => {
-  $("#menu").addClass('hidden');
-  $("#navbar-content").removeClass('open-menu');
-  $("#navbar-content").removeClass('open-mobile-menu');
-  $("#footer-menu").addClass('hidden');
-  $("#form-modal").addClass('hidden');
-  if( $(".display-nav").is(":visible")){
-    return
-  }
-  $('#logo').removeClass('hidden');
-  $('#logo-orange').addClass('hidden');
-  $('#language-select').removeClass('language-menu-open');
-  $('.language-title').removeClass('language-menu-open');
-  $('#language-options').removeClass('language-menu-open');
-  $('#language-options-mobile').removeClass('language-menu-open');  
-  
-};
-
-const handleControlMenu = (action) => {
-  $('#navbar').removeClass('background-nav');
-  if(action == 'open'){
-    openMenu();
-  } 
-  else{
-    closeMenu();
-  }
-}
-
-$(".menu-button").on("click", function () {
-  const isOpen = $(".open-menu").is(":visible") ? 'close' : 'open';
-  handleControlMenu(isOpen);
-});
-
-
 window.addEventListener('scroll', (e) => {
   const currentPositionScroll = window.scrollY;
   const direction = scrollDirection(lastScrollTop, currentPositionScroll);
@@ -643,18 +671,3 @@ $('#holon_iq').click(function(){
 $('#south_summit').click(function(){
   window.open('https://www.southsummit.io/madrid/winners-and-finalists/', '_blank');
 })
-
-window.addEventListener("click", function (e) {
-  if (!document.getElementById("dropdown-select").contains(e.target)) {
-    $(".list-options-tc").slideUp();
-    $(".chevron-select").removeClass("chevron-effect");
-    if ($(".input-select").val() !== "") $(".text-error").remove();
-  }
-  if (
-    !document.getElementById("form-container").contains(e.target) &&
-    !e.target.closest(".service-card") &&
-    !$(".contact-button").is(e.target)
-  ) {
-    $("#form-modal").addClass("hidden");
-  }
-});

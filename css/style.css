@@ -1272,7 +1272,7 @@ html[lang="pt"] .intersection-seniors-junior {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #180023bb;
+    background-color: #000000d1;
     align-items: center;
     justify-content: center;
 }
@@ -2469,7 +2469,7 @@ a.btn-tc-lnk:hover, a.btn-tc-lnk:focus{
 		padding: 2em 2em 1em 2em;
 	}
 
-	.open-menu-mobile #navbar-container{
+	#navbar-container{
 		margin-bottom: 1em;
 	}
 
