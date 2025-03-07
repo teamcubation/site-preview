@@ -166,10 +166,38 @@ const handleControlMenu = (action) => {
   }
 }
 
+$("#services_button").on("click", function() {
+  let section = "proposal"
+  const offset = 100;
+  const targetPosition = $(`#${section}`).offset().top - offset;
+  $("html, body").animate({ scrollTop: targetPosition }, 100, function () {
+    history.pushState(null, null, `#${section}`);
+  });
+  closeMenu();
+});
+
+$("#success_stories_button").on("click", function() {
+  let section = "cases"
+  const offset = 120;
+  const targetPosition = $(`#${section}`).offset().top - offset;
+  $("html, body").animate({ scrollTop: targetPosition }, 100, function () {
+    history.pushState(null, null, `#${section}`);
+  });
+  closeMenu();
+});
+
 $(".link-button").on("click", function (e) {
   e.preventDefault();
   const section = $(this).data('navigate');
-  location.href = `#${section}`;
+  let offset = 120;
+  if(section === "process"){
+    offset = 20
+  }
+  
+  const targetPosition = $(`#${section}`).offset().top - offset;
+  $("html, body").animate({ scrollTop: targetPosition }, 100, function () {
+    history.pushState(null, null, `#${section}`);
+  });
   closeMenu();
 });
 
@@ -438,21 +466,6 @@ $(".process-next").on("click", function(){
   }
 });
 
-$("#services_button").on("click", function() {
-  let target = $("#proposal").offset().top; 
-  window.scrollTo({
-    top: target, 
-    behavior: "smooth" 
-  });
-});
-
-$("#success_stories_button").on("click", function() {
-  let target = $("#cases").offset().top - 25; 
-  window.scrollTo({
-    top: target, 
-    behavior: "smooth" 
-  });
-});
 
 // partners slide
 document.addEventListener("DOMContentLoaded", function() {
