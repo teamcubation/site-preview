@@ -463,11 +463,11 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelector(".logos").appendChild(logosSlideCopy);
 });
 
-window.addEventListener('scroll', (e) => {
-  const currentPositionScroll = window.scrollY;
-  const direction = scrollDirection(lastScrollTop, currentPositionScroll);
+// window.addEventListener('scroll', (e) => {
+//   const currentPositionScroll = window.scrollY;
+//   const direction = scrollDirection(lastScrollTop, currentPositionScroll);
 
-});
+// });
 
 // navbar and menu
 const proposalToTop = proposal.getBoundingClientRect().top;

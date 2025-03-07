@@ -1912,6 +1912,7 @@ ion-icon {
  {
    color: var(--color-logo-orange);
    border: 1px solid var(--color-logo-orange);
+   background-color: white;
 }
 
 #language-select-mobile{
