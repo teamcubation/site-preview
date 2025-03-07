@@ -195,6 +195,7 @@ window.addEventListener("click", function (e) {
 
 //  submit form contact
 $(".form-contact").on("submit", function (ev) {
+  debugger
   ev.preventDefault();
   let data_origin_extra_error_message = dataByLang.formContact.validation.noOptionSelected[lang];
   const currentForm = $(this).attr("id");
@@ -244,8 +245,8 @@ $(".form-contact").on("submit", function (ev) {
       dataType: "json",
       success: (r) => {
         $(".alert").remove();
-        $(".form-contact").prepend(
-          '<div class="alert alert-success" role="alert" style="position: absolute; z-index: 101"></div>'
+        $("#form-container").prepend(
+          '<div class="alert alert-success" role="alert" style="position: absolute; top: 25px; width: 90%, margin: 0 auto; z-index: 101"></div>'
         );
         $(".alert").text(dataByLang.formContact.submitResponse.success[lang]);
         $(".alert")
@@ -258,8 +259,8 @@ $(".form-contact").on("submit", function (ev) {
       },
       error: (r) => {
         $(".alert").remove();
-        $(".form-contact").prepend(
-          '<div class="alert alert-danger" role="alert" style="position: absolute; z-index: 101"></div>'
+        $("#form-container").prepend(
+          '<div class="alert alert-danger" role="alert" style="position: absolute; top: 25px; width: 90%, margin: 0 auto; z-index: 101"></div>'
         );
         $(".alert").text(dataByLang.formContact.submitResponse.error[lang]);
         $(".alert")
