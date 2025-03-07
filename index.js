@@ -234,6 +234,7 @@ $(".option-tc").on("click", function () {
   if (valueOption === "other") {
     $('.form-message').css('display', 'none');
     $("#formInformation").css('visibility', 'visible');
+    $(".name-form-container").css('visibility', 'visible');
     $(".submit-contact").css('visibility', 'visible');
     $(".input-select").data("value-selected", valueOption);
     $(".input-select").val(textOption);
@@ -243,6 +244,7 @@ $(".option-tc").on("click", function () {
   else if (valueOption === "organization") {
     $('.form-message').css('display', 'none');
     $("#formInformation").css('visibility', 'visible');
+    $(".name-form-container").css('visibility', 'visible');
     $(".submit-contact").css('visibility', 'visible');
     $(".input-select").data("value-selected", valueOption);
     $(".input-select").val(textOption);
@@ -252,6 +254,7 @@ $(".option-tc").on("click", function () {
     $(".input-select").data("value-selected", valueOption);
     $(".input-select").val(textOption);
     $("#formInformation").css('visibility', 'hidden');
+    $(".name-form-container").css('visibility', 'hidden');
     $(".submit-contact").css('visibility', 'hidden');
     $('.form-message').css('display', 'none');
     valueOption === "senior" && $("#seniorsMessage").css('display', 'block');

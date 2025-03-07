@@ -984,116 +984,138 @@
   
     <div id="form-modal" class="hidden d-flex">
       <div id="form-container">
-          <form class="form-contact" id="form-contact">
-            <div style="padding: 0 14px;">
-              <h6 class="inter-font" style="font-size: 22px; font-weight: 600; margin-bottom: 0">Contacto</h6>
-              <div style="height: 1px; background:#C8C6C5; width: calc(100%); margin-top: 12px"></div>
-            </div>
-            <!-- <div type="button" id="close-modal" style="float: right; padding: 0 0 2em 0"><img src="media/close-icon.svg" alt="close-icon"></div> -->
-            <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
-              <div class="col-12 col-md-6">
-                <div style="padding: 0 14px;">
-                  <div id="formIdenfitication" class=" w-100">
-                    <div class="dropdown-select w-100" id="dropdown-select">
-                      <label>¿Cómo te identificás?</label>
-                      <div class="select-tc">
-                        <textarea class="input-select" id="identify-input-select" disabled></textarea>
-                        <span class="open-dropdown-select" style="width: 100%; height: 100%; position:absolute"></span>
-                        <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                      </div>
-                      <div style="max-width: 100%">
-                        <ul class="list-options-tc">
-                          <li>
-                            <div class="option-tc" data-option="organization">Soy una organización, quiero que me contacten para conocer más del servicio</div>
-                          </li>
-                          <li>
-                            <div class="option-tc" data-option="senior">Soy un desarrollador Senior y quiero acompañar a Juniors</div>
-                          </li>
-                          <li>
-                            <div class="option-tc" data-option="junior">Soy un desarrollador Junior/Trainee con conocimientos de programación</div>
-                          </li>
-                          <li>
-                            <div class="option-tc" data-option="no-exp">No sé programar y quiero aprender</div>
-                          </li>
-                          <li>
-                            <div class="option-tc" data-option="other">Otro</div>
-                          </li>
-                        </ul>
-                      </div>
+        <form class="form-contact" id="form-contact">
+          <div style="padding: 0 14px; display: flex; justify-content: space-between; align-items: center">
+            <h6 class="inter-font" style="font-size: 22px; font-weight: 600; margin-bottom: 0">Contacto</h6>
+            <div type="button" id="close-modal"><img src="media/close-icon.svg" style="width: 12px" alt="close-icon"></div>
+          </div>
+          <div style="padding: 0 14px; display: flex; justify-content: space-between; align-items: center">
+            <div style="height: 1px; background:#C8C6C5; width: calc(100%); margin: 0.5em 0"></div>
+          </div>
+          <div class="row justify-content-around align-items-end">
+            <div class="col-12 col-md-6" style="margin-top: 1.5em !important;">
+              <div style="padding: 0 14px;">
+                <div id="formIdenfitication" class=" w-100">
+                  <div class="dropdown-select w-100" id="dropdown-select">
+                    <label>¿Cómo te identificás?</label>
+                    <div class="select-tc">
+                      <input class="input-select" id="identify-input-select" disabled>
+                      <span class="open-dropdown-select" style="width: 100%; height: 100%; position:absolute"></span>
+                      <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
                     </div>
-                    <div class="form-message" id="juniorsMessage">
-                      <p class="d-inline fw-600"></p>
-                      <p class="d-inline">Si sos Junior, o sea, ya aprendiste pero no tenés experiencia trabajando</p>
-                      <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">postulate acá</a>
-                      <p class="d-inline">que es donde podemos ayudarte a que una compañía te seleccione para un squad</p>
+                    <div style="max-width: 100%">
+                      <ul class="list-options-tc">
+                        <li>
+                          <div class="option-tc" data-option="organization">Soy una organización, quiero que me contacten para conocer más del servicio</div>
+                        </li>
+                        <li>
+                          <div class="option-tc" data-option="senior">Soy un desarrollador Senior y quiero acompañar a Juniors</div>
+                        </li>
+                        <li>
+                          <div class="option-tc" data-option="junior">Soy un desarrollador Junior/Trainee con conocimientos de programación</div>
+                        </li>
+                        <li>
+                          <div class="option-tc" data-option="no-exp">No sé programar y quiero aprender</div>
+                        </li>
+                        <li>
+                          <div class="option-tc" data-option="other">Otro</div>
+                        </li>
+                      </ul>
                     </div>
-                    <div class="form-message" id="seniorsMessage">
-                      <p class="d-inline fw-400">Si sos dev, tenés experiencia, sos crack y te gusta transmitir habilidades,</p>
-                      <p class="d-inline">andá a </p>
-                      <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">este link y postulate a la búsqueda que más se adecúe a tu perfil</a>
-                      <p class="d-inline">que nos va a permitir entender dónde podemos sumarte en Teamcubation_</p>
-                    </div>
-                    <div class="form-message" id="noCodersMessage">
-                      <p class="d-inline fw-600">Si todavía no aprendiste a programar</p>
-                      <p class="d-inline"> te rogamos que lo hagas, te conviertas en developer y después vengas a postularte! Nosotros no damos clases, ni tenemos horarios, ni profes... Nuestra compañía trabaja para empresas permitiendo que adquieras experiencia si ya sabés codear.</p>
-                    </div>    
                   </div>
-                </div>
-              </div> 
-              <div class="col-12 col-md-6">
-                <div style="padding: 0 14px;">
-                  <label>Nombre</label>
-                  <input type="text" class="name" name="name" required>
-                </div>
-              </div> 
-            </div>
-            <div id="formInformation">
-              <!-- <div class="mt-2">
-                <label data-t>contact.form.organization</label>
-                <input data-attr-t data-attr-t-interpolate type="text" class="organizationContact">
-              </div> -->
-              <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
-                <div class="col-12 col-md-6">
-                  <div style="padding: 0 14px;">
-                    <label>E-mail</label>
-                    <input type="email" name="email" class="email" required>
+                  <!-- <div class="form-message" id="juniorsMessage">
+                    <p class="d-inline fw-600" data-t>contact.description.text.juniors.text.boldTextOne</p>
+                    <p class="d-inline" data-t>contact.description.text.juniors.text.standardTextOne</p>
+                    <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" data-t target="_blank">contact.description.text.juniors.text.linkJuniors</a>
+                    <p class="d-inline" data-t >contact.description.text.juniors.text.standardTextTwo</p>
                   </div>
+                  <div class="form-message" id="seniorsMessage">
+                    <p class="d-inline fw-400" data-t>contact.description.text.seniors.text.boldTextOne</p>
+                    <p class="d-inline" data-t>contact.description.text.seniors.text.standardTextOne</p>
+                    <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" data-t target="_blank">contact.description.text.seniors.text.linkJuniors</a>
+                    <p class="d-inline" data-t>contact.description.text.seniors.text.standardTextTwo</p>
+                  </div>
+                  <div class="form-message" id="noCodersMessage">
+                    <p class="d-inline fw-600" data-t>contact.description.text.noCoders.text.boldText</p>
+                    <p class="d-inline" data-t>contact.description.text.noCoders.text.standardText</p>
+                  </div>     -->
                 </div>
-                <div class="col-12 col-md-6">
-                  <div style="padding: 0 8px 0 14px;">
-                    <label>Teléfono</label>
-                    <div class="row">
-                      <div class="col-3">
-                        <div style="padding: 0 6px;">
-                          <span>+</span>
-                          <input id="country-phone-team" style="width: calc(100% - 15px)" type="text" name="country-phone" class="country-phone" placeholder="País">
-                        </div>
+              </div>
+            </div> 
+            <div class="col-12 col-md-6 " style="margin-top: 1.5em !important;">
+              <div style="padding: 0 14px;" class="name-form-container">
+                <label>Nombre</label>
+                <input type="text" class="name" name="name" required>
+              </div>
+              <div style="padding: 0 14px; position: relative; max-width: 100%;">
+                <div class="form-message" id="juniorsMessage">
+                  <p class="d-inline fw-600"></p>
+                  <p class="d-inline">Si sos Junior, o sea, ya aprendiste pero no tenés experiencia trabajando</p>
+                  <a href="https://teamcubation.bamboohr.com/jobs/view.php?id=30&source=teamcubation" class="d-inline fw-600 linkPostulations" target="_blank">postulate acá</a>
+                  <p class="d-inline">que es donde podemos ayudarte a que una compañía te seleccione para un squad</p>
+                </div>
+                <div class="form-message" id="seniorsMessage">
+                  <p class="d-inline fw-400">Si sos dev, tenés experiencia, sos crack y te gusta transmitir habilidades,</p>
+                  <p class="d-inline">andá a </p>
+                  <a href="https://teamcubation.bamboohr.com/jobs/" class="d-inline fw-600 linkPostulations" target="_blank">este link y postulate a la búsqueda que más se adecúe a tu perfil</a>
+                  <p class="d-inline">que nos va a permitir entender dónde podemos sumarte en Teamcubation_</p>
+                </div>
+                <div class="form-message" id="noCodersMessage">
+                  <p class="d-inline fw-600">Si todavía no aprendiste a programar</p>
+                  <p class="d-inline"> te rogamos que lo hagas, te conviertas en developer y después vengas a postularte! Nosotros no damos clases, ni tenemos horarios, ni profes... Nuestra compañía trabaja para empresas permitiendo que adquieras experiencia si ya sabés codear.</p>
+                </div>    
+              </div>
+
+            </div> 
+          </div>
+
+          <div id="formInformation">
+            <!-- <div class="mt-2">
+              <label data-t>contact.form.organization</label>
+              <input data-attr-t data-attr-t-interpolate type="text" class="organizationContact">
+            </div> -->
+            <div class="row justify-content-around align-items-end">
+              <div class="col-12 col-md-6" style="margin-top: 1.5em !important;">
+                <div style="padding: 0 14px;">
+                  <label>E-mail</label>
+                  <input type="email" name="email" class="email" required>
+                </div>
+              </div>
+              <div class="col-12 col-md-6" style="margin-top: 1.5em !important;"> 
+                <div style="padding: 0 8px 0 14px;">
+                  <label>Teléfono</label>
+                  <div class="row">
+                    <div class="col-3">
+                      <div style="padding: 0 6px; display: flex; align-items: center; align-items: center;">
+                        <span style="width: 25px;">+</span>
+                        <input id="country-phone-team" type="text" name="country-phone" class="country-phone" placeholder="País">
                       </div>
-                      <div class="col-3">
-                        <div style="padding: 0 6px;">
-                          <input type="text" name="area-phone" class="area-phone" placeholder="Área">
-                        </div>
+                    </div>
+                    <div class="col-3">
+                      <div style="padding: 0 6px;">
+                        <input type="text" name="area-phone" class="area-phone" placeholder="Área">
                       </div>
-                      <div class="col-6">
-                        <div style="padding: 0 6px;">
-                          <input type="text" name="number-phone" class="number-phone" placeholder="Número">
-                        </div>
+                    </div>
+                    <div class="col-6">
+                      <div style="padding: 0 6px;">
+                        <input type="text" name="number-phone" class="number-phone" placeholder="Número">
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row justify-content-around align-items-end" style="margin-top: 20px !important;">
-                <div class="col-12">
-                  <div style="padding: 0 14px;">
-                    <label>Dejanos tu mensaje</label>
-                    <textarea name="message" class="message" rows="1" required style="height: 109px;"></textarea>
-                    <button type="submit" name="submit-contact" class="w-100 button submit-contact bg-orange white" style="margin-top: 32px">Enviar</button>
-                  </div>
+            </div>
+            <div class="row justify-content-around align-items-end" style="margin-top: 1.5em !important;">
+              <div class="col-12">
+                <div style="padding: 0 14px;">
+                  <label>Dejanos tu mensaje</label>
+                  <textarea name="message" class="message" rows="1" required style="height: 90px;"></textarea>
+                  <button type="submit" name="submit-contact" class="w-100 button submit-contact bg-orange white" style="margin-top: 2em">Enviar</button>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
+        </form>
       </div>
     </div>
   </div>
