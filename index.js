@@ -124,7 +124,7 @@ $("#close-modal").on("click", (e) => {
 const openMenu = () => {
   $("#menu").removeClass('hidden');
   $("#navbar-content").addClass('open-menu');
-  $("#footer-menu").removeClass('hidden');
+  // $("#footer-menu").removeClass('hidden');
   $('#logo').addClass('hidden');
   $('#logo-orange').removeClass('hidden');
   $('#language-select').addClass('language-menu-open');
@@ -142,7 +142,7 @@ const closeMenu = () => {
   $("#menu").addClass('hidden');
   $("#navbar-content").removeClass('open-menu');
   $("#navbar-content").removeClass('open-mobile-menu');
-  $("#footer-menu").addClass('hidden');
+  // $("#footer-menu").addClass('hidden');
   $("#form-modal").addClass('hidden');
   if( $(".display-nav").is(":visible")){
     return
@@ -187,8 +187,12 @@ $("#success_stories_button").on("click", function() {
 });
 
 $(".link-button").on("click", function (e) {
-  e.preventDefault();
+  
   const section = $(this).data('navigate');
+  if(section === "external"){
+    return;
+  }
+  e.preventDefault();
   let offset = 120;
   if(section === "process"){
     offset = 20
