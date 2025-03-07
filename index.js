@@ -11,6 +11,21 @@ $(function(){
   }
 });
 
+$(function(){
+  if (localStorage.getItem('lang_redirect') === null) {
+    const browser_lang = navigator.language.split('-')[0];
+
+    if (browser_lang !== lang && (['en', 'es', 'pt'].includes(browser_lang))) {
+      localStorage.setItem('lang_redirect', '1');
+      if (browser_lang === 'es') {
+        location.href = '/';
+      } else {
+        location.href = `/${browser_lang}/`;
+      }
+    }
+  }
+});
+
 const currentYear = document.getElementById("currentYear");
 const year = new Date().getFullYear();
 currentYear.textContent = year;
@@ -50,6 +65,16 @@ const dataByLang = {
     },
   },
 };
+
+$(".language-title").on("click", function (e) {
+  // e.preventDefault();
+  $(`.language-options li`).each(function () {
+    if ($(this).data("lang") === lang) {
+      $(this).find("a").addClass("hidden");
+    }
+  });
+  $('.language-select .collapsed-content').slideToggle('slow');
+});
 
 let selectedService = '';
 
@@ -182,7 +207,6 @@ const clearForm = () => {
   $(".organizationContact").val("");
   $(".list-options-tc").slideUp();
   $(".chevron-select").removeClass("chevron-effect");
-  // $(".select-tc").css("border-bottom", "2px solid rgba(128, 128, 128, 0.507)");
   $(".input-select")
     .prop("disabled", true)
     .val("")
@@ -191,21 +215,9 @@ const clearForm = () => {
     .height('40px');
 };
 
-$(".language-title").on("click", function (e) {
-    // e.preventDefault();
-    $(`.language-options li`).each(function () {
-      if ($(this).data("lang") === lang) {
-        $(this).find("a").addClass("hidden");
-      }
-    });
-    $('.language-select .collapsed-content').slideToggle('slow');
-});
-
 // input select //
 $(".open-dropdown-select").on("click", function () {
-  let inputHeight = $("#identify-input-select").outerHeight();
   let dropdown = $(this).closest(".dropdown-select").find(".list-options-tc");
-
   if (dropdown.is(":visible")) {
     dropdown.slideUp();
     $(this).find(".chevron-select").removeClass("chevron-effect");
@@ -261,7 +273,6 @@ $(".option-tc").on("click", function () {
     valueOption === "junior" && $("#juniorsMessage").css('display', 'block');
     valueOption === "no-exp" && $('#noCodersMessage').css('display', 'block');
   }
-  // adjustContactTextareaHeight();
   $(".list-options-tc").slideUp();
   $(".chevron-select").removeClass("chevron-effect");
 });
@@ -274,8 +285,9 @@ $(".option-tc").on("click", function () {
 
 // $(adjustContactTextareaHeight);
 
+
+
 // navbar - scroll
-const heigthNav = document.getElementById("navbar").clientHeight;
 let isNavigate = false;  
 
 // is scrolling ?
@@ -292,64 +304,14 @@ noScroll(function () {
   isNavigate = false;
 });
 
-$(function(){
-  if (localStorage.getItem('lang_redirect') === null) {
-    const browser_lang = navigator.language.split('-')[0];
-
-    if (browser_lang !== lang && (['en', 'es', 'pt'].includes(browser_lang))) {
-      localStorage.setItem('lang_redirect', '1');
-      if (browser_lang === 'es') {
-        location.href = '/';
-      } else {
-        location.href = `/${browser_lang}/`;
-      }
-    }
-  }
-});
-
-// partners slide
-document.addEventListener("DOMContentLoaded", function() {
-  const logosSlide = document.querySelector(".logos div");
-  logosSlide.classList.add("logos-slide");
-  const logosSlideCopy = logosSlide.cloneNode(true);
-  logosSlideCopy.classList.add("logos-slide");
-  document.querySelector(".logos").appendChild(logosSlideCopy);
-});
-
-// incrementCounter
-const peopleNumber = document.getElementById("people-number");
-let incrementAmountPeopleNumber = {
-  counterValue: 0,
-  targetValue: 22,
-  step: 0,
-}
-const incrementPeopleAnimation = new CounterAnimator();
-
-const costTopNumber = document.getElementById("cost-to-number");
-let incrementAmountCostNumber = {
-  counterValue: 0,
-  targetValue: 4000,
-  acumulate: 4000,
-  step: 0,
-}
-const incrementCostAnimation = new CounterAnimator();
-
-const turnoverNumber = document.getElementById("turnover-number");
-let incrementAmountTurnOverNumber = {
-  counterValue: 0,
-  targetValue: 26,
-  acumulate: 26,
-  step: 0,
-}
-const incrementTurnOverAnimation = new CounterAnimator();
 
 // navBar effect to - top
-const navBar = document.getElementsByTagName('nav'); 
+// const navBar = document.getElementsByTagName('nav'); 
 
 const proposal = document.getElementById("proposal");
 const howDoCarousel = document.getElementById("process-carousel");
 const howDoCarouselItemWidth = document.querySelector(".process-item-scroll").scrollWidth;
-const results = document.getElementById('results');
+// const results = document.getElementById('results');
 const howDoAnimation = new CarouselAnimator(howDoCarousel, howDoCarouselItemWidth, 2);
 
 let lastScrollTop = 0;
@@ -404,6 +366,14 @@ $("#success_stories_button").on("click", function() {
   });
 });
 
+// partners slide
+document.addEventListener("DOMContentLoaded", function() {
+  const logosSlide = document.querySelector(".logos div");
+  logosSlide.classList.add("logos-slide");
+  const logosSlideCopy = logosSlide.cloneNode(true);
+  logosSlideCopy.classList.add("logos-slide");
+  document.querySelector(".logos").appendChild(logosSlideCopy);
+});
 
 window.addEventListener('scroll', (e) => {
   const currentPositionScroll = window.scrollY;
@@ -478,20 +448,6 @@ $(".menu-button").on("click", function () {
   handleControlMenu(isOpen);
 });
 
-window.addEventListener("click", function (e) {
-  if (!document.getElementById("dropdown-select").contains(e.target)) {
-    $(".list-options-tc").slideUp();
-    $(".chevron-select").removeClass("chevron-effect");
-    if ($(".input-select").val() !== "") $(".text-error").remove();
-  }
-  if (
-    !document.getElementById("form-container").contains(e.target) &&
-    !e.target.closest(".service-card") &&
-    !$(".contact-button").is(e.target)
-  ) {
-    $("#form-modal").addClass("hidden");
-  }
-});
 
 window.addEventListener('scroll', (e) => {
   const currentPositionScroll = window.scrollY;
@@ -515,11 +471,11 @@ window.addEventListener('scroll', (e) => {
   
     }
   }
-  if(currentPositionScroll > proposalToTop && direction == "down"){
-    $('#navbar').addClass('hidden-nav');
-    handleControlMenu('close');
-  }
-  if(currentPositionScroll > proposalToTop && direction == "up"){
+  // if(currentPositionScroll > proposalToTop && direction == "down"){
+  //   $('#navbar').addClass('hidden-nav');
+  //   handleControlMenu('close');
+  // }
+  if(currentPositionScroll > 0){
     $('#navbar').removeClass('hidden-nav');
     $('#navbar-content').addClass('display-nav');
     $('#logo').addClass('hidden');
@@ -686,3 +642,18 @@ $('#holon_iq').click(function(){
 $('#south_summit').click(function(){
   window.open('https://www.southsummit.io/madrid/winners-and-finalists/', '_blank');
 })
+
+window.addEventListener("click", function (e) {
+  if (!document.getElementById("dropdown-select").contains(e.target)) {
+    $(".list-options-tc").slideUp();
+    $(".chevron-select").removeClass("chevron-effect");
+    if ($(".input-select").val() !== "") $(".text-error").remove();
+  }
+  if (
+    !document.getElementById("form-container").contains(e.target) &&
+    !e.target.closest(".service-card") &&
+    !$(".contact-button").is(e.target)
+  ) {
+    $("#form-modal").addClass("hidden");
+  }
+});
