@@ -19,9 +19,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/style.css?v=2.13">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
   <!-- Google Tag Manager -->
@@ -123,13 +123,17 @@
               <a class="methodology" href="#squad-description-layout">Metodología</a>
               <!-- <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu"> -->
             </div>
+            <div data-navigate="product" class="link-button divider-button">
+              <a class="product" href="#product">Producto</a>
+            </div>
+
             <div data-navigate="team" class="link-button divider-button">
               <a class="aboutUs" href="#team">Quienes somos</a>
               <!-- <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu"> -->
             </div>
             <div data-navigate="external" class="link-button" style="height: 20px;">
-              <div style="display: flex;justify-content: center;align-items: center;">
-                <a style="color:#0A66C2; margin-right: 5px" href="https://www.linkedin.com/company/teamcubation">LinkedIn</a>
+              <div style="display: flex; justify-content: center;align-items: center;">
+                <a style="color:#0A66C2; margin-right: 5px" target="_blank" href="https://www.linkedin.com/company/teamcubation">LinkedIn</a>
                 <img class="arrow-menu" style="color:#0A66C2" src="media/arrow-link.svg" alt="arrow-menu">
               </div>
             </div>
@@ -160,7 +164,7 @@
       <div id="partners">
         <div class="logos">
           <div>
-            <img src="media/partners/test2.png?v=2">
+            <img src="media/partners/test2.png?v=4">
           </div>
         </div>        
       </div>
@@ -469,120 +473,98 @@
         </div>
       </div>
     </section>
-
-    <section id="pep">
-      <div id="pep-layout" class="layout">
-        <div id="pep-content">
-          <div class="w-100 orange">
-            <h3>PEP:</h3>
-            <h3>Programming Experience Platform. </h3>
+    <section id="product">
+      <div id="product-layout" class="layout">
+        <div id="product-content">
+          <div class="text-center" style="max-width: 80%; margin: 0 auto;">
+            <img src="media/team_boarding.png" style="max-width: 100%;" alt="Teamboarding">
+            <p class="inter-font secondary" style="margin-top: 20px; font-size: 20px;">Mientras el equipo trabaja, recopilamos y analizamos datos concretos para evaluar y mejorar las habilidades de nuestros desarrolladores con la ayuda de Teamboarding.</p>
+            <h4 class="inter-font" style="margin-top: 72px; font-weight: 600;">Onboarding claro y estructurado, sin complicaciones.</h4>
+            <p class="inter-font secondary" style="margin-top: 20px; font-size: 16px;">Descubrí una forma simple y efectiva de integrar personas a tu equipo.</p>
           </div>
-          <div class="d-flex mt-5 justify-content-between flex-wrap">
-            <div class="col-10 col-sm-5">
-              <h6 class="md-text-card orange fw-bold">La magia de nuestra metodología está en los datos.</h6>
-            </div>
-            <div class="col-10 col-sm-6">
-              <p class="grey">Mientras el equipo trabaja, recolectamos y analizamos datos concretos para evaluar y mejorar las habilidades de nuestros desarrolladores juniors con la ayuda de nuestra Plataforma de Experiencia en Programación (PEP). Esto permite a nuestros seniors, apoyar a cada uno de forma personalizada para garantizar que se alineen con la cultura, metodologías y tecnologías de tus equipos, ayudándolos a adquirir la experiencia necesaria para poder incorporarse a estos y ser productivos desde el primer día.</p>
-            </div>
-          </div>
-          <div class="row w-100" style="margin: 0">
-            <div id="pep-attributes-container">
-              <div class="row">
-                <div class="col-12 col-lg-5">
-                  <div class="dropdown-container">
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card orange">Integración a su flujo de trabajo</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div id="pep-one" class="collapsed-content d-flex">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">PEP se conecta con herramientas como GitHub, Jira, Slack y Teams, facilitando tanto el proceso de desarrollo de software como el seguimiento del progreso de los juniors.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-1.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">Insights en tiempo real</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">Observa la evolución de los developers con métricas precisas sobre el código que desarrollan, las metodologías y herramientas de comunicación.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-2.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">Alertas inteligentes</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">Nos mantienen al tanto del desempeño de los developers con notificaciones que identifican comportamientos que no se alinean con las expectativas, necesarias para mejorar la calidad y coherencia del trabajo y del equipo.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-3.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">Seguimiento personalizable</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">Evaluamos aspectos clave del desarrollo personal de los developers mediante acciones y encuestas a medida que aportan un enfoque humano en el proceso de entrenamiento.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-4.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">Conoce a tus futuros colaboradores</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">A través de tests cognitivos y conductuales, tales como PDA (Personal Development Analysis), obtenemos una visión clara de los perfiles de tus futuros colaboradores para gestionar su talento, desarrollar habilidades y obtener su mejor versión.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-5.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">Pulso emocional</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">Integración con IA que analiza respuestas y detecta automáticamente los sentimientos y emociones del equipo para intervenir oportunamente cuando sea necesario, asegurando un entorno laboral positivo y productivo.</p>
-                          <img class="img-responsive hidden" src="media/pep/pep-6.png" alt>
-                        </div>
-                      </div>
-                    </div>
+          <div class="row" style=" margin: 40px -16px 0 -16px!important">
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/customized_processes.svg" alt>
+                    <h6>Procesos Personalizados</h6>
                   </div>
-                </div>
-                <div class="col-12 col-lg-7">
-                  <div id="pep-img-container">
-                    <img class="img-responsive" src="media/pep/pep-1.png" alt>
-                  </div>
+                  <p>Crea y gestiona flujos de trabajo adaptados a cada rol dentro del equipo.</p>
                 </div>
               </div>
             </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/detailed_metrics.svg" alt>
+                    <h6>Métricas Detalladas</h6>
+                  </div>
+                  <p>Supervisa el avance con informes y análisis precisos que permiten tomar decisiones informadas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/automatic_alerts.svg" alt>
+                    <h6>Alertas Automáticas</h6>
+                  </div>
+                  <p>Recibe notificaciones en tiempo real sobre hitos importantes o situaciones que requieren atención.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/activity_logs.svg" alt>
+                    <h6>Registros de Actividad</h6>
+                  </div>
+                  <p>Lleva un seguimiento completo de cada acción para facilitar el feedback y la mejora continua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style=" margin-left: -16px!important; margin-right: -16px!important;">
+            <div class="col-12 col-md-6 col-xl-4 d-flex  col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/role_assignment.svg" alt>
+                    <h6>Asignación Simple de Roles</h6>
+                  </div>
+                  <p>Asigna fácilmente líderes o mentores a los nuevos integrantes para asegurar un acompañamiento efectivo.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 d-flex col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/easy_connection.svg" alt>
+                    <h6>Integración con Herramientas de Uso Diario</h6>
+                  </div>
+                  <p>Conecta las herramientas que tu equipo ya utiliza para recopilar datos y seguir el progreso sin fricciones.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 d-flex col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="media/product/progress_monitoring.svg" alt>
+                    <h6>Monitoreo Detallado del Progreso</h6>
+                  </div>
+                  <p>Visualiza y evalúa todo el proceso, tanto para nuevos ingresos como para líderes, desde una única plataforma.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <button id="open_team_boarding" class="button lg-button inter-font white bg-tb_primary">Más información</button>
           </div>
         </div>
       </div>
@@ -1094,10 +1076,9 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js" nomodule></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="index.js?v=3.1"></script>
+  <script type="module" src="index.js?v=4"></script>
 
 </body>
 </html>

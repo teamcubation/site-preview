@@ -19,9 +19,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-  <link rel="stylesheet" href="../css/style.css?v=2.13">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css?v=4">
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
   <!-- Google Tag Manager -->
@@ -123,13 +123,17 @@
               <a class="methodology" href="#squad-description-layout">Metodologia</a>
               <!-- <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu"> -->
             </div>
+            <div data-navigate="product" class="link-button divider-button">
+              <a class="product" href="#product">Produto</a>
+            </div>
+
             <div data-navigate="team" class="link-button divider-button">
               <a class="aboutUs" href="#team">Quem somos</a>
               <!-- <img class="arrow-menu" src="media/arrow-menu.svg" alt="arrow-menu"> -->
             </div>
             <div data-navigate="external" class="link-button" style="height: 20px;">
-              <div style="display: flex;justify-content: center;align-items: center;">
-                <a style="color:#0A66C2; margin-right: 5px" href="https://www.linkedin.com/company/teamcubation">LinkedIn</a>
+              <div style="display: flex; justify-content: center;align-items: center;">
+                <a style="color:#0A66C2; margin-right: 5px" target="_blank" href="https://www.linkedin.com/company/teamcubation">LinkedIn</a>
                 <img class="arrow-menu" style="color:#0A66C2" src="../media/arrow-link.svg" alt="arrow-menu">
               </div>
             </div>
@@ -160,7 +164,7 @@
       <div id="partners">
         <div class="logos">
           <div>
-            <img src="../media/partners/test2.png?v=2">
+            <img src="../media/partners/test2.png?v=4">
           </div>
         </div>        
       </div>
@@ -469,120 +473,98 @@
         </div>
       </div>
     </section>
-
-    <section id="pep">
-      <div id="pep-layout" class="layout">
-        <div id="pep-content">
-          <div class="w-100 orange">
-            <h3>PEP:</h3>
-            <h3>Plataforma de Experiência em Programação. </h3>
+    <section id="product">
+      <div id="product-layout" class="layout">
+        <div id="product-content">
+          <div class="text-center" style="max-width: 80%; margin: 0 auto;">
+            <img src="../media/team_boarding.png" style="max-width: 100%;" alt="Teamboarding">
+            <p class="inter-font secondary" style="margin-top: 20px; font-size: 20px;">Enquanto a equipe trabalha, coletamos e analisamos dados concretos para avaliar e aprimorar as habilidades dos nossos desenvolvedores com a ajuda do Teamboarding.</p>
+            <h4 class="inter-font" style="margin-top: 72px; font-weight: 600;">Onboarding claro e estruturado, sem complicações</h4>
+            <p class="inter-font secondary" style="margin-top: 20px; font-size: 16px;">Descubra uma forma simples e eficaz de integrar pessoas à sua equipe.</p>
           </div>
-          <div class="d-flex mt-5 justify-content-between flex-wrap">
-            <div class="col-10 col-sm-5">
-              <h6 class="md-text-card orange fw-bold">A mágica da nossa metodologia está nos dados.</h6>
-            </div>
-            <div class="col-10 col-sm-6">
-              <p class="grey">Enquanto a equipe trabalha, coletamos e analisamos dados concretos para avaliar e melhorar as habilidades de nossos desenvolvedores juniores com a ajuda de nossa Plataforma de Experiência em Programação (PEP). Isso permite que nossos seniors apoiem cada um de forma personalizada para garantir que se alinhem com a cultura, metodologias e tecnologias de suas equipes, ajudando-os a adquirir a experiência necessária para se juntar a elas e serem produtivos desde o primeiro dia.</p>
-            </div>
-          </div>
-          <div class="row w-100" style="margin: 0">
-            <div id="pep-attributes-container">
-              <div class="row">
-                <div class="col-12 col-lg-5">
-                  <div class="dropdown-container">
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card orange">Integração ao seu fluxo de trabalho</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div id="pep-one" class="collapsed-content d-flex">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">A PEP se conecta com ferramentas como GitHub, Jira, Slack e Teams, facilitando tanto o processo de desenvolvimento de software quanto o acompanhamento do progresso dos juniores.</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-1.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">pep.dropDown.two.title</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">pep.dropDown.two.leyend</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-2.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">pep.dropDown.three.title</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">pep.dropDown.three.leyend</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-3.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">pep.dropDown.four.title</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">pep.dropDown.four.leyend</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-4.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">pep.dropDown.five.title</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">pep.dropDown.five.leyend</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-5.png" alt>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card dropdown-standard-item">
-                      <div class="card-standard-header">
-                        <div class="fw-bold sm-text-card">pep.dropDown.six.title</div>
-                        <div class="dropdown-item-button">
-                          <img class="dropdown-arrow" src="../media/arrow-dropdowns-down.svg" alt="arrow">
-                        </div>
-                      </div>
-                      <div class="collapsed-content">
-                        <div class="card-collapse-content">
-                          <p class="sm-text-card light-grey">pep.dropDown.six.leyend</p>
-                          <img class="img-responsive hidden" src="../media/pep/pep-6.png" alt>
-                        </div>
-                      </div>
-                    </div>
+          <div class="row" style=" margin: 40px -16px 0 -16px!important">
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/customized_processes.svg" alt>
+                    <h6>Processos Personalizados</h6>
                   </div>
-                </div>
-                <div class="col-12 col-lg-7">
-                  <div id="pep-img-container">
-                    <img class="img-responsive" src="../media/pep/pep-1.png" alt>
-                  </div>
+                  <p>Crie e gerencie fluxos de trabalho adaptados a cada função dentro da equipe.</p>
                 </div>
               </div>
             </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/detailed_metrics.svg" alt>
+                    <h6>Métricas Detalhadas</h6>
+                  </div>
+                  <p>Acompanhe o progresso com relatórios e análises precisas que apoiam a tomada de decisões.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/automatic_alerts.svg" alt>
+                    <h6>Alertas Automáticos</h6>
+                  </div>
+                  <p>Receba notificações em tempo real sobre marcos importantes ou situações que exigem atenção.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-3 mb-2 d-flex col-gap-32">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/activity_logs.svg" alt>
+                    <h6>Registros de Atividades</h6>
+                  </div>
+                  <p>Mantenha o controle de todas as ações para facilitar o feedback e a melhoria contínua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style=" margin-left: -16px!important; margin-right: -16px!important;">
+            <div class="col-12 col-md-6 col-xl-4 d-flex  col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/role_assignment.svg" alt>
+                    <h6>Atribuição Simples de Papéis</h6>
+                  </div>
+                  <p>Atribua facilmente líderes ou mentores aos novos integrantes para garantir um acompanhamento eficaz.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 d-flex col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/easy_connection.svg" alt>
+                    <h6>Integração com Ferramentas do Dia a Dia</h6>
+                  </div>
+                  <p>Conecte as ferramentas que sua equipe já utiliza para coletar dados e acompanhar o progresso sem complicações.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 d-flex col-gap-32 mb-2">
+              <div class="product-card flex-fill">
+                <div class="product-card-content">
+                  <div class="d-flex gap-2">
+                    <img class src="../media/product/progress_monitoring.svg" alt>
+                    <h6>Monitoramento Detalhado do Progresso</h6>
+                  </div>
+                  <p>Visualize e avalie toda a jornada do processo, tanto para novos colaboradores quanto para líderes, a partir de uma plataforma centralizada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <button id="open_team_boarding" class="button lg-button inter-font white bg-tb_primary">Mais informações</button>
           </div>
         </div>
       </div>
@@ -1094,10 +1076,9 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js" nomodule></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script type="module" src="../index.js?v=3.1"></script>
+  <script type="module" src="../index.js?v=4"></script>
 
 </body>
 </html>

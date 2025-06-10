@@ -121,6 +121,11 @@ $("#close-modal").on("click", (e) => {
   handleControlFormModal();
 });
 
+$('#open_team_boarding').click(function(e) {
+  e.preventDefault();
+  window.open('https://teamboarding.com/', '_blank');
+});
+
 const openMenu = () => {
   $("#menu").removeClass('hidden');
   $("#navbar-content").addClass('open-menu');
@@ -227,7 +232,6 @@ window.addEventListener("click", function (e) {
 
 //  submit form contact
 $(".form-contact").on("submit", function (ev) {
-  debugger
   ev.preventDefault();
   let data_origin_extra_error_message = dataByLang.formContact.validation.noOptionSelected[lang];
   const currentForm = $(this).attr("id");
